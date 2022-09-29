@@ -1,0 +1,14 @@
+2022-09-23 10:32:14,552 - INFO - Data has been loaded
+2022-09-23 10:32:14,656 - INFO - Train and test set has been created
+2022-09-23 10:32:17,132 - INFO - Gaussian Naïve Bayes model has been built
+2022-09-23 10:37:23,161 - INFO - Logistic Regression model has been built
+2022-09-23 10:37:42,240 - INFO - Support Vector Machine model has been built
+2022-09-23 10:38:07,386 - INFO - K Nearest Neighbors model has been built
+2022-09-23 10:59:03,706 - INFO - Multi Layer Perceptron model has been built
+2022-09-23 10:59:44,651 - INFO - Decision Tree model has been built
+2022-09-23 11:08:52,170 - INFO - Random Forest model has been built
+2022-09-23 11:09:42,853 - INFO - Light Gradient Boosted Machine model has been built
+2022-09-23 11:09:58,621 - INFO - Adaptive Boosting model has been built
+2022-09-23 11:10:21,158 - INFO - Gradient Boosted Machine model has been built
+2022-09-23 11:10:39,514 - INFO - Extreme Gradient Boosted Machine model has been built
+2022-09-23 11:11:01,989 - INFO - Category Boosting model has been built

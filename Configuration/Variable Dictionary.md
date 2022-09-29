@@ -1,0 +1,239 @@
+**Variable Dictionary**
+
+- **season** - The season when a match took place
+- **match_week** - The match week when a match took place
+- **match_date** - The date week when a match took place
+- **month** - The month when a match took place
+- **day** - The day of the month when a match took place
+- **weekday** - The day of the week when a match took place
+- **referee** - The referee who officiated the match
+- **home_team** - The home team in this match
+- **away_team** - The away team in this match
+- **stadium** - The stadium where a match took place in this match
+- **attendance** - The number of people attended in this match
+- **h_position** - The league position of the home team
+- **a_position** - The league position of the away team
+- **goals_h** - The number of goals scored by home team in this match
+- **goals_a** - The number of goals scored by away team in this match
+- **possession_h** - The percentage of possession for home team in this match
+- **possession_a** - The percentage of possession for away team in this match
+- **shots_on_target_h** - The number of shots on target for home team in this match
+- **shots_on_target_a** - The number of shots on target for away team in this match
+- **shots_h** - The number of shots for home team in this match
+- **shots_a** - The number of shots for away team in this match
+- **touches_h** - The number of touches for home team in this match
+- **touches_a** - The number of touches for away team in this match
+- **passes_h** - The number of passes for home team in this match
+- **passes_a** - The number of passes for away team in this match
+- **tackles_h** - The number of tackles for home team in this match
+- **tackles_a** - The number of tackles for away team in this match
+- **clearances_h** - The number of clearances for home team in this match
+- **clearances_a** - The number of clearances for away team in this match
+- **corners_h** - The number of corners for home team in this match
+- **corners_a** - The number of corners for away team in this match
+- **offsides_h** - The number of offsides for home team in this match
+- **offsides_a** - The number of offsides for away team in this match
+- **yellow_cards_h** - The number of yellow cards for home team in this match
+- **yellow_cards_a** - The number of yellow cards for away team in this match
+- **red_cards_h** - The number of red cards for home team in this match
+- **red_cards_a** - The number of red cards for away team in this match
+- **fouls_conceded_h** - The number of fouls conceded by home team in this match
+- **fouls_conceded_a** - The number of fouls conceded by away team in this match
+- **formation_h** - The formation used by home team in this match
+- **formation_a** - The formation used by away team in this match
+- **result_h** - The result of the match for home team
+- **result_a** - The result of the match for away team
+- **points_h** - The number of points got based on the result for home team in this match
+- **points_a** - The number of points got based on the result for away team in this match
+- **total_n_matches_played_h** - The total number of matches played by home team up to this match
+- **total_n_matches_played_a** - The total number of matches played by away team up to this match
+- **total_max_points_h** - The total number of maximum points home team had to get up to this match
+- **total_max_points_a** - The total number of maximum points away team had to get up to this match
+- **total_points_h_cum** - The total number of points accumulated by home team up to this match
+- **total_points_a_cum** - The total number of points accumulated by away team up to this match
+- **total_points_dropped_h** - The total number of points dropped by home team up to this match
+- **total_points_dropped_a** - The total number of points dropped by away team up to this match
+- **total_goals_scored_h** - The total number of goals scored by home team up to this match
+- **total_goals_scored_a** - The total number of goals scored by away team up to this match
+- **total_goals_conceded_h** - The total number of goals conceded by home team up to this match
+- **total_goals_conceded_a** - The total number of goals conceded by away team up to this match
+- **total_avg_possession_h** - The average possession for home team up to this match
+- **total_avg_possession_a** - The average possession for away team up to this match
+- **total_avg_possession_last_3_h** - The average possession of the last three matches for home team up to this match
+- **total_avg_possession_last_3_a** - The average possession of the last three matches for away team up to this match
+- **total_avg_possession_last_5_h** - The average possession of the last five matches for home team up to this match
+- **total_avg_possession_last_5_a** - The average possession of the last five matches for away team up to this match
+- **total_avg_shots_on_target_h** - The average shots on target for home team up to this match
+- **total_avg_shots_on_target_a** - The average shots on target for away team up to this match
+- **total_avg_shots_on_target_last_3_h** - The average shots on target of the last three matches for home team up to this match
+- **total_avg_shots_on_target_last_3_a** - The average shots on target of the last three matches for away team up to this match
+- **total_avg_shots_on_target_last_5_h** - The average shots on target of the last five matches for home team up to this match
+- **total_avg_shots_on_target_last_5_a** - The average shots on target of the last five matches for away team up to this match
+- **total_avg_shots_h** - The average shots for home team up to this match
+- **total_avg_shots_a** - The average shots for away team up to this match
+- **total_avg_shots_last_3_h** - The average shots of the last three matches for home team up to this match
+- **total_avg_shots_last_3_a** - The average shots of the last three matches for away team up to this match
+- **total_avg_shots_last_5_h** - The average shots of the last five matches for home team up to this match
+- **total_avg_shots_last_5_a** - The average shots of the last five matches for away team up to this match
+- **total_avg_touches_h** - The average touches for home team up to this match
+- **total_avg_touches_a** - The average touches for away team up to this match
+- **total_avg_touches_last_3_h** - The average touches of the last three matches for home team up to this match
+- **total_avg_touches_last_3_a** - The average touches of the last three matches for away team up to this match
+- **total_avg_touches_last_5_h** - The average touches of the last five matches for home team up to this match
+- **total_avg_touches_last_5_a** - The average touches of the last five matches for away team up to this match
+- **total_avg_passes_h** - The average passes for home team up to this match
+- **total_avg_passes_a** - The average passes for away team up to this match
+- **total_avg_passes_last_3_h** - The average passes of the last three matches for home team up to this match
+- **total_avg_passes_last_3_a** - The average passes of the last three matches for away team up to this match
+- **total_avg_passes_last_5_h** - The average passes of the last five matches for home team up to this match
+- **total_avg_passes_last_5_a** - The average passes of the last five matches for away team up to this match
+- **total_avg_tackles_h** - The average tackles for home team up to this match
+- **total_avg_tackles_a** - The average tackles for away team up to this match
+- **total_avg_tackles_last_3_h** - The average tackles of the last three matches for home team up to this match
+- **total_avg_tackles_last_3_a** - The average tackles of the last three matches for away team up to this match
+- **total_avg_tackles_last_5_h** - The average tackles of the last five matches for home team up to this match
+- **total_avg_tackles_last_5_a** - The average tackles of the last five matches for away team up to this match
+- **total_avg_clearances_h** - The average clearances for home team up to this match
+- **total_avg_clearances_a** - The average clearances for away team up to this match
+- **total_avg_clearances_last_3_h** - The average clearances of the last three matches for home team up to this match
+- **total_avg_clearances_last_3_a** - The average clearances of the last three matches for away team up to this match
+- **total_avg_clearances_last_5_h** - The average clearances of the last five matches for home team up to this match
+- **total_avg_clearances_last_5_a** - The average clearances of the last five matches for away team up to this match
+- **total_avg_corners_h** - The average corners for home team up to this match
+- **total_avg_corners_a** - The average corners for away team up to this match
+- **total_avg_corners_last_3_h** - The average corners of the last three matches for home team up to this match
+- **total_avg_corners_last_3_a** - The average corners of the last three matches for away team up to this match
+- **total_avg_corners_last_5_h** - The average corners of the last five matches for home team up to this match
+- **total_avg_corners_last_5_a** - The average corners of the last five matches for away team up to this match
+- **total_avg_offsides_h** - The average offsides for home team up to this match
+- **total_avg_offsides_a** - The average offsides for away team up to this match
+- **total_avg_offsides_last_3_h** - The average offsides of the last three matches for home team up to this match
+- **total_avg_offsides_last_3_a** - The average offsides of the last three matches for away team up to this match
+- **total_avg_offsides_last_5_h** - The average offsides of the last five matches for home team up to this match
+- **total_avg_offsides_last_5_a** - The average offsides of the last five matches for away team up to this match
+- **total_avg_yellow_cards_h** - The average yellow cards for home team up to this match
+- **total_avg_yellow_cards_a** - The average yellow cards for away team up to this match
+- **total_avg_yellow_cards_last_3_h** - The average yellow cards of the last three matches for home team up to this match
+- **total_avg_yellow_cards_last_3_a** - The average yellow cards of the last three matches for away team up to this match
+- **total_avg_yellow_cards_last_5_h** - The average yellow cards of the last five matches for home team up to this match
+- **total_avg_yellow_cards_last_5_a** - The average yellow cards of the last five matches for away team up to this match
+- **total_avg_fouls_conceded_h** - The average fouls conceded for home team up to this match
+- **total_avg_fouls_conceded_a** - The average fouls conceded for away team up to this match
+- **total_avg_fouls_conceded_last_3_h** - The average fouls conceded of the last three matches for home team up to this match
+- **total_avg_fouls_conceded_last_3_a** - The average fouls conceded of the last three matches for away team up to this match
+- **total_avg_fouls_conceded_last_5_h** - The average fouls conceded of the last five matches for home team up to this match
+- **total_avg_fouls_conceded_last_5_a** - The average fouls conceded of the last five matches for away team up to this match
+- **n_matches_played_h** - The number of home matches played by home team up to this match
+- **n_matches_played_a** - The number of away matches played by away team up to this match
+- **max_points_h** - The number of maximum home points home team had to get up to this match
+- **max_points_a** - The number of maximum away points away team had to get up to this match
+- **points_h_cum** - The number of home points accumulated by home team up to this match
+- **points_a_cum** - The number of away points accumulated by away team up to this match
+- **points_dropped_h** - The total number of home points dropped by home team up to this match
+- **points_dropped_a** - The total number of away points dropped by away team up to this match
+- **goals_scored_h** - The total number of home goals scored by home team up to this match
+- **goals_scored_a** - The total number of away goals scored by away team up to this match
+- **goals_conceded_h** - The total number of home goals conceded by home team up to this match
+- **goals_conceded_a** - The total number of away goals conceded by away team up to this match
+- **avg_possession_h** - The average home possession for home team up to this match
+- **avg_possession_a** - The average away possession for away team up to this match
+- **avg_possession_last_3_h** - The average home possession of the last three matches for home team up to this match
+- **avg_possession_last_3_a** - The average away possession of the last three matches for away team up to this match
+- **avg_possession_last_5_h** - The average home possession of the last five matches for home team up to this match
+- **avg_possession_last_5_a** - The average away possession of the last five matches for away team up to this match
+- **avg_shots_on_target_h** - The average shots on target (home) for home team up to this match
+- **avg_shots_on_target_a** - The average shots on target (away) for away team up to this match
+- **avg_shots_on_target_last_3_h** - The average shots on target (home) of the last three matches for home team up to this match
+- **avg_shots_on_target_last_3_a** - The average shots on target (away) of the last three matches for away team up to this match
+- **avg_shots_on_target_last_5_h** - The average shots on target (home) of the last five matches for home team up to this match
+- **avg_shots_on_target_last_5_a** - The average shots on target (away) of the last five matches for away team up to this match
+- **avg_shots_h** - The average shots (home) for home team up to this match
+- **avg_shots_a** - The average shots (away) for away team up to this match
+- **avg_shots_last_3_h** - The average (home) shots of the last three matches for home team up to this match
+- **avg_shots_last_3_a** - The average (away) shots of the last three matches for away team up to this match
+- **avg_shots_last_5_h** - The average (home) shots of the last five matches for home team up to this match
+- **avg_shots_last_5_a** - The average (away) shots of the last five matches for away team up to this match
+- **avg_touches_h** - The average touches (home) for home team up to this match
+- **avg_touches_a** - The average touches (away) for away team up to this match
+- **avg_touches_last_3_h** - The average touches (home) of the last three matches for home team up to this match
+- **avg_touches_last_3_a** - The average touches (away) of the last three matches for away team up to this match
+- **avg_touches_last_5_h** - The average touches (home) of the last five matches for home team up to this match
+- **avg_touches_last_5_a** - The average touches (away) of the last five matches for away team up to this match
+- **avg_passes_h** - The average passes (home) for home team up to this match
+- **avg_passes_a** - The average passes (away) for away team up to this match
+- **avg_passes_last_3_h** - The average passes (home) of the last three matches for home team up to this match
+- **avg_passes_last_3_a** - The average passes (away) of the last three matches for away team up to this match
+- **avg_passes_last_5_h** - The average passes (home) of the last five matches for home team up to this match
+- **avg_passes_last_5_a** - The average passes (away) of the last five matches for away team up to this match
+- **avg_tackles_h** - The average tackles (home) for home team up to this match
+- **avg_tackles_a** - The average tackles (away) for away team up to this match
+- **avg_tackles_last_3_h** - The average tackles (home) of the last three matches for home team up to this match
+- **avg_tackles_last_3_a** - The average tackles (away) of the last three matches for away team up to this match
+- **avg_tackles_last_5_h** - The average tackles (home) of the last five matches for home team up to this match
+- **avg_tackles_last_5_a** - The average tackles (away) of the last five matches for away team up to this match
+- **avg_clearances_h** - The average clearances (home) for home team up to this match
+- **avg_clearances_a** - The average clearances (away) for away team up to this match
+- **avg_clearances_last_3_h** - The average clearances (home) of the last three matches for home team up to this match
+- **avg_clearances_last_3_a** - The average clearances (away) of the last three matches for away team up to this match
+- **avg_clearances_last_5_h** - The average clearances (home) of the last five matches for home team up to this match
+- **avg_clearances_last_5_a** - The average clearances (away) of the last five matches for away team up to this match
+- **avg_corners_h** - The average corners (home) for home team up to this match
+- **avg_corners_a** - The average corners (away) for away team up to this match
+- **avg_corners_last_3_h** - The average (home) corners of the last three matches for home team up to this match
+- **avg_corners_last_3_a** - The average (away) corners of the last three matches for away team up to this match
+- **avg_corners_last_5_h** - The average (home) corners of the last five matches for home team up to this match
+- **avg_corners_last_5_a** - The average (away) corners of the last five matches for away team up to this match
+- **avg_offsides_h** - The average offsides (home) for home team up to this match
+- **avg_offsides_a** - The average offsides (away) for away team up to this match
+- **avg_offsides_last_3_h** - The average offsides (home) of the last three matches for home team up to this match
+- **avg_offsides_last_3_a** - The average offsides (away) of the last three matches for away team up to this match
+- **avg_offsides_last_5_h** - The average offsides (home) of the last five matches for home team up to this match
+- **avg_offsides_last_5_a** - The average offsides (away) of the last five matches for away team up to this match
+- **avg_yellow_cards_h** - The average yellow cards (home) for home team up to this match
+- **avg_yellow_cards_a** - The average yellow cards (away) for away team up to this match
+- **avg_yellow_cards_last_3_h** - The average yellow cards (home) of the last three matches for home team up to this match
+- **avg_yellow_cards_last_3_a** - The average yellow cards (away) of the last three matches for away team up to this match
+- **avg_yellow_cards_last_5_h** - The average yellow cards (home) of the last five matches for home team up to this match
+- **avg_yellow_cards_last_5_a** - The average yellow cards (away) of the last five matches for away team up to this match
+- **avg_fouls_conceded_h** - The average fouls conceded (home) for home team up to this match
+- **avg_fouls_conceded_a** - The average fouls conceded (away) for away team up to this match
+- **avg_fouls_conceded_last_3_h** - The average fouls conceded (home) of the last three matches for home team up to this match
+- **avg_fouls_conceded_last_3_a** - The average fouls conceded (away) of the last three matches for away team up to this match
+- **avg_fouls_conceded_last_5_h** - The average fouls conceded (home) of the last five matches for home team up to this match
+- **avg_fouls_conceded_last_5_a** - The average fouls conceded (away) of the last five matches for away team up to this match
+- **is_boxing_day** - Whether or not a match is on a boxing day
+- **finished_top_4_last_season_h** - Whether or not home team got top four last season
+- **finished_top_4_last_season_h** - Whether or not away team got top four last season
+- **won_carabao_cup_last_season_h** - Whether or not home team won Carabao Cup last season
+- **won_carabao_cup_last_season_a** - Whether or not away team won Carabao Cup last season
+- **won_fa_cup_last_season_h** - Whether or not home team won FA Cup last season
+- **won_fa_cup_last_season_a** - Whether or not away team won FA Cup last season
+- **won_epl_last_season_h** - Whether or not home team won EPL last season
+- **won_epl_last_season_a** - Whether or not away team won EPL last season
+- **was_in_ucl_last_season_h** - Whether or not home team was in UCL last season
+- **was_in_ucl_last_season_a** - Whether or not away team was in UCL last season
+- **was_in_uel_last_season_h** - Whether or not home team was in UEL last season
+- **was_in_uel_last_season_a** - Whether or not away team was in UEL last season
+- **is_in_ucl_last_season_h** - Whether or not home team is in UCL (group stage) this season
+- **is_in_ucl_last_season_a** - Whether or not away team is in UCL (group stage) this season
+- **is_in_uel_last_season_h** - Whether or not home team is in UEL (group stage) this season
+- **is_in_uel_last_season_a** - Whether or not away team is in UEL (group stage) this season
+- **traditional_top_6_h** - Whether or not home team is a traditional top six club
+- **traditional_top_6_a** - Whether or not away team is a traditional top six club
+- **newly_promoted_h** - Whether or not home team is a newly promoted club
+- **newly_promoted_a** - Whether or not away team is a newly promoted club
+- **total_goal_difference_h** - Goal difference for home team in all matches up to this match
+- **total_goal_difference_a** - Goal difference for away team in all matches up to this match
+- **goal_difference_h** - Goal difference (home) for home team in all matches up to this match
+- **goal_difference_a** - Goal difference (away) for away team in all matches up to this match
+- **positive_total_goal_difference_h** - Whether or not home team has a positive goal difference in all matches (binary)
+- **positive_total_goal_difference_a** - Whether or not away team has a positive goal difference in all matches (binary)
+- **positive_goal_difference_h** - Whether or not home team has a positive goal difference in home matches (binary)
+- **positive_goal_difference_a** - Whether or not away team has a positive goal difference in away matches (binary)
+- **is_derby** - Whether or not it is a derby match (binary)
+- **which_derby** - The name of the derby
+- **ground_truth** - The target (multiclass: -1 --> Defeat | 0 --> Draw | 1 --> Win) variable based on home team
+- **home_win** - Whether or not home team won the match (binary)
+- **draw** - Whether or not a result was a draw
+- **away_win** - Whether or not away team won the match (binary)
+- **link** - The link to the match in EPL website
