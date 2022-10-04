@@ -1,6 +1,5 @@
 # Importing Dependencies
 from selenium.webdriver.support import expected_conditions as EC
-from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver import Chrome, ChromeOptions
 from selenium.webdriver.common.keys import Keys
@@ -38,7 +37,6 @@ config = load_credentials(filename = '/Users/kzeynalzade/Documents/Project/Confi
 
 # Specifying the path for the driver and target URL
 DRIVER_PATH = config.get('credentials').get('driver_path')
-# DRIVER_PATH = '/Users/kzeynalzade/Downloads/.wdm/drivers/chromedriver/mac64/105.0.5195/chromedriver'
 TARGET_URL = config.get('credentials').get('target_url')
 
 # Adding an option to browse in an incognito mode
