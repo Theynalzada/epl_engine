@@ -362,12 +362,17 @@ It would not be the best approach to use this model to predict the outcome of th
 4. **High** - The outcome of a match with probability between than **65%** (inclusive) and **85%** (exclusive)
 5. **Very High** - The outcome of a match with probability greater equal than **85%**
 
-Even though the engine makes predictions for any match, its performance is evaluted for matches in which the probability is greater equal than **65%**. Current accuracy of the engine on the train and the test set is **79%** which means that on average out of every 10 predictions with probability greater equal than **65%** the eight of those matches are correctly predicted.
+Even though the engine makes predictions for any match, its performance is evaluted for matches in which the probability is greater equal than **65%**. Current accuracy of the engine on the train set is **79%** and **75%** on the test set.
 
-![](https://i.imgur.com/gYFf5OR.jpg)
+![](https://i.imgur.com/8hNmw1b.jpg)
+
+Apart from the primary engine, there is also a **shadow engine** which contains the exact same models built using **Logistic Regression** algorithm. The main reason why there is also the second engine was due to the fact that I wanted to compare the performance of those engines in production while only providing the output of the primary engine to the end users as the predictions of the shadow engine are saved for further analysis. The performance of the both engines will be monitored till the **World Cup** starts. Right now the accuracy of the shadow engine on the test set is **83%**. 
+
+![](https://i.imgur.com/lrE1baB.jpg)
+
 
 ## Deployment
-Apart from the primary engine there is also **shadow mode** engine which I built using **Logistic Regression** algorithm. The reason why I built another engine with different algorithm is due to the fact that I want to analyze and compare predictions of the engines and see how the shadow mode engine perform in production environment in comparison to the primary engine. Furthermore, I have also created a streamlit application which has been deployed and currently running on **Heroku** server, however, primary engine is the one that makes predictions in the application.
+Furthermore, I have also created a streamlit [application](https://epl-engine.herokuapp.com) which has been deployed and currently running on **Heroku** server, however, primary engine is the one that makes predictions in the application.
 
 ## Additional Information
-I will maintain this project for the years to come and add other functionalities to the engine such as online prediction using in game statistics. In addition, I will also include new variables for the current engine and retrain it. Since the size of the training set is subject to increase each year, the change for the main algorithms used in modeling is expected.
+I will maintain this project for the years to come and add other functionalities to the engine such as **online prediction** using in game statistics. In addition, I will also include new variables for the current engine and retrain it. Since the size of the training set is subject to increase each year, the change for the main algorithms used in modeling is expected.

@@ -12,8 +12,7 @@ import time
 import yaml
 import os
 
-# Configuration of settings
-pd.set_option('display.max_columns', None)
+# Filtering potential warnings
 warnings.filterwarnings(action = 'ignore')
 
 # Defining a function to load credentials
@@ -46,7 +45,6 @@ options.add_argument(argument = '--incognito')
 # Defining a function to scrape the data for the last seven seasons
 def scrape_data():
     for x in range(7):
-        # driver = Chrome(executable_path = ChromeDriverManager().install(), chrome_options = options)
         driver = Chrome(executable_path = DRIVER_PATH, chrome_options = options)
         driver.get(url = TARGET_URL)
         driver.maximize_window()
@@ -54,10 +52,17 @@ def scrape_data():
         time.sleep(3)
         accept_all_cookies_full_xpath = '/html/body/div[2]/div/div/div[1]/div[5]/button[1]'
         WebDriverWait(driver = driver, timeout = 10).until(method = EC.element_to_be_clickable(mark = (By.XPATH, accept_all_cookies_full_xpath))).click()
+        
+        time.sleep(3)
+        remove_advert = '/html/body/main/div[1]/nav/a[2]'
+        WebDriverWait(driver = driver, timeout = 10).until(method = EC.element_to_be_clickable(mark = (By.XPATH, remove_advert))).click()
 
         time.sleep(3)
         results_full_xpath = '/html/body/header/div/nav/ul/li[3]/a'
         WebDriverWait(driver = driver, timeout = 10).until(method = EC.element_to_be_clickable(mark = (By.XPATH, results_full_xpath))).click()
+        
+        time.sleep(3)
+        WebDriverWait(driver = driver, timeout = 10).until(method = EC.element_to_be_clickable(mark = (By.XPATH, remove_advert))).click()
 
         time.sleep(3)
         driver.execute_script(script = 'window.scrollTo(0, 200);')
@@ -90,9 +95,13 @@ def scrape_data():
         links = ['https:' + link.get_attribute(name = 'data-href') for link in links]
         stadiums = [stadium.text.split(',')[0].strip() for stadium in stadiums]
 
-        scraped_data_v1 = {'season':season, 'home_team':home_teams, 'away_team':away_teams, 
-                       'goals_h':goals_scored_by_home_team, 'goals_a':goals_scored_by_away_team, 
-                       'stadium':stadiums, 'link':links}
+        scraped_data_v1 = {'season':season, 
+                           'home_team':home_teams, 
+                           'away_team':away_teams, 
+                           'goals_h':goals_scored_by_home_team, 
+                           'goals_a':goals_scored_by_away_team, 
+                           'stadium':stadiums, 
+                           'link':links}
 
         df = pd.DataFrame(data = scraped_data_v1)
 
@@ -135,7 +144,7 @@ def scrape_data():
             driver.execute_script(script = 'window.scrollTo(0, 500)')
 
             time.sleep(3)
-            WebDriverWait(driver = driver, timeout = 10).until(method = EC.element_to_be_clickable(mark = (By.XPATH, "/html/body/main/div/section[2]/div[2]/div[2]/div[1]/div/div/ul/li[3]"))).click()
+            WebDriverWait(driver = driver, timeout = 20).until(method = EC.element_to_be_clickable(mark = (By.XPATH, "/html/body/main/div/section[2]/div[2]/div[2]/div[1]/div/div/ul/li[3]"))).click()
 
             time.sleep(3)
             driver.execute_script(script = 'window.scrollTo(0, 1000)')

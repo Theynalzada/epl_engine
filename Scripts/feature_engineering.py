@@ -52,7 +52,7 @@ def create_preliminary_variables(data_frame = None, season = None):
     PROMOTED_TEAMS = config.get(season).get('promoted_teams')
     BOXING_DAY = config.get(season).get('boxing_day')
     
-    data_frame.match_date = pd.to_datetime(data_frame.match_date, yearfirst= True)
+    data_frame.match_date = pd.to_datetime(arg = data_frame.match_date, yearfirst = True)
     
     data_frame['ground_truth'] = np.nan
     data_frame['result_h'] = ''
@@ -61,27 +61,27 @@ def create_preliminary_variables(data_frame = None, season = None):
     data_frame['points_a'] = 0
     
     data_frame['is_boxing_day'] = np.where((data_frame.match_date.dt.month == 12) & (data_frame.match_date.dt.day == BOXING_DAY), 1, 0)
-    data_frame['finished_top_4_last_season_h'] = np.where(data_frame.home_team.isin(FINISHED_IN_TOP_4_LAST_SEASON), 1, 0)
-    data_frame['finished_top_4_last_season_a'] = np.where(data_frame.away_team.isin(FINISHED_IN_TOP_4_LAST_SEASON), 1, 0)
+    data_frame['finished_top_4_last_season_h'] = np.where(data_frame.home_team.isin(values = FINISHED_IN_TOP_4_LAST_SEASON), 1, 0)
+    data_frame['finished_top_4_last_season_a'] = np.where(data_frame.away_team.isin(values = FINISHED_IN_TOP_4_LAST_SEASON), 1, 0)
     data_frame['won_carabao_cup_last_season_h'] = np.where(data_frame.home_team == WON_CARABAO_CUP_LAST_SEASON, 1, 0)
     data_frame['won_carabao_cup_last_season_a'] = np.where(data_frame.away_team == WON_CARABAO_CUP_LAST_SEASON, 1, 0)
-    data_frame['was_in_ucl_last_season_h'] = np.where(data_frame.home_team.isin(WAS_IN_UCL_LAST_SEASON), 1, 0)
-    data_frame['was_in_ucl_last_season_a'] = np.where(data_frame.away_team.isin(WAS_IN_UCL_LAST_SEASON), 1, 0)
-    data_frame['was_in_uel_last_season_h'] = np.where(data_frame.home_team.isin(WAS_IN_UEL_LAST_SEASON), 1, 0)
-    data_frame['was_in_uel_last_season_a'] = np.where(data_frame.away_team.isin(WAS_IN_UEL_LAST_SEASON), 1, 0)
-    data_frame['is_in_ucl_this_season_h'] = np.where(data_frame.home_team.isin(IS_IN_UCL_THIS_SEASON), 1, 0)
-    data_frame['is_in_ucl_this_season_a'] = np.where(data_frame.away_team.isin(IS_IN_UCL_THIS_SEASON), 1, 0)
-    data_frame['is_in_uel_this_season_h'] = np.where(data_frame.home_team.isin(IS_IN_UEL_THIS_SEASON), 1, 0)
-    data_frame['is_in_uel_this_season_a'] = np.where(data_frame.away_team.isin(IS_IN_UEL_THIS_SEASON), 1, 0)
+    data_frame['was_in_ucl_last_season_h'] = np.where(data_frame.home_team.isin(values = WAS_IN_UCL_LAST_SEASON), 1, 0)
+    data_frame['was_in_ucl_last_season_a'] = np.where(data_frame.away_team.isin(values = WAS_IN_UCL_LAST_SEASON), 1, 0)
+    data_frame['was_in_uel_last_season_h'] = np.where(data_frame.home_team.isin(values = WAS_IN_UEL_LAST_SEASON), 1, 0)
+    data_frame['was_in_uel_last_season_a'] = np.where(data_frame.away_team.isin(values = WAS_IN_UEL_LAST_SEASON), 1, 0)
+    data_frame['is_in_ucl_this_season_h'] = np.where(data_frame.home_team.isin(values = IS_IN_UCL_THIS_SEASON), 1, 0)
+    data_frame['is_in_ucl_this_season_a'] = np.where(data_frame.away_team.isin(values = IS_IN_UCL_THIS_SEASON), 1, 0)
+    data_frame['is_in_uel_this_season_h'] = np.where(data_frame.home_team.isin(values = IS_IN_UEL_THIS_SEASON), 1, 0)
+    data_frame['is_in_uel_this_season_a'] = np.where(data_frame.away_team.isin(values = IS_IN_UEL_THIS_SEASON), 1, 0)
     data_frame['won_fa_cup_last_season_h'] = np.where(data_frame.home_team == WON_FA_CUP_LAST_SEASON, 1, 0)
     data_frame['won_fa_cup_last_season_a'] = np.where(data_frame.away_team == WON_FA_CUP_LAST_SEASON, 1, 0)
-    data_frame['traditional_top_6_h'] = np.where(data_frame.home_team.isin(TRADITIONAL_TOP_6), 1, 0)
-    data_frame['traditional_top_6_a'] = np.where(data_frame.away_team.isin(TRADITIONAL_TOP_6), 1, 0)
+    data_frame['traditional_top_6_h'] = np.where(data_frame.home_team.isin(values = TRADITIONAL_TOP_6), 1, 0)
+    data_frame['traditional_top_6_a'] = np.where(data_frame.away_team.isin(values = TRADITIONAL_TOP_6), 1, 0)
     data_frame['won_epl_last_season_h'] = np.where(data_frame.home_team == REIGNING_CHAMPION, 1, 0)
     data_frame['won_epl_last_season_a'] = np.where(data_frame.away_team == REIGNING_CHAMPION, 1, 0)
-    data_frame['newly_promoted_h'] = np.where(data_frame.home_team.isin(PROMOTED_TEAMS), 1, 0)
-    data_frame['newly_promoted_a'] = np.where(data_frame.away_team.isin(PROMOTED_TEAMS), 1, 0)
-    
+    data_frame['newly_promoted_h'] = np.where(data_frame.home_team.isin(values = PROMOTED_TEAMS), 1, 0)
+    data_frame['newly_promoted_a'] = np.where(data_frame.away_team.isin(values = PROMOTED_TEAMS), 1, 0)
+
     data_frame['home_win'] = np.where(data_frame.goals_h > data_frame.goals_a, 1, 0)
     data_frame['away_win'] = np.where(data_frame.goals_a > data_frame.goals_h, 1, 0)
     data_frame['draw'] = np.where(data_frame.goals_h == data_frame.goals_a, 1, 0)
@@ -97,6 +97,7 @@ def create_preliminary_variables(data_frame = None, season = None):
     data_frame.loc[data_frame.result_h == 'defeat', 'ground_truth'] = -1
     data_frame.loc[data_frame.result_h == 'draw', 'ground_truth'] = 0
     data_frame.loc[data_frame.result_h == 'win', 'ground_truth'] = 1
+    
     data_frame.ground_truth = data_frame.ground_truth.apply(func = lambda x: int(x))
 
     data_frame.loc[data_frame.result_h == 'draw', 'points_h'] = 1
@@ -3060,7 +3061,7 @@ def apply_feature_engineering():
         
         # Creating a list of reallocated features
         reallocated_features = ['season', 'match_week', 'match_date', 'month', 'day', 'weekday', 'referee', 'home_team', 'away_team', 'stadium', 'attendance',
-                                'h_position', 'a_position', 'goals_h', 'goals_a', 'possession_h', 'possession_a', 'shots_on_target_h', 'shots_on_target_a', 'shots_h', 'shots_a', 'touches_h',
+                                'h_position', 'a_position', 'goals_h', 'goals_a', 'possession_h', 'possession_a', 'shots_on_target_h', 'shots_on_target_a',       'shots_h', 'shots_a', 'touches_h',
                                 'touches_a', 'passes_h', 'passes_a', 'tackles_h', 'tackles_a', 'clearances_h', 'clearances_a', 'corners_h', 'corners_a', 'offsides_h',
                                 'offsides_a', 'yellow_cards_h', 'yellow_cards_a', 'red_cards_h', 'red_cards_a', 'fouls_conceded_h', 'fouls_conceded_a', 
                                 'formation_h', 'formation_a', 'result_h', 'result_a', 'points_h', 'points_a', 'total_n_matches_played_h',

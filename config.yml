@@ -472,3 +472,5 @@ target:
   win_model: home_win
 test_split:
   test_season: 2021/22
+current_season:
+  2022/23
