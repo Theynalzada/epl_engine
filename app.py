@@ -2,6 +2,7 @@
 from statsmodels.stats.outliers_influence import variance_inflation_factor as VIF
 from feature_engineering import apply_feature_engineering
 from sklearn.base import BaseEstimator, TransformerMixin
+from datetime import timedelta
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -182,7 +183,8 @@ current_season_df = pd.read_csv(filepath_or_buffer = '2022-23_unprocessed.csv')
 # Casting the data type of match_date variable from object to datetime
 current_season_df.match_date = pd.to_datetime(arg = current_season_df.match_date, yearfirst = True)
 
-min_match_date = current_season_df.match_date.max() + pd.DateOffset(days = 1)
+# Assigning the minimum match date
+min_match_date = current_season_df.match_date.max()# + pd.DateOffset(days = 1)
 
 # Creating a list of teams
 teams = current_season_df.home_team.unique().tolist()
@@ -384,13 +386,6 @@ with interface:
     with match_date:
         # Specifying a match date
         match_date = st.date_input(label = 'Match Date', min_value = min_match_date)
-        
-    # Calling the function to generate input data
-    input_data = generate_input_data(match_week = match_week,
-                                     match_date = match_date,
-                                     home_teams = home_team,
-                                     away_teams = away_team,
-                                     unprocessed_data = current_season_df)
 
     # Creating a straight line
     st.markdown(body = '***')
@@ -403,7 +398,20 @@ with interface:
         # Creating a spinner
         with st.spinner('Input features are being sent to the engine...'):
             # Making a little pause
-            time.sleep(1)
+            time.sleep(1.5)
+        
+        # Displaying the information about the engine features being calculating
+        st.warning(body = 'Engine features are being calculated..')
+        
+        # Making a little pause
+        time.sleep(1)
+            
+        # Calling the function to generate input data
+        input_data = generate_input_data(match_week = match_week,
+                                         match_date = match_date,
+                                         home_teams = home_team,
+                                         away_teams = away_team,
+                                         unprocessed_data = current_season_df)
             
         # Making prediction with the engine
         prediction = make_predictions(data_frame = input_data)
