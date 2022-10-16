@@ -362,14 +362,13 @@ It would not be the best approach to use this model to predict the outcome of th
 4. **High** - The outcome of a match with probability between than **65%** (inclusive) and **85%** (exclusive)
 5. **Very High** - The outcome of a match with probability greater equal than **85%**
 
-Even though the engine makes predictions for any match, its performance is evaluted for matches in which the probability is greater equal than **65%**. Current accuracy of the engine on the train set is **79%** and **75%** on the test set.
+Even though the engine makes predictions for any match, its performance is evaluted for matches in which the probability is greater equal than **65%**. Current accuracy of the engine on the train set is **79%** and **76%** on the test set.
 
-![](https://i.imgur.com/8hNmw1b.jpg)
+![](https://i.imgur.com/nxTiHOc.jpg)
 
-Apart from the primary engine, there is also a **shadow engine** which contains the exact same models built using **Logistic Regression** algorithm. The main reason why there is also the second engine was due to the fact that I wanted to compare the performance of those engines in production while only providing the output of the primary engine to the end users as the predictions of the shadow engine are saved for further analysis. The performance of the both engines will be monitored till the **World Cup** starts. Right now the accuracy of the shadow engine on the test set is **83%**. 
+Apart from the primary engine, there is also a **shadow engine** which contains the exact same models built using **Logistic Regression** algorithm. The main reason why there is also the second engine was due to the fact that I wanted to compare the performance of those engines in production while only providing the output of the primary engine to the end users as the predictions of the shadow engine are saved for further analysis. The performance of the both engines will be monitored till the **World Cup** starts. Right now the accuracy of the shadow engine on the test set is **80%**. 
 
-![](https://i.imgur.com/lrE1baB.jpg)
-
+![](https://i.imgur.com/9cqC8hU.jpg)
 
 ## Deployment
 Furthermore, I have also created a streamlit [application](https://epl-engine.herokuapp.com) which has been deployed and currently running on **Heroku** server, however, primary engine is the one that makes predictions in the application.

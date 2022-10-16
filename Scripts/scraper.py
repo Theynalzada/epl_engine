@@ -49,20 +49,24 @@ def scrape_data():
         driver.get(url = TARGET_URL)
         driver.maximize_window()
 
-        time.sleep(3)
-        accept_all_cookies_full_xpath = '/html/body/div[2]/div/div/div[1]/div[5]/button[1]'
-        WebDriverWait(driver = driver, timeout = 10).until(method = EC.element_to_be_clickable(mark = (By.XPATH, accept_all_cookies_full_xpath))).click()
+        time.sleep(5)
+        accept_all_cookies_full_xpath = '/html/body/div[12]/div/div/div[1]/div[5]/button[1]'
+        WebDriverWait(driver = driver, timeout = 15).until(method = EC.element_to_be_clickable(mark = (By.XPATH, accept_all_cookies_full_xpath))).click()
         
         time.sleep(3)
-        remove_advert = '/html/body/main/div[1]/nav/a[2]'
-        WebDriverWait(driver = driver, timeout = 10).until(method = EC.element_to_be_clickable(mark = (By.XPATH, remove_advert))).click()
+        logo_xpath = '/html/body/header/div/a'
+        WebDriverWait(driver = driver, timeout = 10).until(method = EC.element_to_be_clickable(mark = (By.XPATH, logo_xpath))).click()
+        
+        # time.sleep(3)
+        # remove_advert = '/html/body/main/div[1]/nav/a[2]'
+        # WebDriverWait(driver = driver, timeout = 10).until(method = EC.element_to_be_clickable(mark = (By.XPATH, remove_advert))).click()
 
         time.sleep(3)
         results_full_xpath = '/html/body/header/div/nav/ul/li[3]/a'
         WebDriverWait(driver = driver, timeout = 10).until(method = EC.element_to_be_clickable(mark = (By.XPATH, results_full_xpath))).click()
         
-        time.sleep(3)
-        WebDriverWait(driver = driver, timeout = 10).until(method = EC.element_to_be_clickable(mark = (By.XPATH, remove_advert))).click()
+        # time.sleep(3)
+        # WebDriverWait(driver = driver, timeout = 10).until(method = EC.element_to_be_clickable(mark = (By.XPATH, remove_advert))).click()
 
         time.sleep(3)
         driver.execute_script(script = 'window.scrollTo(0, 200);')
