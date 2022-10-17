@@ -398,14 +398,11 @@ with interface:
         # Creating a spinner
         with st.spinner('Input features are being sent to the engine...'):
             # Making a little pause
-            time.sleep(1.5)
+            time.sleep(1)
         
         # Displaying the information about the engine features being calculating
-        st.warning(body = 'Engine features are being calculated..')
+        st.warning(body = 'Engine features are being calculated...')
         
-        # Making a little pause
-        time.sleep(1)
-            
         # Calling the function to generate input data
         input_data = generate_input_data(match_week = match_week,
                                          match_date = match_date,
