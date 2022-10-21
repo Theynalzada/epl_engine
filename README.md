@@ -366,9 +366,9 @@ Even though the engine makes predictions for any match, its performance is evalu
 
 ![](https://i.imgur.com/nxTiHOc.jpg)
 
-Apart from the primary engine, there is also a **shadow engine** which contains the exact same models built using **Logistic Regression** algorithm. The main reason why there is also the second engine was due to the fact that I wanted to compare the performance of those engines in production while only providing the output of the primary engine to the end users as the predictions of the shadow engine are saved for further analysis. The performance of the both engines will be monitored till the **World Cup** starts. Right now the accuracy of the shadow engine on the test set is **80%**. 
+Apart from the primary engine, there is also a **shadow engine** which contains the exact same models built using **Logistic Regression** algorithm. The main reason why there is also the second engine was due to the fact that I wanted to compare the performance of those engines in production while only providing the output of the primary engine to the end users as the predictions of the shadow engine are saved for further analysis. The performance of the both engines will be monitored till the **World Cup** starts. Right now the accuracy of the shadow engine on the test set is **81%**. 
 
-![](https://i.imgur.com/9cqC8hU.jpg)
+![](https://i.imgur.com/PN01iGe.jpg)
 
 ## Deployment
 Furthermore, I have also created a streamlit [application](https://epl-engine.herokuapp.com) which has been deployed and currently running on **Heroku** server, however, primary engine is the one that makes predictions in the application.
