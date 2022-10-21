@@ -1,10 +1,11 @@
 season,match_week,match_date,home_team,away_team,prediction,probability,confidence,bet,engine_output
-2022/23,12,2022-10-18,Brighton,Nott'm Forest,1,0.3966826931472367,Low,False,Probability of Brighton beating Nott'm Forest at home is 40%.
-2022/23,12,2022-10-18,Crystal Palace,Wolves,1,0.3895004593401732,Low,False,Probability of Crystal Palace beating Wolves at home is 39%.
-2022/23,12,2022-10-19,Bournemouth,Southampton,1,0.4094069046634554,Low,False,Probability of Bournemouth beating Southampton at home is 41%.
-2022/23,12,2022-10-19,Brentford,Chelsea,-1,0.6116461661401784,Medium,False,Probability of Chelsea defeating Brentford away from home is 61%.
-2022/23,12,2022-10-19,Liverpool,West Ham,1,0.5902472562532305,Medium,False,Probability of Liverpool beating West Ham at home is 59%.
-2022/23,12,2022-10-19,Newcastle,Everton,1,0.35806116714721287,Low,False,Probability of Newcastle beating Everton at home is 36%.
-2022/23,12,2022-10-19,Man Utd,Spurs,1,0.4749182638800384,Low,False,Probability of Man Utd beating Spurs at home is 47%.
-2022/23,12,2022-10-20,Leicester,Leeds,1,0.4815355033887519,Low,False,Probability of Leicester beating Leeds at home is 48%.
-2022/23,12,2022-10-20,Fulham,Aston Villa,1,0.37553234460236473,Low,False,Probability of Fulham beating Aston Villa at home is 38%.
+2022/23,13,2022-10-22,Nott'm Forest,Liverpool,-1,0.6627973684479889,High,True,Probability of Liverpool defeating Nott'm Forest away from home is 66%.
+2022/23,13,2022-10-22,Man City,Brighton,1,0.6652344058056264,High,True,Probability of Man City beating Brighton at home is 67%.
+2022/23,13,2022-10-22,Chelsea,Man Utd,1,0.5399397108905482,Low,False,Probability of Chelsea beating Man Utd at home is 54%.
+2022/23,13,2022-10-22,Everton,Crystal Palace,1,0.5146907037542394,Low,False,Probability of Everton beating Crystal Palace at home is 51%.
+2022/23,13,2022-10-23,Aston Villa,Brentford,1,0.35602890597467857,Low,False,Probability of Aston Villa beating Brentford at home is 36%.
+2022/23,13,2022-10-23,Leeds,Fulham,1,0.4899829693063709,Low,False,Probability of Leeds beating Fulham at home is 49%.
+2022/23,13,2022-10-23,Southampton,Arsenal,-1,0.6491510887465461,Medium,False,Probability of Arsenal defeating Southampton away from home is 65%.
+2022/23,13,2022-10-23,Wolves,Leicester,1,0.31315275014274896,Very Low,False,Probability of Wolves beating Leicester at home is 31%.
+2022/23,13,2022-10-23,Spurs,Newcastle,1,0.6987731158419203,High,True,Probability of Spurs beating Newcastle at home is 70%.
+2022/23,13,2022-10-24,West Ham,Bournemouth,1,0.5,Low,False,Probability of West Ham beating Bournemouth at home is 50%.
