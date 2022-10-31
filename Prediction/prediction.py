@@ -190,13 +190,13 @@ current_season_df = pd.read_csv(filepath_or_buffer = '/Users/kzeynalzade/Documen
 current_season_df.match_date = pd.to_datetime(arg = current_season_df.match_date, yearfirst = True)
 
 # Creating a list of match dates
-dates = pd.to_datetime(arg = ('2022-10-29 ' * 8).strip().split() + ('2022-10-30 ' * 2).strip().split(), yearfirst = True)
+dates = pd.to_datetime(arg = ('2022-11-05 ' * 5).strip().split() + ('2022-11-06 ' * 5).strip().split(), yearfirst = True)
 
 # Creating a list of home teams
-home_teams = ['Leicester', 'Bournemouth', 'Brentford', 'Brighton', 'Crystal Palace', 'Newcastle', 'Fulham', 'Liverpool', 'Arsenal', 'Man Utd']
+home_teams = ['Leeds', 'Man City', 'Nott\'m Forest', 'Wolves', 'Everton', 'Chelsea', 'Aston Villa', 'Southampton', 'West Ham', 'Spurs']
 
 # Creating a list of away teams
-away_teams = ['Man City', 'Spurs', 'Wolves', 'Chelsea', 'Southampton', 'Aston Villa', 'Everton', 'Leeds', 'Nott\'m Forest', 'West Ham']
+away_teams = ['Bournemouth', 'Fulham', 'Brentford', 'Brighton', 'Leicester', 'Arsenal', 'Man Utd', 'Newcastle', 'Crystal Palace', 'Liverpool']
 
 # Defining a function to generate input data
 def generate_input_data(match_week = None, 
@@ -354,7 +354,7 @@ def make_predictions(data_frame = None, use_shadow_models = False):
         logging.info(msg = 'Shadow engine made predictions successfully')
 
 # Calling the function to generate input data
-input_data = generate_input_data(match_week = 14,
+input_data = generate_input_data(match_week = 15,
                                  match_dates = dates,
                                  home_teams = home_teams,
                                  away_teams = away_teams,
