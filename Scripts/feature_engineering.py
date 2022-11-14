@@ -7,7 +7,7 @@ import yaml
 import os
 
 # Creating a logger file
-logging.basicConfig(level = logging.INFO, filename = '/Users/kzeynalzade/Documents/Project/Logs/feature_engineering.log', filemode = 'w', format = '%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(level = logging.INFO, filename = '/Users/kzeynalzade/Documents/EPL Redevelopment/epl_engine/Logs/feature_engineering.log', filemode = 'w', format = '%(asctime)s - %(levelname)s - %(message)s')
 
 # Filtering the warnings
 warnings.filterwarnings(action = 'ignore')
@@ -27,7 +27,7 @@ def load_credentials(filename = None):
         
     return config
 
-config = load_credentials(filename = '/Users/kzeynalzade/Documents/Project/Configuration/config.yml')
+config = load_credentials(filename = '/Users/kzeynalzade/Documents/EPL Redevelopment/epl_engine/Configuration/config.yml')
 
 def create_preliminary_variables(data_frame = None, season = None):
     """
@@ -49,6 +49,8 @@ def create_preliminary_variables(data_frame = None, season = None):
     IS_IN_UEL_THIS_SEASON = config.get(season).get('is_in_uel_this_season')
     TRADITIONAL_TOP_6 = config.get(season).get('traditional_top_6')
     REIGNING_CHAMPION = config.get(season).get('reigning_champion')
+    HAS_BEEN_UCL_WINNER = config.get(season).get('ucl_winners')
+    HAS_BEEN_EPL_WINNER = config.get(season).get('epl_winners')
     PROMOTED_TEAMS = config.get(season).get('promoted_teams')
     BOXING_DAY = config.get(season).get('boxing_day')
     
@@ -59,10 +61,18 @@ def create_preliminary_variables(data_frame = None, season = None):
     data_frame['result_a'] = ''
     data_frame['points_h'] = 0
     data_frame['points_a'] = 0
+    data_frame['n_ucls_h'] = 0
+    data_frame['n_ucls_a'] = 0
+    data_frame['n_epls_h'] = 0
+    data_frame['n_epls_a'] = 0
     
     data_frame['is_boxing_day'] = np.where((data_frame.match_date.dt.month == 12) & (data_frame.match_date.dt.day == BOXING_DAY), 1, 0)
     data_frame['finished_top_4_last_season_h'] = np.where(data_frame.home_team.isin(values = FINISHED_IN_TOP_4_LAST_SEASON), 1, 0)
     data_frame['finished_top_4_last_season_a'] = np.where(data_frame.away_team.isin(values = FINISHED_IN_TOP_4_LAST_SEASON), 1, 0)
+    data_frame['has_been_a_ucl_winner_h'] = np.where(data_frame.home_team.isin(values = list(HAS_BEEN_UCL_WINNER.keys())), 1, 0)
+    data_frame['has_been_a_ucl_winner_a'] = np.where(data_frame.away_team.isin(values = list(HAS_BEEN_UCL_WINNER.keys())), 1, 0)
+    data_frame['has_been_an_epl_winner_h'] = np.where(data_frame.home_team.isin(values = list(HAS_BEEN_EPL_WINNER.keys())), 1, 0)
+    data_frame['has_been_an_epl_winner_a'] = np.where(data_frame.away_team.isin(values = list(HAS_BEEN_EPL_WINNER.keys())), 1, 0)
     data_frame['won_carabao_cup_last_season_h'] = np.where(data_frame.home_team == WON_CARABAO_CUP_LAST_SEASON, 1, 0)
     data_frame['won_carabao_cup_last_season_a'] = np.where(data_frame.away_team == WON_CARABAO_CUP_LAST_SEASON, 1, 0)
     data_frame['was_in_ucl_last_season_h'] = np.where(data_frame.home_team.isin(values = WAS_IN_UCL_LAST_SEASON), 1, 0)
@@ -86,25 +96,38 @@ def create_preliminary_variables(data_frame = None, season = None):
     data_frame['away_win'] = np.where(data_frame.goals_a > data_frame.goals_h, 1, 0)
     data_frame['draw'] = np.where(data_frame.goals_h == data_frame.goals_a, 1, 0)
 
-    data_frame.loc[data_frame.goals_h < data_frame.goals_a, 'result_h'] = 'defeat'
-    data_frame.loc[data_frame.goals_h == data_frame.goals_a, 'result_h'] = 'draw'
-    data_frame.loc[data_frame.goals_h > data_frame.goals_a, 'result_h'] = 'win'
+    data_frame.loc[data_frame.goals_h < data_frame.goals_a, 'result_h'] = 'Defeat'
+    data_frame.loc[data_frame.goals_h == data_frame.goals_a, 'result_h'] = 'Draw'
+    data_frame.loc[data_frame.goals_h > data_frame.goals_a, 'result_h'] = 'Win'
 
-    data_frame.loc[data_frame.result_h == 'win', 'result_a'] = 'defeat'
-    data_frame.loc[data_frame.result_h == 'defeat', 'result_a'] = 'win'
-    data_frame.loc[data_frame.result_h == 'draw', 'result_a'] = 'draw'
+    data_frame.loc[data_frame.result_h == 'Win', 'result_a'] = 'Defeat'
+    data_frame.loc[data_frame.result_h == 'Defeat', 'result_a'] = 'Win'
+    data_frame.loc[data_frame.result_h == 'Draw', 'result_a'] = 'Draw'
     
-    data_frame.loc[data_frame.result_h == 'defeat', 'ground_truth'] = -1
-    data_frame.loc[data_frame.result_h == 'draw', 'ground_truth'] = 0
-    data_frame.loc[data_frame.result_h == 'win', 'ground_truth'] = 1
+    data_frame.loc[data_frame.result_h == 'Defeat', 'ground_truth'] = -1
+    data_frame.loc[data_frame.result_h == 'Draw', 'ground_truth'] = 0
+    data_frame.loc[data_frame.result_h == 'Win', 'ground_truth'] = 1
     
     data_frame.ground_truth = data_frame.ground_truth.apply(func = lambda x: int(x))
 
-    data_frame.loc[data_frame.result_h == 'draw', 'points_h'] = 1
-    data_frame.loc[data_frame.result_h == 'win', 'points_h'] = 3
+    data_frame.loc[data_frame.result_h == 'Draw', 'points_h'] = 1
+    data_frame.loc[data_frame.result_h == 'Win', 'points_h'] = 3
 
-    data_frame.loc[data_frame.result_a == 'draw', 'points_a'] = 1
-    data_frame.loc[data_frame.result_a == 'win', 'points_a'] = 3
+    data_frame.loc[data_frame.result_a == 'Draw', 'points_a'] = 1
+    data_frame.loc[data_frame.result_a == 'Win', 'points_a'] = 3
+    
+    teams = data_frame.home_team.unique().tolist()
+    
+    for i in teams:
+        data_frame.loc[data_frame.home_team == i, ['n_ucls_h', 'n_epls_h']] = [HAS_BEEN_UCL_WINNER.get(i), HAS_BEEN_EPL_WINNER.get(i)]
+        data_frame.loc[data_frame.away_team == i, ['n_ucls_a', 'n_epls_a']] = [HAS_BEEN_UCL_WINNER.get(i), HAS_BEEN_EPL_WINNER.get(i)]
+        
+    data_frame.n_ucls_h.fillna(value = 0, inplace = True)
+    data_frame.n_ucls_a.fillna(value = 0, inplace = True)
+    data_frame.n_epls_h.fillna(value = 0, inplace = True)
+    data_frame.n_epls_a.fillna(value = 0, inplace = True)
+    
+    data_frame[['n_ucls_h', 'n_ucls_a', 'n_epls_h', 'n_epls_a']] = data_frame[['n_ucls_h', 'n_ucls_a', 'n_epls_h', 'n_epls_a']].applymap(func = lambda x: int(x))
     
     return data_frame
 
@@ -342,16 +365,22 @@ def create_derbies(data_frame = None):
     """
     data_frame['is_derby'] = 0
     data_frame['derby_name'] = 'No Derby'
+    data_frame.loc[(data_frame.home_team == 'Aston Villa') & (data_frame.away_team == 'Birmingham'), ['is_derby', 'derby_name']] = [1, 'West Midlands']
+    data_frame.loc[(data_frame.home_team == 'Birmingham') & (data_frame.away_team == 'Aston Villa'), ['is_derby', 'derby_name']] = [1, 'West Midlands']
     data_frame.loc[(data_frame.home_team == 'Arsenal') & (data_frame.away_team == 'Chelsea'), ['is_derby', 'derby_name']] = [1, 'North West London']
     data_frame.loc[(data_frame.home_team == 'Chelsea') & (data_frame.away_team == 'Arsenal'), ['is_derby', 'derby_name']] = [1, 'North West London']
     data_frame.loc[(data_frame.home_team == 'Chelsea') & (data_frame.away_team == 'Spurs'), ['is_derby', 'derby_name']] = [1, 'North West London']
     data_frame.loc[(data_frame.home_team == 'Spurs') & (data_frame.away_team == 'Chelsea'), ['is_derby', 'derby_name']] = [1, 'North West London']
+    data_frame.loc[(data_frame.home_team == 'Sunderland') & (data_frame.away_team == 'Newcastle'), ['is_derby', 'derby_name']] = [1, 'Tyne-Wear']
+    data_frame.loc[(data_frame.home_team == 'Newcastle') & (data_frame.away_team == 'Sunderland'), ['is_derby', 'derby_name']] = [1, 'Tyne-Wear']
     data_frame.loc[(data_frame.home_team == 'Liverpool') & (data_frame.away_team == 'Everton'), ['is_derby', 'derby_name']] = [1, 'Merseyside']
     data_frame.loc[(data_frame.home_team == 'Everton') & (data_frame.away_team == 'Liverpool'), ['is_derby', 'derby_name']] = [1, 'Merseyside']
     data_frame.loc[(data_frame.home_team == 'Man Utd') & (data_frame.away_team == 'Liverpool'), ['is_derby', 'derby_name']] = [1, 'North West']
     data_frame.loc[(data_frame.home_team == 'Liverpool') & (data_frame.away_team == 'Man Utd'), ['is_derby', 'derby_name']] = [1, 'North West']
     data_frame.loc[(data_frame.home_team == 'Man Utd') & (data_frame.away_team == 'Man City'), ['is_derby', 'derby_name']] = [1, 'Manchester']
     data_frame.loc[(data_frame.home_team == 'Man City') & (data_frame.away_team == 'Man Utd'), ['is_derby', 'derby_name']] = [1, 'Manchester']
+    data_frame.loc[(data_frame.home_team == 'Brighton') & (data_frame.away_team == 'Crystal Palace'), ['is_derby', 'derby_name']] = [1, 'A23']
+    data_frame.loc[(data_frame.home_team == 'Crystal Palace') & (data_frame.away_team == 'Brighton'), ['is_derby', 'derby_name']] = [1, 'A23']
     data_frame.loc[(data_frame.home_team == 'Arsenal') & (data_frame.away_team == 'Spurs'), ['is_derby', 'derby_name']] = [1, 'North London']
     data_frame.loc[(data_frame.home_team == 'Spurs') & (data_frame.away_team == 'Arsenal'), ['is_derby', 'derby_name']] = [1, 'North London']
     data_frame.loc[(data_frame.home_team == 'Man Utd') & (data_frame.away_team == 'Leeds'), ['is_derby', 'derby_name']] = [1, 'Roses']
@@ -2830,6 +2859,915 @@ def create_total_max_and_dropped_points(data_frame = None):
     
     return data_frame
 
+# Defining a function to calculate the streaks
+def create_form_streaks(data_frame = None):
+    # Creating streak variables for home and away teams
+    data_frame['streak_h'] = ''
+    data_frame['streak_a'] = ''
+    
+    # Creating a list of teams
+    teams = data_frame.home_team.unique().tolist()
+    
+    # Looping through each team
+    for i in teams:
+        # Filtering the data based on teams, points a
+        home_fixtures_df = data_frame.loc[data_frame.home_team == i][['home_team', 'points_h', 'match_date']].reset_index(drop = True)
+        away_fixtures_df = data_frame.loc[data_frame.away_team == i][['away_team', 'points_a', 'match_date']].reset_index(drop = True)
+        
+        # Creating a new variable called status
+        home_fixtures_df['status'] = 'home'
+        away_fixtures_df['status'] = 'away'
+        
+        # Renaming the columns
+        home_fixtures_df.columns = ['team', 'points', 'match_date', 'status']
+        away_fixtures_df.columns = ['team', 'points', 'match_date', 'status']
+        
+        # Concatenating the data frames, sorting the matches in ascending order, and reseting the index
+        combined_df = pd.concat(objs = [home_fixtures_df, away_fixtures_df], ignore_index = True).sort_values(by = 'match_date').reset_index(drop = True)
+        
+        # Calculating the points accumulated in the last five matches prior to the current match
+        combined_df['accumulated_points'] = pd.Series(data = [sum(combined_df.points.tolist()[i:5 + i]) for i in range(combined_df.shape[0])]).shift(periods = 5)
+        
+        # Creating a list of conditions
+        conditions = [combined_df.accumulated_points < 3, 
+                      combined_df.accumulated_points.between(left = 3, right = 6),
+                      combined_df.accumulated_points.between(left = 7, right = 10),
+                      combined_df.accumulated_points.between(left = 11, right = 14),
+                      combined_df.accumulated_points == 15]
+        
+        # Creating a list of values for in case a particular condition is satisfied
+        outputs = ['Relegation Form', 'Bad Form', 'Mixed Form', 'Good Form', 'Hot Form']
+        
+        # Calculating the streak
+        combined_df['streak'] = np.select(condlist = conditions, choicelist = outputs, default = 'Out of Interval')
+        
+        # Filtering the streaks for home and away teams
+        streaks_h = combined_df.loc[(combined_df.status == 'home') & (combined_df.team == i), 'streak'].tolist()[::-1]
+        streaks_a = combined_df.loc[(combined_df.status == 'away') & (combined_df.team == i), 'streak'].tolist()[::-1]
+        
+        # Assigning the form streaks 
+        data_frame.loc[data_frame.home_team == i, 'streak_h'] = streaks_h
+        data_frame.loc[data_frame.away_team == i, 'streak_a'] = streaks_a
+    
+    # Returning the data frame
+    return data_frame
+
+# Defining a function to calculate the average goals scored by a team
+def create_avg_goals_for_against_per_game(data_frame = None):
+    # Calculating average goals scored by a team
+    data_frame['total_avg_goals_scored_h'] = round(number = (data_frame.total_goals_scored_h / data_frame.total_n_matches_played_h).fillna(value = 0), ndigits = 2)
+    data_frame['total_avg_goals_scored_a'] = round(number = (data_frame.total_goals_scored_a / data_frame.total_n_matches_played_a).fillna(value = 0), ndigits = 2)
+    
+    # Calculating average goals conceded by a team
+    data_frame['total_avg_goals_conceded_h'] = round(number = (data_frame.total_goals_conceded_h / data_frame.total_n_matches_played_h).fillna(value = 0), ndigits = 2)
+    data_frame['total_avg_goals_conceded_a'] = round(number = (data_frame.total_goals_conceded_a / data_frame.total_n_matches_played_a).fillna(value = 0), ndigits = 2)
+    
+    # Calculating average goals scored by home & away team in home and away matches accordingly
+    data_frame['avg_goals_scored_h'] = round(number = (data_frame.goals_scored_h_cum / data_frame.n_matches_played_h).fillna(value = 0), ndigits = 2)
+    data_frame['avg_goals_scored_a'] = round(number = (data_frame.goals_scored_a_cum / data_frame.n_matches_played_a).fillna(value = 0), ndigits = 2)
+    
+    # Calculating average goals conceded by home & away team in home and away matches accordingly
+    data_frame['avg_goals_conceded_h'] = round(number = (data_frame.goals_conceded_h_cum / data_frame.n_matches_played_h).fillna(value = 0), ndigits = 2)
+    data_frame['avg_goals_conceded_a'] = round(number = (data_frame.goals_conceded_a_cum / data_frame.n_matches_played_a).fillna(value = 0), ndigits = 2)
+    
+    # Returning the data frame
+    return data_frame
+
+# Defining a function to calculate average points accumulated & dropped for a team
+def create_avg_points_accumulated_dropped_per_game(data_frame = None):
+    # Calculating the average number of accumulated points per game for a team
+    data_frame["total_avg_acc_points_h"] = round(number = (data_frame.total_points_h_cum / data_frame.total_n_matches_played_h).fillna(value = 0), ndigits = 2)
+    data_frame["total_avg_acc_points_a"] = round(number = (data_frame.total_points_a_cum / data_frame.total_n_matches_played_a).fillna(value = 0), ndigits = 2)
+    
+    # Calculating the average number of dropped points per game for a team
+    data_frame["total_avg_dropped_points_h"] = round(number = (data_frame.total_points_dropped_h / data_frame.total_n_matches_played_h).fillna(value = 0), ndigits = 2)
+    data_frame["total_avg_dropped_points_a"] = round(number = (data_frame.total_points_dropped_a / data_frame.total_n_matches_played_a).fillna(value = 0), ndigits = 2)
+    
+    # Calculating the average number of accumulated home points per game for a team
+    data_frame["avg_acc_points_h"] = round(number = (data_frame.points_h_cum / data_frame.n_matches_played_h).fillna(value = 0), ndigits = 2)
+    data_frame["avg_acc_points_a"] = round(number = (data_frame.points_a_cum / data_frame.n_matches_played_a).fillna(value = 0), ndigits = 2)
+    
+    # Calculating the average number of dropped away points per game for a team
+    data_frame["avg_dropped_points_h"] = round(number = (data_frame.points_dropped_h / data_frame.n_matches_played_h).fillna(value = 0), ndigits = 2)
+    data_frame["avg_dropped_points_a"] = round(number = (data_frame.points_dropped_a / data_frame.n_matches_played_a).fillna(value = 0), ndigits = 2)
+    
+    # Returning the data frame
+    return data_frame
+
+# Defining a function to calculate the average number of goals scored in the last three & five matches
+def create_total_avg_goals_scored_last_3_5(data_frame = None):
+    # Creating new variables
+    data_frame["total_avg_goals_scored_last_5_h"] = np.nan
+    data_frame["total_avg_goals_scored_last_5_a"] = np.nan
+    data_frame["total_avg_goals_scored_last_3_h"] = np.nan
+    data_frame["total_avg_goals_scored_last_3_a"] = np.nan
+    
+    # Creating a list of teams
+    teams = data_frame.home_team.unique().tolist()
+    
+    # Looping through each team
+    for i in teams:
+        # Filtering the data based on a particular team
+        home_fixtures_df = data_frame.loc[data_frame.home_team == i][["match_date", "goals_h"]].reset_index(drop = True)
+        away_fixtures_df = data_frame.loc[data_frame.away_team == i][["match_date", "goals_a"]].reset_index(drop = True)
+        
+        # Renaming the columns
+        home_fixtures_df.columns = ["match_date", "goals"]
+        away_fixtures_df.columns = ["match_date", "goals"]
+
+        # Creating indicator variables
+        home_fixtures_df["status"] = "home"
+        away_fixtures_df["status"] = "away"
+        
+        # Concatenating the data frames and sorting based on match date in ascending order
+        combined_df = pd.concat(objs = [home_fixtures_df, away_fixtures_df], ignore_index = True).sort_values(by = "match_date").reset_index(drop = True)
+        
+        # Calculating the average number of goals scored by a team in the last five matches
+        combined_df["total_avg_goals_scored_last_5"] = pd.Series(data = [sum(combined_df.goals.tolist()[i:5 + i]) / 5 for i in range(combined_df.shape[0])]).\
+        shift(periods = 5, fill_value = 0).tolist()
+        
+        # Calculating the average number of goals scored by a team in the last three matches
+        combined_df["total_avg_goals_scored_last_3"] = pd.Series(data = [sum(combined_df.goals.tolist()[i:3 + i]) / 3 for i in range(combined_df.shape[0])]).\
+        shift(periods = 3, fill_value = 0).tolist()
+        
+        # Filtering the average number of goals scored by a team in the last five matches
+        avg_goals_h_last_5 = round(number = combined_df.loc[combined_df.status == "home", "total_avg_goals_scored_last_5"], ndigits = 2).tolist()[::-1]
+        avg_goals_a_last_5 = round(number = combined_df.loc[combined_df.status == "away", "total_avg_goals_scored_last_5"], ndigits = 2).tolist()[::-1]
+        
+        # Filtering the average number of goals scored by a team in the last three matches
+        avg_goals_h_last_3 = round(number = combined_df.loc[combined_df.status == "home", "total_avg_goals_scored_last_3"], ndigits = 2).tolist()[::-1]
+        avg_goals_a_last_3 = round(number = combined_df.loc[combined_df.status == "away", "total_avg_goals_scored_last_3"], ndigits = 2).tolist()[::-1]
+        
+        # Assigning the average number of goals scored by a team in the last five matches accordingly
+        data_frame.loc[data_frame.home_team == i, "total_avg_goals_scored_last_5_h"] = avg_goals_h_last_5
+        data_frame.loc[data_frame.away_team == i, "total_avg_goals_scored_last_5_a"] = avg_goals_a_last_5
+        
+        # Assigning the average number of goals scored by a team in the last three matches accordingly
+        data_frame.loc[data_frame.home_team == i, "total_avg_goals_scored_last_3_h"] = avg_goals_h_last_3
+        data_frame.loc[data_frame.away_team == i, "total_avg_goals_scored_last_3_a"] = avg_goals_a_last_3
+        
+    # Returning the data frame
+    return data_frame
+
+# Defining a function to calculate the average number of goals conceded in the last three & five matches
+def create_total_avg_goals_conceded_last_3_5(data_frame = None):
+    # Creating new variables
+    data_frame["total_avg_goals_conceded_last_5_h"] = np.nan
+    data_frame["total_avg_goals_conceded_last_5_a"] = np.nan
+    data_frame["total_avg_goals_conceded_last_3_h"] = np.nan
+    data_frame["total_avg_goals_conceded_last_3_a"] = np.nan
+    
+    # Creating a list of teams
+    teams = data_frame.home_team.unique().tolist()
+    
+    # Looping through each team
+    for i in teams:
+        # Filtering the data based on a particular team
+        home_fixtures_df = data_frame.loc[data_frame.home_team == i][["match_date", "goals_a"]].reset_index(drop = True)
+        away_fixtures_df = data_frame.loc[data_frame.away_team == i][["match_date", "goals_h"]].reset_index(drop = True)
+        
+        # Renaming the columns
+        home_fixtures_df.columns = ["match_date", "goals"]
+        away_fixtures_df.columns = ["match_date", "goals"]
+
+        # Creating indicator variables
+        home_fixtures_df["status"] = "home"
+        away_fixtures_df["status"] = "away"
+        
+        # Concatenating the data frames and sorting based on match date in ascending order
+        combined_df = pd.concat(objs = [home_fixtures_df, away_fixtures_df], ignore_index = True).sort_values(by = "match_date").reset_index(drop = True)
+        
+        # Calculating the average number of goals conceded by a team in the last five matches
+        combined_df["total_avg_goals_conceded_last_5"] = pd.Series(data = [sum(combined_df.goals.tolist()[i:5 + i]) / 5 for i in range(combined_df.shape[0])]).\
+        shift(periods = 5, fill_value = 0).tolist()
+        
+        # Calculating the average number of goals conceded by a team in the last three matches
+        combined_df["total_avg_goals_conceded_last_3"] = pd.Series(data = [sum(combined_df.goals.tolist()[i:3 + i]) / 3 for i in range(combined_df.shape[0])]).\
+        shift(periods = 3, fill_value = 0).tolist()
+        
+        # Filtering the average number of goals conceded by a team in the last five matches
+        avg_goals_h_last_5 = round(number = combined_df.loc[combined_df.status == "home", "total_avg_goals_conceded_last_5"], ndigits = 2).tolist()[::-1]
+        avg_goals_a_last_5 = round(number = combined_df.loc[combined_df.status == "away", "total_avg_goals_conceded_last_5"], ndigits = 2).tolist()[::-1]
+        
+        # Filtering the average number of goals conceded by a team in the last three matches
+        avg_goals_h_last_3 = round(number = combined_df.loc[combined_df.status == "home", "total_avg_goals_conceded_last_3"], ndigits = 2).tolist()[::-1]
+        avg_goals_a_last_3 = round(number = combined_df.loc[combined_df.status == "away", "total_avg_goals_conceded_last_3"], ndigits = 2).tolist()[::-1]
+        
+        # Assigning the average number of goals conceded by a team in the last five matches accordingly
+        data_frame.loc[data_frame.home_team == i, "total_avg_goals_conceded_last_5_h"] = avg_goals_h_last_5
+        data_frame.loc[data_frame.away_team == i, "total_avg_goals_conceded_last_5_a"] = avg_goals_a_last_5
+        
+        # Assigning the average number of goals conceded by a team in the last three matches accordingly
+        data_frame.loc[data_frame.home_team == i, "total_avg_goals_conceded_last_3_h"] = avg_goals_h_last_3
+        data_frame.loc[data_frame.away_team == i, "total_avg_goals_conceded_last_3_a"] = avg_goals_a_last_3
+        
+    # Returning the data frame
+    return data_frame
+
+# Defining a function to calculate the average number of points accumulated in the last three & five matches
+def create_total_avg_points_points_accumulated_last_3_5(data_frame = None):
+    # Creating new variables
+    data_frame["total_avg_points_accumulated_last_5_h"] = np.nan
+    data_frame["total_avg_points_accumulated_last_5_a"] = np.nan
+    data_frame["total_avg_points_accumulated_last_3_h"] = np.nan
+    data_frame["total_avg_points_accumulated_last_3_a"] = np.nan
+    
+    # Creating a list of teams
+    teams = data_frame.home_team.unique().tolist()
+    
+    # Looping through each team
+    for i in teams:
+        # Filtering the data based on a particular team
+        home_fixtures_df = data_frame.loc[data_frame.home_team == i][["match_date", "points_h"]].reset_index(drop = True)
+        away_fixtures_df = data_frame.loc[data_frame.away_team == i][["match_date", "points_a"]].reset_index(drop = True)
+        
+        # Renaming the columns
+        home_fixtures_df.columns = ["match_date", "points"]
+        away_fixtures_df.columns = ["match_date", "points"]
+
+        # Creating indicator variables
+        home_fixtures_df["status"] = "home"
+        away_fixtures_df["status"] = "away"
+        
+        # Concatenating the data frames and sorting based on match date in ascending order
+        combined_df = pd.concat(objs = [home_fixtures_df, away_fixtures_df], ignore_index = True).sort_values(by = "match_date").reset_index(drop = True)
+        
+        # Calculating the average number of points accumulated by a team in the last five matches
+        combined_df["total_avg_points_accumulated_last_5"] = pd.Series(data = [sum(combined_df.points.tolist()[i:5 + i]) / 5 for i in range(combined_df.shape[0])]).\
+        shift(periods = 5, fill_value = 0).tolist()
+        
+        # Calculating the average number of points accumulated by a team in the last three matches
+        combined_df["total_avg_points_accumulated_last_3"] = pd.Series(data = [sum(combined_df.points.tolist()[i:3 + i]) / 3 for i in range(combined_df.shape[0])]).\
+        shift(periods = 3, fill_value = 0).tolist()
+        
+        # Filtering the average number of points accumulated by a team in the last five matches
+        avg_points_h_last_5 = round(number = combined_df.loc[combined_df.status == "home", "total_avg_points_accumulated_last_5"], ndigits = 2).tolist()[::-1]
+        avg_points_a_last_5 = round(number = combined_df.loc[combined_df.status == "away", "total_avg_points_accumulated_last_5"], ndigits = 2).tolist()[::-1]
+        
+        # Filtering the average number of points accumulated by a team in the last three matches
+        avg_points_h_last_3 = round(number = combined_df.loc[combined_df.status == "home", "total_avg_points_accumulated_last_3"], ndigits = 2).tolist()[::-1]
+        avg_points_a_last_3 = round(number = combined_df.loc[combined_df.status == "away", "total_avg_points_accumulated_last_3"], ndigits = 2).tolist()[::-1]
+        
+        # Assigning the average number of points accumulated by a team in the last five matches accordingly
+        data_frame.loc[data_frame.home_team == i, "total_avg_points_accumulated_last_5_h"] = avg_points_h_last_5
+        data_frame.loc[data_frame.away_team == i, "total_avg_points_accumulated_last_5_a"] = avg_points_a_last_5
+        
+        # Assigning the average number of points accumulated by a team in the last three matches accordingly
+        data_frame.loc[data_frame.home_team == i, "total_avg_points_accumulated_last_3_h"] = avg_points_h_last_3
+        data_frame.loc[data_frame.away_team == i, "total_avg_points_accumulated_last_3_a"] = avg_points_a_last_3
+        
+    # Returning the data frame
+    return data_frame
+
+# Defining a function to calculate the average number of points dropped in the last three & five matches
+def create_total_avg_points_points_dropped_last_3_5(data_frame = None):
+    # Creating new variables
+    data_frame["total_avg_points_dropped_last_5_h"] = np.nan
+    data_frame["total_avg_points_dropped_last_5_a"] = np.nan
+    data_frame["total_avg_points_dropped_last_3_h"] = np.nan
+    data_frame["total_avg_points_dropped_last_3_a"] = np.nan
+    
+    # Creating a list of teams
+    teams = data_frame.home_team.unique().tolist()
+    
+    # Looping through each team
+    for i in teams:
+        # Filtering the data based on a particular team
+        home_fixtures_df = data_frame.loc[data_frame.home_team == i][["match_date", "points_a"]].reset_index(drop = True)
+        away_fixtures_df = data_frame.loc[data_frame.away_team == i][["match_date", "points_h"]].reset_index(drop = True)
+        
+        # Renaming the columns
+        home_fixtures_df.columns = ["match_date", "points"]
+        away_fixtures_df.columns = ["match_date", "points"]
+
+        # Creating indicator variables
+        home_fixtures_df["status"] = "home"
+        away_fixtures_df["status"] = "away"
+        
+        # Mapping draws as two points dropped
+        home_fixtures_df.points = np.where(home_fixtures_df.points == 1, 2, home_fixtures_df.points)
+        away_fixtures_df.points = np.where(away_fixtures_df.points == 1, 2, away_fixtures_df.points)
+        
+        # Concatenating the data frames and sorting based on match date in ascending order
+        combined_df = pd.concat(objs = [home_fixtures_df, away_fixtures_df], ignore_index = True).sort_values(by = "match_date").reset_index(drop = True)
+        
+        # Calculating the average number of points dropped by a team in the last five matches
+        combined_df["total_avg_points_dropped_last_5"] = pd.Series(data = [sum(combined_df.points.tolist()[i:5 + i]) / 5 for i in range(combined_df.shape[0])]).\
+        shift(periods = 5, fill_value = 0).tolist()
+        
+        # Calculating the average number of points dropped by a team in the last three matches
+        combined_df["total_avg_points_dropped_last_3"] = pd.Series(data = [sum(combined_df.points.tolist()[i:3 + i]) / 3 for i in range(combined_df.shape[0])]).\
+        shift(periods = 3, fill_value = 0).tolist()
+        
+        # Filtering the average number of points dropped by a team in the last five matches
+        avg_points_h_last_5 = round(number = combined_df.loc[combined_df.status == "home", "total_avg_points_dropped_last_5"], ndigits = 2).tolist()[::-1]
+        avg_points_a_last_5 = round(number = combined_df.loc[combined_df.status == "away", "total_avg_points_dropped_last_5"], ndigits = 2).tolist()[::-1]
+        
+        # Filtering the average number of points dropped by a team in the last three matches
+        avg_points_h_last_3 = round(number = combined_df.loc[combined_df.status == "home", "total_avg_points_dropped_last_3"], ndigits = 2).tolist()[::-1]
+        avg_points_a_last_3 = round(number = combined_df.loc[combined_df.status == "away", "total_avg_points_dropped_last_3"], ndigits = 2).tolist()[::-1]
+        
+        # Assigning the average number of points dropped by a team in the last five matches accordingly
+        data_frame.loc[data_frame.home_team == i, "total_avg_points_dropped_last_5_h"] = avg_points_h_last_5
+        data_frame.loc[data_frame.away_team == i, "total_avg_points_dropped_last_5_a"] = avg_points_a_last_5
+        
+        # Assigning the average number of points dropped by a team in the last three matches accordingly
+        data_frame.loc[data_frame.home_team == i, "total_avg_points_dropped_last_3_h"] = avg_points_h_last_3
+        data_frame.loc[data_frame.away_team == i, "total_avg_points_dropped_last_3_a"] = avg_points_a_last_3
+        
+    # Returning the data frame
+    return data_frame
+
+# Defining a function to calculate the average number of goals scored in the last three & five matches home and away matches
+def create_avg_goals_scored_last_3_5(data_frame = None):
+    # Creating new variables
+    data_frame["avg_goals_scored_last_5_h"] = np.nan
+    data_frame["avg_goals_scored_last_5_a"] = np.nan
+    data_frame["avg_goals_scored_last_3_h"] = np.nan
+    data_frame["avg_goals_scored_last_3_a"] = np.nan
+    
+    # Creating a list of teams
+    teams = data_frame.home_team.unique().tolist()
+    
+    # Looping through each team
+    for i in teams:
+        # Filtering the data based on a particular team
+        home_fixtures_df = data_frame.loc[data_frame.home_team == i][["match_date", "goals_h"]].sort_values(by = 'match_date').reset_index(drop = True)
+        away_fixtures_df = data_frame.loc[data_frame.away_team == i][["match_date", "goals_a"]].sort_values(by = 'match_date').reset_index(drop = True)
+        
+        # Renaming the columns
+        home_fixtures_df.columns = ["match_date", "goals"]
+        away_fixtures_df.columns = ["match_date", "goals"]
+        
+        # Calculating the average number of goals scored by a team in the last five home matches
+        home_fixtures_df["avg_goals_scored_last_5_h"] = pd.Series(data = [sum(home_fixtures_df.goals.tolist()[i:5 + i]) / 5 for i in range(home_fixtures_df.shape[0])]).\
+        shift(periods = 5, fill_value = 0).tolist()
+        
+        # Calculating the average number of goals scored by a team in the last three home matches
+        home_fixtures_df["avg_goals_scored_last_3_h"] = pd.Series(data = [sum(home_fixtures_df.goals.tolist()[i:3 + i]) / 3 for i in range(home_fixtures_df.shape[0])]).\
+        shift(periods = 3, fill_value = 0).tolist()
+        
+        # Calculating the average number of goals scored by a team in the last five away matches
+        away_fixtures_df["avg_goals_scored_last_5_a"] = pd.Series(data = [sum(away_fixtures_df.goals.tolist()[i:5 + i]) / 5 for i in range(away_fixtures_df.shape[0])]).\
+        shift(periods = 5, fill_value = 0).tolist()
+        
+        # Calculating the average number of goals scored by a team in the last three away matches
+        away_fixtures_df["avg_goals_scored_last_3_a"] = pd.Series(data = [sum(away_fixtures_df.goals.tolist()[i:3 + i]) / 3 for i in range(away_fixtures_df.shape[0])]).\
+        shift(periods = 3, fill_value = 0).tolist()
+        
+        # Rounding the precision to two digits 
+        avg_goals_scored_last_5_h = round(number = home_fixtures_df.avg_goals_scored_last_5_h, ndigits = 2).tolist()[::-1]
+        avg_goals_scored_last_3_h = round(number = home_fixtures_df.avg_goals_scored_last_3_h, ndigits = 2).tolist()[::-1]
+        avg_goals_scored_last_5_a = round(number = away_fixtures_df.avg_goals_scored_last_5_a, ndigits = 2).tolist()[::-1]
+        avg_goals_scored_last_3_a = round(number = away_fixtures_df.avg_goals_scored_last_3_a, ndigits = 2).tolist()[::-1]
+        
+        # Assigning the average number of goals scored by a team in the last five matches accordingly
+        data_frame.loc[data_frame.home_team == i, "avg_goals_scored_last_5_h"] = avg_goals_scored_last_5_h
+        data_frame.loc[data_frame.away_team == i, "avg_goals_scored_last_5_a"] = avg_goals_scored_last_5_a
+        
+        # Assigning the average number of goals scored by a team in the last three matches accordingly
+        data_frame.loc[data_frame.home_team == i, "avg_goals_scored_last_3_h"] = avg_goals_scored_last_3_h
+        data_frame.loc[data_frame.away_team == i, "avg_goals_scored_last_3_a"] = avg_goals_scored_last_3_a
+        
+    # Returning the data frame
+    return data_frame
+
+# Defining a function to calculate the average number of goals conceded in the last three & five matches home and away matches
+def create_avg_goals_conceded_last_3_5(data_frame = None):
+    # Creating new variables
+    data_frame["avg_goals_conceded_last_5_h"] = np.nan
+    data_frame["avg_goals_conceded_last_5_a"] = np.nan
+    data_frame["avg_goals_conceded_last_3_h"] = np.nan
+    data_frame["avg_goals_conceded_last_3_a"] = np.nan
+    
+    # Creating a list of teams
+    teams = data_frame.home_team.unique().tolist()
+    
+    # Looping through each team
+    for i in teams:
+        # Filtering the data based on a particular team
+        home_fixtures_df = data_frame.loc[data_frame.home_team == i][["match_date", "goals_a"]].sort_values(by = 'match_date').reset_index(drop = True)
+        away_fixtures_df = data_frame.loc[data_frame.away_team == i][["match_date", "goals_h"]].sort_values(by = 'match_date').reset_index(drop = True)
+        
+        # Renaming the columns
+        home_fixtures_df.columns = ["match_date", "goals"]
+        away_fixtures_df.columns = ["match_date", "goals"]
+        
+        # Calculating the average number of goals conceded by a team in the last five home matches
+        home_fixtures_df["avg_goals_conceded_last_5_h"] = pd.Series(data = [sum(home_fixtures_df.goals.tolist()[i:5 + i]) / 5 for i in range(home_fixtures_df.shape[0])]).\
+        shift(periods = 5, fill_value = 0).tolist()
+        
+        # Calculating the average number of goals conceded by a team in the last three home matches
+        home_fixtures_df["avg_goals_conceded_last_3_h"] = pd.Series(data = [sum(home_fixtures_df.goals.tolist()[i:3 + i]) / 3 for i in range(home_fixtures_df.shape[0])]).\
+        shift(periods = 3, fill_value = 0).tolist()
+        
+        # Calculating the average number of goals conceded by a team in the last five away matches
+        away_fixtures_df["avg_goals_conceded_last_5_a"] = pd.Series(data = [sum(away_fixtures_df.goals.tolist()[i:5 + i]) / 5 for i in range(away_fixtures_df.shape[0])]).\
+        shift(periods = 5, fill_value = 0).tolist()
+        
+        # Calculating the average number of goals conceded by a team in the last three away matches
+        away_fixtures_df["avg_goals_conceded_last_3_a"] = pd.Series(data = [sum(away_fixtures_df.goals.tolist()[i:3 + i]) / 3 for i in range(away_fixtures_df.shape[0])]).\
+        shift(periods = 3, fill_value = 0).tolist()
+        
+        # Rounding the precision to two digits 
+        avg_goals_conceded_last_5_h = round(number = home_fixtures_df.avg_goals_conceded_last_5_h, ndigits = 2).tolist()[::-1]
+        avg_goals_conceded_last_3_h = round(number = home_fixtures_df.avg_goals_conceded_last_3_h, ndigits = 2).tolist()[::-1]
+        avg_goals_conceded_last_5_a = round(number = away_fixtures_df.avg_goals_conceded_last_5_a, ndigits = 2).tolist()[::-1]
+        avg_goals_conceded_last_3_a = round(number = away_fixtures_df.avg_goals_conceded_last_3_a, ndigits = 2).tolist()[::-1]
+        
+        # Assigning the average number of goals conceded by a team in the last five matches accordingly
+        data_frame.loc[data_frame.home_team == i, "avg_goals_conceded_last_5_h"] = avg_goals_conceded_last_5_h
+        data_frame.loc[data_frame.away_team == i, "avg_goals_conceded_last_5_a"] = avg_goals_conceded_last_5_a
+        
+        # Assigning the average number of goals conceded by a team in the last three matches accordingly
+        data_frame.loc[data_frame.home_team == i, "avg_goals_conceded_last_3_h"] = avg_goals_conceded_last_3_h
+        data_frame.loc[data_frame.away_team == i, "avg_goals_conceded_last_3_a"] = avg_goals_conceded_last_3_a
+        
+    # Returning the data frame
+    return data_frame
+
+# Defining a function to calculate the average number of points accumulated in the last three & five matches home and away matches
+def create_avg_points_accumulated_last_3_5(data_frame = None):
+    # Creating new variables
+    data_frame["avg_points_accumulated_last_5_h"] = np.nan
+    data_frame["avg_points_accumulated_last_5_a"] = np.nan
+    data_frame["avg_points_accumulated_last_3_h"] = np.nan
+    data_frame["avg_points_accumulated_last_3_a"] = np.nan
+    
+    # Creating a list of teams
+    teams = data_frame.home_team.unique().tolist()
+    
+    # Looping through each team
+    for i in teams:
+        # Filtering the data based on a particular team
+        home_fixtures_df = data_frame.loc[data_frame.home_team == i][["match_date", "points_h"]].sort_values(by = 'match_date').reset_index(drop = True)
+        away_fixtures_df = data_frame.loc[data_frame.away_team == i][["match_date", "points_a"]].sort_values(by = 'match_date').reset_index(drop = True)
+        
+        # Renaming the columns
+        home_fixtures_df.columns = ["match_date", "points"]
+        away_fixtures_df.columns = ["match_date", "points"]
+        
+        # Calculating the average number of points accumulated by a team in the last five home matches
+        home_fixtures_df["avg_points_accumulated_last_5_h"] = pd.Series(data = [sum(home_fixtures_df.points.tolist()[i:5 + i]) / 5 for i in range(home_fixtures_df.shape[0])]).\
+        shift(periods = 5, fill_value = 0).tolist()
+        
+        # Calculating the average number of points accumulated by a team in the last three home matches
+        home_fixtures_df["avg_points_accumulated_last_3_h"] = pd.Series(data = [sum(home_fixtures_df.points.tolist()[i:3 + i]) / 3 for i in range(home_fixtures_df.shape[0])]).\
+        shift(periods = 3, fill_value = 0).tolist()
+        
+        # Calculating the average number of points accumulated by a team in the last five away matches
+        away_fixtures_df["avg_points_accumulated_last_5_a"] = pd.Series(data = [sum(away_fixtures_df.points.tolist()[i:5 + i]) / 5 for i in range(away_fixtures_df.shape[0])]).\
+        shift(periods = 5, fill_value = 0).tolist()
+        
+        # Calculating the average number of points accumulated by a team in the last three away matches
+        away_fixtures_df["avg_points_accumulated_last_3_a"] = pd.Series(data = [sum(away_fixtures_df.points.tolist()[i:3 + i]) / 3 for i in range(away_fixtures_df.shape[0])]).\
+        shift(periods = 3, fill_value = 0).tolist()
+        
+        # Rounding the precision to two digits 
+        avg_points_accumulated_last_5_h = round(number = home_fixtures_df.avg_points_accumulated_last_5_h, ndigits = 2).tolist()[::-1]
+        avg_points_accumulated_last_3_h = round(number = home_fixtures_df.avg_points_accumulated_last_3_h, ndigits = 2).tolist()[::-1]
+        avg_points_accumulated_last_5_a = round(number = away_fixtures_df.avg_points_accumulated_last_5_a, ndigits = 2).tolist()[::-1]
+        avg_points_accumulated_last_3_a = round(number = away_fixtures_df.avg_points_accumulated_last_3_a, ndigits = 2).tolist()[::-1]
+        
+        # Assigning the average number of points accumulated by a team in the last five matches accordingly
+        data_frame.loc[data_frame.home_team == i, "avg_points_accumulated_last_5_h"] = avg_points_accumulated_last_5_h
+        data_frame.loc[data_frame.away_team == i, "avg_points_accumulated_last_5_a"] = avg_points_accumulated_last_5_a
+        
+        # Assigning the average number of points accumulated by a team in the last three matches accordingly
+        data_frame.loc[data_frame.home_team == i, "avg_points_accumulated_last_3_h"] = avg_points_accumulated_last_3_h
+        data_frame.loc[data_frame.away_team == i, "avg_points_accumulated_last_3_a"] = avg_points_accumulated_last_3_a
+        
+    # Returning the data frame
+    return data_frame
+
+# Defining a function to calculate the average number of points dropped in the last three & five matches home and away matches
+def create_avg_points_dropped_last_3_5(data_frame = None):
+    # Creating new variables
+    data_frame["avg_points_dropped_last_5_h"] = np.nan
+    data_frame["avg_points_dropped_last_5_a"] = np.nan
+    data_frame["avg_points_dropped_last_3_h"] = np.nan
+    data_frame["avg_points_dropped_last_3_a"] = np.nan
+    
+    # Creating a list of teams
+    teams = data_frame.home_team.unique().tolist()
+    
+    # Looping through each team
+    for i in teams:
+        # Filtering the data based on a particular team
+        home_fixtures_df = data_frame.loc[data_frame.home_team == i][["match_date", "points_a"]].sort_values(by = 'match_date').reset_index(drop = True)
+        away_fixtures_df = data_frame.loc[data_frame.away_team == i][["match_date", "points_h"]].sort_values(by = 'match_date').reset_index(drop = True)
+        
+        # Renaming the columns
+        home_fixtures_df.columns = ["match_date", "points"]
+        away_fixtures_df.columns = ["match_date", "points"]
+        
+        # Mapping draws as two points dropped
+        home_fixtures_df.points = np.where(home_fixtures_df.points == 1, 2, home_fixtures_df.points)
+        away_fixtures_df.points = np.where(away_fixtures_df.points == 1, 2, away_fixtures_df.points)
+        
+        # Calculating the average number of points dropped by a team in the last five home matches
+        home_fixtures_df["avg_points_dropped_last_5_h"] = pd.Series(data = [sum(home_fixtures_df.points.tolist()[i:5 + i]) / 5 for i in range(home_fixtures_df.shape[0])]).\
+        shift(periods = 5, fill_value = 0).tolist()
+        
+        # Calculating the average number of points dropped by a team in the last three home matches
+        home_fixtures_df["avg_points_dropped_last_3_h"] = pd.Series(data = [sum(home_fixtures_df.points.tolist()[i:3 + i]) / 3 for i in range(home_fixtures_df.shape[0])]).\
+        shift(periods = 3, fill_value = 0).tolist()
+        
+        # Calculating the average number of points dropped by a team in the last five away matches
+        away_fixtures_df["avg_points_dropped_last_5_a"] = pd.Series(data = [sum(away_fixtures_df.points.tolist()[i:5 + i]) / 5 for i in range(away_fixtures_df.shape[0])]).\
+        shift(periods = 5, fill_value = 0).tolist()
+        
+        # Calculating the average number of points dropped by a team in the last three away matches
+        away_fixtures_df["avg_points_dropped_last_3_a"] = pd.Series(data = [sum(away_fixtures_df.points.tolist()[i:3 + i]) / 3 for i in range(away_fixtures_df.shape[0])]).\
+        shift(periods = 3, fill_value = 0).tolist()
+        
+        # Rounding the precision to two digits 
+        avg_points_dropped_last_5_h = round(number = home_fixtures_df.avg_points_dropped_last_5_h, ndigits = 2).tolist()[::-1]
+        avg_points_dropped_last_3_h = round(number = home_fixtures_df.avg_points_dropped_last_3_h, ndigits = 2).tolist()[::-1]
+        avg_points_dropped_last_5_a = round(number = away_fixtures_df.avg_points_dropped_last_5_a, ndigits = 2).tolist()[::-1]
+        avg_points_dropped_last_3_a = round(number = away_fixtures_df.avg_points_dropped_last_3_a, ndigits = 2).tolist()[::-1]
+        
+        # Assigning the average number of points dropped by a team in the last five matches accordingly
+        data_frame.loc[data_frame.home_team == i, "avg_points_dropped_last_5_h"] = avg_points_dropped_last_5_h
+        data_frame.loc[data_frame.away_team == i, "avg_points_dropped_last_5_a"] = avg_points_dropped_last_5_a
+        
+        # Assigning the average number of points dropped by a team in the last three matches accordingly
+        data_frame.loc[data_frame.home_team == i, "avg_points_dropped_last_3_h"] = avg_points_dropped_last_3_h
+        data_frame.loc[data_frame.away_team == i, "avg_points_dropped_last_3_a"] = avg_points_dropped_last_3_a
+        
+    # Returning the data frame
+    return data_frame
+
+# Defining a function to calculate the goals scored to shots on target ratio
+def create_total_s2g_last_3_5(data_frame = None):
+    # Creating new variables
+    data_frame["total_s2g_ratio_last_3_h"] = np.nan
+    data_frame["total_s2g_ratio_last_5_h"] = np.nan
+    data_frame["total_s2g_ratio_last_3_a"] = np.nan
+    data_frame["total_s2g_ratio_last_5_a"] = np.nan
+    
+    # Creating a list of teams
+    teams = data_frame.home_team.unique().tolist()
+    
+    # Looping through each team
+    for i in teams:
+        # Filtering home and away fixtures for a team
+        home_fixtures_df = data_frame.loc[data_frame.home_team == i][["match_date", "goals_h", "shots_on_target_h"]]
+        away_fixtures_df = data_frame.loc[data_frame.away_team == i][["match_date", "goals_a", "shots_on_target_a"]]
+        
+        # Renaming the columns
+        home_fixtures_df.columns = ["match_date", "goals", "shots_on_target"]
+        away_fixtures_df.columns = ["match_date", "goals", "shots_on_target"]
+        
+        # Creating indicator columns
+        home_fixtures_df["status"] = "home"
+        away_fixtures_df["status"] = "away"
+        
+        # Concatenating the data frames
+        combined_df = pd.concat(objs = [home_fixtures_df, away_fixtures_df], ignore_index = True).sort_values(by = "match_date").reset_index(drop = True)
+        
+        # Creating empty lists to store the ratios
+        s2g_ratios_last_3 = []
+        s2g_ratios_last_5 = []
+        
+        # Looping through each index
+        for x in range(combined_df.shape[0]):
+            try:
+                # Calculating the shots on target to goal ratio in the last three and five matches for a team
+                s2g_ratio_last_3 = round(number = sum(combined_df.goals.tolist()[x:x + 3]) / sum(combined_df.shots_on_target.tolist()[x:x + 3]), ndigits = 2)
+                s2g_ratio_last_5 = round(number = sum(combined_df.goals.tolist()[x:x + 5]) / sum(combined_df.shots_on_target.tolist()[x:x + 5]), ndigits = 2)
+            except:
+                # Reseting the values as zero due to zero division error
+                s2g_ratio_last_3 = 0
+                s2g_ratio_last_5 = 0
+            
+            # Appending the ratios to the lists
+            s2g_ratios_last_3.append(s2g_ratio_last_3)
+            s2g_ratios_last_5.append(s2g_ratio_last_5)
+        
+        # Assigning the values to the concatenated data frame
+        combined_df["s2g_ratio_last_3"] = pd.Series(data = s2g_ratios_last_3).shift(periods = 3, fill_value = 0).tolist()
+        combined_df["s2g_ratio_last_5"] = pd.Series(data = s2g_ratios_last_5).shift(periods = 5, fill_value = 0).tolist()
+        
+        # Assigning the values
+        data_frame.loc[data_frame.home_team == i, "total_s2g_ratio_last_3_h"] = combined_df.loc[combined_df.status == "home", "s2g_ratio_last_3"].tolist()[::-1]
+        data_frame.loc[data_frame.away_team == i, "total_s2g_ratio_last_3_a"] = combined_df.loc[combined_df.status == "away", "s2g_ratio_last_3"].tolist()[::-1]
+        data_frame.loc[data_frame.home_team == i, "total_s2g_ratio_last_5_h"] = combined_df.loc[combined_df.status == "home", "s2g_ratio_last_5"].tolist()[::-1]
+        data_frame.loc[data_frame.away_team == i, "total_s2g_ratio_last_5_a"] = combined_df.loc[combined_df.status == "away", "s2g_ratio_last_5"].tolist()[::-1]
+        
+    # Returning the data frame
+    return data_frame
+
+def create_total_s2s_last_3_5(data_frame = None):
+    # Creating new variables
+    data_frame["total_s2s_ratio_last_3_h"] = np.nan
+    data_frame["total_s2s_ratio_last_5_h"] = np.nan
+    data_frame["total_s2s_ratio_last_3_a"] = np.nan
+    data_frame["total_s2s_ratio_last_5_a"] = np.nan
+    
+    # Creating a list of teams
+    teams = data_frame.home_team.unique().tolist()
+    
+    # Looping through each team
+    for i in teams:
+        # Filtering home and away fixtures for a team
+        home_fixtures_df = data_frame.loc[data_frame.home_team == i][["match_date", "shots_h", "shots_on_target_h"]]
+        away_fixtures_df = data_frame.loc[data_frame.away_team == i][["match_date", "shots_a", "shots_on_target_a"]]
+        
+        # Renaming the columns
+        home_fixtures_df.columns = ["match_date", "shots", "shots_on_target"]
+        away_fixtures_df.columns = ["match_date", "shots", "shots_on_target"]
+        
+        # Creating indicator columns
+        home_fixtures_df["status"] = "home"
+        away_fixtures_df["status"] = "away"
+        
+        # Concatenating the data frames
+        combined_df = pd.concat(objs = [home_fixtures_df, away_fixtures_df], ignore_index = True).sort_values(by = "match_date").reset_index(drop = True)
+        
+        # Creating empty lists to store the ratios
+        s2s_ratios_last_3 = []
+        s2s_ratios_last_5 = []
+        
+        # Looping through each index
+        for x in range(combined_df.shape[0]):
+            try:
+                # Calculating the shots on target to shots ratio in the last three and five matches for a team
+                s2s_ratio_last_3 = round(number = sum(combined_df.shots_on_target.tolist()[x:x + 3]) / sum(combined_df.shots.tolist()[x:x + 3]), ndigits = 2)
+                s2s_ratio_last_5 = round(number = sum(combined_df.shots_on_target.tolist()[x:x + 5]) / sum(combined_df.shots.tolist()[x:x + 5]), ndigits = 2)
+            except:
+                # Reseting the values as zero due to zero division error
+                s2s_ratio_last_3 = 0
+                s2s_ratio_last_5 = 0
+            
+            # Appending the ratios to the lists
+            s2s_ratios_last_3.append(s2s_ratio_last_3)
+            s2s_ratios_last_5.append(s2s_ratio_last_5)
+        
+        # Assigning the values to the concatenated data frame
+        combined_df["s2s_ratio_last_3"] = pd.Series(data = s2s_ratios_last_3).shift(periods = 3, fill_value = 0).tolist()
+        combined_df["s2s_ratio_last_5"] = pd.Series(data = s2s_ratios_last_5).shift(periods = 5, fill_value = 0).tolist()
+        
+        # Assigning the values
+        data_frame.loc[data_frame.home_team == i, "total_s2s_ratio_last_3_h"] = combined_df.loc[combined_df.status == "home", "s2s_ratio_last_3"].tolist()[::-1]
+        data_frame.loc[data_frame.away_team == i, "total_s2s_ratio_last_3_a"] = combined_df.loc[combined_df.status == "away", "s2s_ratio_last_3"].tolist()[::-1]
+        data_frame.loc[data_frame.home_team == i, "total_s2s_ratio_last_5_h"] = combined_df.loc[combined_df.status == "home", "s2s_ratio_last_5"].tolist()[::-1]
+        data_frame.loc[data_frame.away_team == i, "total_s2s_ratio_last_5_a"] = combined_df.loc[combined_df.status == "away", "s2s_ratio_last_5"].tolist()[::-1]
+        
+    # Returning the data frame
+    return data_frame
+
+# Defining a function to calculate the goals scored to shots on target ratio
+def create_s2g_last_3_5(data_frame = None):
+    # Creating new variables
+    data_frame["s2g_ratio_last_3_h"] = np.nan
+    data_frame["s2g_ratio_last_5_h"] = np.nan
+    data_frame["s2g_ratio_last_3_a"] = np.nan
+    data_frame["s2g_ratio_last_5_a"] = np.nan
+    
+    # Creating a list of teams
+    teams = data_frame.home_team.unique().tolist()
+    
+    # Looping through each team
+    for i in teams:
+        # Filtering home and away fixtures for a team
+        home_fixtures_df = data_frame.loc[data_frame.home_team == i][["match_date", "goals_h", "shots_on_target_h"]].sort_values(by = "match_date")
+        away_fixtures_df = data_frame.loc[data_frame.away_team == i][["match_date", "goals_a", "shots_on_target_a"]].sort_values(by = "match_date")
+        
+        # Creating empty lists
+        s2g_ratios_last_3_h = []
+        s2g_ratios_last_5_h = []
+        s2g_ratios_last_3_a = []
+        s2g_ratios_last_5_a = []
+        
+        # Looping through each index
+        for x in range(home_fixtures_df.shape[0]):
+            try:
+                # Calculating the goals to shots on target ratio in the last three & five matches for a home team
+                s2g_ratio_last_3_h = round(number = sum(home_fixtures_df.goals_h.tolist()[x:x + 3]) / 
+                                                    sum(home_fixtures_df.shots_on_target_h.tolist()[x:x + 3]), 
+                                           ndigits = 2)
+                
+                s2g_ratio_last_5_h = round(number = sum(home_fixtures_df.goals_h.tolist()[x:x + 5]) / 
+                                                    sum(home_fixtures_df.shots_on_target_h.tolist()[x:x + 5]), 
+                                           ndigits = 2)
+            except:
+                # Assigning the values as zeros in case of a zero division error
+                s2g_ratio_last_3_h = 0
+                s2g_ratio_last_5_h = 0
+        
+            # Appending the values to the list
+            s2g_ratios_last_3_h.append(s2g_ratio_last_3_h)
+            s2g_ratios_last_5_h.append(s2g_ratio_last_5_h)
+            
+        # Looping through each index
+        for x in range(away_fixtures_df.shape[0]):
+            try:
+                # Calculating the goals to shots on target ratio in the last three & five matches for an away team
+                s2g_ratio_last_3_a = round(number = sum(away_fixtures_df.goals_a.tolist()[x:x + 3]) / 
+                                                    sum(away_fixtures_df.shots_on_target_a.tolist()[x:x + 3]), 
+                                           ndigits = 2)
+                
+                s2g_ratio_last_5_a = round(number = sum(away_fixtures_df.goals_a.tolist()[x:x + 5]) / 
+                                                    sum(away_fixtures_df.shots_on_target_a.tolist()[x:x + 5]), 
+                                           ndigits = 2)
+            except:
+                # Assigning the values as zeros in case of a zero division error
+                s2g_ratio_last_3_a = 0
+                s2g_ratio_last_5_a = 0
+                
+            # Appending the values to the list
+            s2g_ratios_last_3_a.append(s2g_ratio_last_3_a)
+            s2g_ratios_last_5_a.append(s2g_ratio_last_5_a)
+        
+        # Assigning the values to the data frame   
+        data_frame.loc[data_frame.home_team == i, "s2g_ratio_last_3_h"] = pd.Series(data = s2g_ratios_last_3_h).shift(periods = 3, fill_value = 0).tolist()[::-1]
+        data_frame.loc[data_frame.home_team == i, "s2g_ratio_last_5_h"] = pd.Series(data = s2g_ratios_last_5_h).shift(periods = 5, fill_value = 0).tolist()[::-1]
+        data_frame.loc[data_frame.away_team == i, "s2g_ratio_last_3_a"] = pd.Series(data = s2g_ratios_last_3_a).shift(periods = 3, fill_value = 0).tolist()[::-1]
+        data_frame.loc[data_frame.away_team == i, "s2g_ratio_last_5_a"] = pd.Series(data = s2g_ratios_last_5_a).shift(periods = 5, fill_value = 0).tolist()[::-1]
+        
+    # Returning the data frame
+    return data_frame
+
+# Defining a function to calculate the shots on target to shots ratio
+def create_s2s_last_3_5(data_frame = None):
+    # Creating new variables
+    data_frame["s2s_ratio_last_3_h"] = np.nan
+    data_frame["s2s_ratio_last_5_h"] = np.nan
+    data_frame["s2s_ratio_last_3_a"] = np.nan
+    data_frame["s2s_ratio_last_5_a"] = np.nan
+    
+    # Creating a list of teams
+    teams = data_frame.home_team.unique().tolist()
+    
+    # Looping through each team
+    for i in teams:
+        # Filtering home and away fixtures for a team
+        home_fixtures_df = data_frame.loc[data_frame.home_team == i][["match_date", "shots_h", "shots_on_target_h"]].sort_values(by = "match_date")
+        away_fixtures_df = data_frame.loc[data_frame.away_team == i][["match_date", "shots_a", "shots_on_target_a"]].sort_values(by = "match_date")
+        
+        # Creating empty lists
+        s2s_ratios_last_3_h = []
+        s2s_ratios_last_5_h = []
+        s2s_ratios_last_3_a = []
+        s2s_ratios_last_5_a = []
+        
+        # Looping through each index
+        for x in range(home_fixtures_df.shape[0]):
+            try:
+                # Calculating the shots to shots on target ratio in the last three & five matches for a home team
+                s2s_ratio_last_3_h = round(number = sum(home_fixtures_df.shots_on_target_h.tolist()[x:x + 3]) / 
+                                                    sum(home_fixtures_df.shots_h.tolist()[x:x + 3]), 
+                                           ndigits = 2)
+                
+                s2s_ratio_last_5_h = round(number = sum(home_fixtures_df.shots_on_target_h.tolist()[x:x + 5]) / 
+                                                    sum(home_fixtures_df.shots_h.tolist()[x:x + 5]), 
+                                           ndigits = 2)
+            except:
+                # Assigning the values as zeros in case of a zero division error
+                s2s_ratio_last_3_h = 0
+                s2s_ratio_last_5_h = 0
+        
+            # Appending the values to the list
+            s2s_ratios_last_3_h.append(s2s_ratio_last_3_h)
+            s2s_ratios_last_5_h.append(s2s_ratio_last_5_h)
+            
+        # Looping through each index
+        for x in range(away_fixtures_df.shape[0]):
+            try:
+                # Calculating the shots to shots on target ratio in the last three & five matches for an away team
+                s2s_ratio_last_3_a = round(number = sum(away_fixtures_df.shots_on_target_a.tolist()[x:x + 3]) / 
+                                                    sum(away_fixtures_df.shots_a.tolist()[x:x + 3]), 
+                                           ndigits = 2)
+                
+                s2s_ratio_last_5_a = round(number = sum(away_fixtures_df.shots_on_target_a.tolist()[x:x + 5]) / 
+                                                    sum(away_fixtures_df.shots_a.tolist()[x:x + 5]), 
+                                           ndigits = 2)
+            except:
+                # Assigning the values as zeros in case of a zero division error
+                s2s_ratio_last_3_a = 0
+                s2s_ratio_last_5_a = 0
+                
+            # Appending the values to the list
+            s2s_ratios_last_3_a.append(s2s_ratio_last_3_a)
+            s2s_ratios_last_5_a.append(s2s_ratio_last_5_a)
+        
+        # Assigning the values to the data frame   
+        data_frame.loc[data_frame.home_team == i, "s2s_ratio_last_3_h"] = pd.Series(data = s2s_ratios_last_3_h).shift(periods = 3, fill_value = 0).tolist()[::-1]
+        data_frame.loc[data_frame.home_team == i, "s2s_ratio_last_5_h"] = pd.Series(data = s2s_ratios_last_5_h).shift(periods = 5, fill_value = 0).tolist()[::-1]
+        data_frame.loc[data_frame.away_team == i, "s2s_ratio_last_3_a"] = pd.Series(data = s2s_ratios_last_3_a).shift(periods = 3, fill_value = 0).tolist()[::-1]
+        data_frame.loc[data_frame.away_team == i, "s2s_ratio_last_5_a"] = pd.Series(data = s2s_ratios_last_5_a).shift(periods = 5, fill_value = 0).tolist()[::-1]
+        
+    # Returning the data frame
+    return data_frame
+
+# Defining a function to calculate the total cumulative shots and shots on target
+def create_total_cumulative_shots_and_shots_on_target(data_frame = None):
+    # Creating new variables
+    data_frame["total_shots_on_target_cum_h"] = 0
+    data_frame["total_shots_on_target_cum_a"] = 0
+    data_frame["total_shots_cum_h"] = 0
+    data_frame["total_shots_cum_a"] = 0
+    
+    # Creating a list of teams
+    teams = data_frame.home_team.unique().tolist()
+    
+    # Looping through each team
+    for i in teams:
+        # Filtering home and away fixtures for a team
+        home_fixtures_df = data_frame.loc[data_frame.home_team == i][["match_date", "shots_h", "shots_on_target_h"]]
+        away_fixtures_df = data_frame.loc[data_frame.away_team == i][["match_date", "shots_a", "shots_on_target_a"]]
+        
+        # Renaming the columns
+        home_fixtures_df.columns = ["match_date", "shots", "shots_on_target"]
+        away_fixtures_df.columns = ["match_date", "shots", "shots_on_target"]
+        
+        # Creating indicator columns
+        home_fixtures_df["status"] = "home"
+        away_fixtures_df["status"] = "away"
+        
+        # Concatenating the data frames
+        combined_df = pd.concat(objs = [home_fixtures_df, away_fixtures_df], ignore_index = True).sort_values(by = "match_date").reset_index(drop = True)
+        
+        # Calculatine the cumulative shots on target
+        combined_df["shots_on_target_cum"] = combined_df.shots_on_target.shift(fill_value = 0).cumsum().tolist()
+        combined_df["shots_cum"] = combined_df.shots.shift(fill_value = 0).cumsum().tolist()
+        
+        # Filtering the values based on home and away fixtures
+        shots_on_target_cum_h = combined_df.loc[combined_df.status == "home", "shots_on_target_cum"].tolist()[::-1]
+        shots_on_target_cum_a = combined_df.loc[combined_df.status == "away", "shots_on_target_cum"].tolist()[::-1]
+        shots_cum_h = combined_df.loc[combined_df.status == "home", "shots_cum"].tolist()[::-1]
+        shots_cum_a = combined_df.loc[combined_df.status == "away", "shots_cum"].tolist()[::-1]
+        
+        # Assigning the values
+        data_frame.loc[data_frame.home_team == i, "total_shots_on_target_cum_h"] = shots_on_target_cum_h
+        data_frame.loc[data_frame.away_team == i, "total_shots_on_target_cum_a"] = shots_on_target_cum_a
+        data_frame.loc[data_frame.home_team == i, "total_shots_cum_h"] = shots_cum_h
+        data_frame.loc[data_frame.away_team == i, "total_shots_cum_a"] = shots_cum_a
+        
+    # Returning the data frame
+    return data_frame
+
+# Defining a function to calculate the cumulative shots and shots on target
+def create_cumulative_shots_and_shots_on_target(data_frame = None):
+    # Creating variables
+    data_frame["shots_on_target_h_cum"] = 0
+    data_frame["shots_on_target_a_cum"] = 0
+    data_frame["shots_h_cum"] = 0
+    data_frame["shots_a_cum"] = 0
+    
+    # Creating a list of teams
+    teams = data_frame.home_team.unique().tolist()
+    
+    # Looping through each team
+    for i in teams:
+        # Filtering home and away fixtures for a team
+        home_fixtures_df = data_frame.loc[data_frame.home_team == i][["match_date", "shots_h", "shots_on_target_h"]].sort_values(by = "match_date")
+        away_fixtures_df = data_frame.loc[data_frame.away_team == i][["match_date", "shots_a", "shots_on_target_a"]].sort_values(by = "match_date")
+        
+        # Calculating the cumulative shots on target of a team in home and away fixtures
+        shots_on_target_h_cum = home_fixtures_df.shots_on_target_h.shift(fill_value = 0).cumsum().tolist()[::-1]
+        shots_on_target_a_cum = away_fixtures_df.shots_on_target_a.shift(fill_value = 0).cumsum().tolist()[::-1]
+        
+        # Calculating the cumulative shots of a team in home and away fixtures
+        shots_h_cum = home_fixtures_df.shots_h.shift(fill_value = 0).cumsum().tolist()[::-1]
+        shots_a_cum = away_fixtures_df.shots_a.shift(fill_value = 0).cumsum().tolist()[::-1]
+        
+        # Assigning the values
+        data_frame.loc[data_frame.home_team == i, "shots_on_target_h_cum"] = shots_on_target_h_cum
+        data_frame.loc[data_frame.away_team == i, "shots_on_target_a_cum"] = shots_on_target_a_cum
+        data_frame.loc[data_frame.home_team == i, "shots_h_cum"] = shots_h_cum
+        data_frame.loc[data_frame.away_team == i, "shots_a_cum"] = shots_a_cum
+        
+    # Returning the data frame
+    return data_frame
+
+# Defining a function to calculate total cumulative goals to shots on target and shots on target to shots ratio
+def create_total_s2g_s2s_cum_ratio(data_frame = None):
+    # Calculating the total cumulative goals to shots on target ratio
+    data_frame["total_s2g_cum_ratio_h"] = round(number = (data_frame.total_goals_scored_h / data_frame.total_shots_on_target_cum_h).fillna(value = 0), ndigits = 2)
+    data_frame["total_s2g_cum_ratio_a"] = round(number = (data_frame.total_goals_scored_a / data_frame.total_shots_on_target_cum_a).fillna(value = 0), ndigits = 2)
+    
+    # Calculating the total cumulative goals to shots on target ratio
+    data_frame["total_s2s_cum_ratio_h"] = round(number = (data_frame.total_shots_on_target_cum_h / data_frame.total_shots_cum_h).fillna(value = 0), ndigits = 2)
+    data_frame["total_s2s_cum_ratio_a"] = round(number = (data_frame.total_shots_on_target_cum_a / data_frame.total_shots_cum_a).fillna(value = 0), ndigits = 2)
+    
+    # Returning the data frame
+    return data_frame
+
+# Defining a function to calculate total cumulative goals to shots on target and shots on target to shots ratio
+def create_s2g_s2s_cum_ratio(data_frame = None):
+    # Calculating the total cumulative goals to shots on target ratio
+    data_frame["s2g_cum_ratio_h"] = round(number = (data_frame.goals_scored_h_cum / data_frame.shots_on_target_h_cum).fillna(value = 0), ndigits = 2)
+    data_frame["s2g_cum_ratio_a"] = round(number = (data_frame.goals_scored_a_cum / data_frame.shots_on_target_a_cum).fillna(value = 0), ndigits = 2)
+    
+    # Calculating the total cumulative goals to shots on target ratio
+    data_frame["s2s_cum_ratio_h"] = round(number = (data_frame.shots_on_target_h_cum / data_frame.shots_h_cum).fillna(value = 0), ndigits = 2)
+    data_frame["s2s_cum_ratio_a"] = round(number = (data_frame.shots_on_target_a_cum / data_frame.shots_a_cum).fillna(value = 0), ndigits = 2)
+    
+    # Returning the data frame
+    return data_frame
+
 def create_league_positions(data_frame = None):
     data_frame['h_position'] = np.nan
     data_frame['a_position'] = np.nan
@@ -2848,7 +3786,7 @@ def create_league_positions(data_frame = None):
         away_df['status'] = 'away'
 
         standings_df = pd.concat(objs = [home_df, away_df], ignore_index = True)
-        standings_df.sort_values(by = 'date', ascending = False, inplace = True) # new
+        standings_df.sort_values(by = 'date', ascending = False, inplace = True)
         standings_df.drop_duplicates(subset = 'team', inplace = True, ignore_index = True)
         standings_df.sort_values(by = ['point', 'gd', 'team'], ascending = [False, False, True], inplace = True)
         standings_df.reset_index(drop = True, inplace = True)
@@ -2953,15 +3891,41 @@ def create_league_positions(data_frame = None):
 
     return data_frame
 
+# Defining a function to create club tiers
+def create_club_tiers(data_frame = None):
+    # Creating a list of conditions
+    conditions_h = [((data_frame.n_epls_h >= 10) & (data_frame.n_ucls_h >= 2)),
+                    ((data_frame.n_epls_h >= 10) & ((data_frame.has_been_a_ucl_winner_h == 0) | (data_frame.has_been_a_ucl_winner_h == 1))),
+                    data_frame.n_epls_h.between(left = 5, right = 10, inclusive = "left"),
+                    data_frame.n_epls_h.between(left = 2, right = 5, inclusive = "left"),
+                    ((data_frame.n_epls_h == 1) & (data_frame.has_been_a_ucl_winner_h == 1))]
+
+    # Creating a list of conditions
+    conditions_a = [((data_frame.n_epls_a >= 10) & (data_frame.n_ucls_a >= 2)),
+                    ((data_frame.n_epls_a >= 10) & ((data_frame.has_been_a_ucl_winner_a == 0) | (data_frame.has_been_a_ucl_winner_a == 1))),
+                    data_frame.n_epls_a.between(left = 5, right = 10, inclusive = "left"),
+                    data_frame.n_epls_a.between(left = 2, right = 5, inclusive = "left"),
+                    ((data_frame.n_epls_a == 1) & (data_frame.has_been_a_ucl_winner_a == 1))]
+        
+    # Creating a list of outputs
+    outputs = ["Elite Club", "Huge Club", "Big Club", "Considered as a Big Club", "Considered as a Big Club"]
+
+    # Assigning the values
+    data_frame["club_tier_h"] = np.select(condlist = conditions_h, choicelist = outputs, default = "Small Club")
+    data_frame["club_tier_a"] = np.select(condlist = conditions_a, choicelist = outputs, default = "Small Club")
+        
+    # Returning the data frame
+    return data_frame
+
 # Defining a function to apply feature engineering
 def apply_feature_engineering():
     # Looping through each raw csv file
-    for data_frame in [filename for filename in os.listdir(path = '/Users/kzeynalzade/Documents/Project/Data/Unprocessed data') if filename.endswith('.csv')]:
+    for data_frame in [filename for filename in os.listdir(path = '/Users/kzeynalzade/Documents/EPL Redevelopment/epl_engine/Data/Unprocessed data') if filename.endswith('.csv')]:
         # Replacing the dash with forward slash
         season = data_frame.split('_')[0].replace('-', '/')
         
         # Loading the raw data
-        df = pd.read_csv(filepath_or_buffer = f'/Users/kzeynalzade/Documents/Project/Data/Unprocessed data/{data_frame}')
+        df = pd.read_csv(filepath_or_buffer = f'/Users/kzeynalzade/Documents/EPL Redevelopment/epl_engine/Data/Unprocessed data/{data_frame}')
         
         # Applying the functions
         df = create_preliminary_variables(data_frame = df, season = season)
@@ -3057,20 +4021,38 @@ def apply_feature_engineering():
         df = create_goal_difference(data_frame = df)
         df = create_total_avg_shots(data_frame = df)
         df = create_derbies(data_frame = df)
+        df = create_form_streaks(data_frame = df)
+        df = create_avg_goals_for_against_per_game(data_frame = df)
+        df = create_avg_points_accumulated_dropped_per_game(data_frame = df)
+        df = create_total_avg_goals_scored_last_3_5(data_frame = df)
+        df = create_total_avg_goals_conceded_last_3_5(data_frame = df)
+        df = create_total_avg_points_points_accumulated_last_3_5(data_frame = df)
+        df = create_total_avg_points_points_dropped_last_3_5(data_frame = df)
+        df = create_avg_goals_scored_last_3_5(data_frame = df)
+        df = create_avg_goals_conceded_last_3_5(data_frame = df)
+        df = create_avg_points_accumulated_last_3_5(data_frame = df)
+        df = create_avg_points_dropped_last_3_5(data_frame = df)
+        df = create_total_s2g_last_3_5(data_frame = df)
+        df = create_total_s2s_last_3_5(data_frame = df)
+        df = create_s2g_last_3_5(data_frame = df)
+        df = create_s2s_last_3_5(data_frame = df)
+        df = create_total_cumulative_shots_and_shots_on_target(data_frame = df)
+        df = create_cumulative_shots_and_shots_on_target(data_frame = df)
+        df = create_total_s2g_s2s_cum_ratio(data_frame = df)
+        df = create_s2g_s2s_cum_ratio(data_frame = df)
         df = create_league_positions(data_frame = df)
+        df = create_club_tiers(data_frame = df)
         
         # Creating a list of reallocated features
         reallocated_features = ['season', 'match_week', 'match_date', 'month', 'day', 'weekday', 'referee', 'home_team', 'away_team', 'stadium', 'attendance',
-                                'h_position', 'a_position', 'goals_h', 'goals_a', 'possession_h', 'possession_a', 'shots_on_target_h', 'shots_on_target_a',       'shots_h', 'shots_a', 'touches_h',
-                                'touches_a', 'passes_h', 'passes_a', 'tackles_h', 'tackles_a', 'clearances_h', 'clearances_a', 'corners_h', 'corners_a', 'offsides_h',
-                                'offsides_a', 'yellow_cards_h', 'yellow_cards_a', 'red_cards_h', 'red_cards_a', 'fouls_conceded_h', 'fouls_conceded_a', 
-                                'formation_h', 'formation_a', 'result_h', 'result_a', 'points_h', 'points_a', 'total_n_matches_played_h',
-                                'total_n_matches_played_a', 'total_max_points_h', 'total_max_points_a', 'total_points_h_cum', 'total_points_a_cum', 
-                                'total_points_dropped_h', 'total_points_dropped_a', 'total_goals_scored_h', 'total_goals_scored_a', 'total_goals_conceded_h', 
-                                'total_goals_conceded_a', 'total_avg_possession_h', 'total_avg_possession_a', 'total_avg_possession_last_3_h', 
-                                'total_avg_possession_last_3_a', 'total_avg_possession_last_5_h', 'total_avg_possession_last_5_a', 'total_avg_shots_on_target_h', 
-                                'total_avg_shots_on_target_a', 'total_avg_shots_on_target_last_3_h',
-                                'total_avg_shots_on_target_last_3_a', 'total_avg_shots_on_target_last_5_h', 'total_avg_shots_on_target_last_5_a', 'total_avg_shots_h',
+                                'derby_name', 'club_tier_h', 'club_tier_a', 'h_position', 'a_position', 'streak_h', 'streak_a', 'goals_h', 'goals_a', 'possession_h',                                         'possession_a', 'shots_on_target_h','shots_on_target_a', 'shots_h', 'shots_a', 'touches_h', 'touches_a', 'passes_h', 'passes_a', 
+                                'tackles_h', 'tackles_a', 'clearances_h', 'clearances_a', 'corners_h', 'corners_a', 'offsides_h', 'offsides_a', 'yellow_cards_h',                                             'yellow_cards_a', 'red_cards_h', 'red_cards_a', 'fouls_conceded_h', 'fouls_conceded_a', 'formation_h', 'formation_a', 'result_h', 
+                                'result_a', 'points_h', 'points_a', 'n_epls_h', 'n_epls_a', 'n_ucls_h', 'n_ucls_a', 
+                                'total_n_matches_played_h', 'total_n_matches_played_a', 'total_max_points_h', 'total_max_points_a', 'total_points_h_cum',                                                     'total_avg_acc_points_h', 'total_avg_points_accumulated_last_3_h', 'total_avg_points_accumulated_last_5_h', 'total_points_a_cum',                                             'total_avg_acc_points_a', 'total_avg_points_accumulated_last_3_a', 'total_avg_points_accumulated_last_5_a',
+                                'total_points_dropped_h', 'total_avg_dropped_points_h', 'total_avg_points_dropped_last_3_h', 'total_avg_points_dropped_last_5_h',                                             'total_points_dropped_a', 'total_avg_dropped_points_a', 'total_avg_points_dropped_last_3_a', 'total_avg_points_dropped_last_5_a',                                             'total_goals_scored_h', 'total_avg_goals_scored_h', 'total_avg_goals_scored_last_3_h', 'total_avg_goals_scored_last_5_h',                                                     'total_goals_scored_a', 'total_avg_goals_scored_a', 'total_avg_goals_scored_last_3_a', 'total_avg_goals_scored_last_5_a',                                                     'total_goals_conceded_h', 'total_avg_goals_conceded_h', 'total_avg_goals_conceded_last_3_h', 'total_avg_goals_conceded_last_5_h',
+                                'total_goals_conceded_a', 'total_avg_goals_conceded_a', 'total_avg_goals_conceded_last_3_a', 'total_avg_goals_conceded_last_5_a',                                             'total_avg_possession_h', 'total_avg_possession_a', 'total_avg_possession_last_3_h', 
+                                'total_avg_possession_last_3_a', 'total_avg_possession_last_5_h', 'total_avg_possession_last_5_a', 'total_shots_on_target_cum_h',                                             'total_shots_on_target_cum_a', 'total_avg_shots_on_target_h', 'total_avg_shots_on_target_a', 'total_avg_shots_on_target_last_3_h',
+                                'total_avg_shots_on_target_last_3_a', 'total_avg_shots_on_target_last_5_h', 'total_avg_shots_on_target_last_5_a', 'total_shots_cum_h',                                         'total_shots_cum_a', 'total_avg_shots_h',
                                 'total_avg_shots_a', 'total_avg_shots_last_3_h', 'total_avg_shots_last_3_a', 'total_avg_shots_last_5_h', 'total_avg_shots_last_5_a',
                                 'total_avg_touches_h', 'total_avg_touches_a', 'total_avg_touches_last_3_h', 'total_avg_touches_last_3_a', 'total_avg_touches_last_5_h',
                                 'total_avg_touches_last_5_a', 'total_avg_passes_h', 'total_avg_passes_a', 'total_avg_passes_last_3_h', 'total_avg_passes_last_3_a',
@@ -3082,12 +4064,14 @@ def apply_feature_engineering():
                                 'total_avg_offsides_last_3_a', 'total_avg_offsides_last_5_h', 'total_avg_offsides_last_5_a', 'total_avg_yellow_cards_h', 
                                 'total_avg_yellow_cards_a', 'total_avg_yellow_cards_last_3_h', 'total_avg_yellow_cards_last_3_a', 'total_avg_yellow_cards_last_5_h',
                                 'total_avg_yellow_cards_last_5_a', 'total_avg_fouls_conceded_h', 'total_avg_fouls_conceded_a', 'total_avg_fouls_conceded_last_3_h',
-                                'total_avg_fouls_conceded_last_3_a', 'total_avg_fouls_conceded_last_5_h', 'total_avg_fouls_conceded_last_5_a', 'n_matches_played_h',
-                                'n_matches_played_a', 'max_points_h', 'max_points_a', 'points_h_cum', 'points_a_cum', 'points_dropped_h', 'points_dropped_a',
-                                'goals_scored_h_cum', 'goals_scored_a_cum', 'goals_conceded_h_cum', 'goals_conceded_a_cum', 'avg_possession_h',
+                                'total_avg_fouls_conceded_last_3_a', 'total_avg_fouls_conceded_last_5_h', 'total_avg_fouls_conceded_last_5_a', 'total_s2g_cum_ratio_h',                                       'total_s2g_ratio_last_3_h', 'total_s2g_ratio_last_5_h', 'total_s2g_cum_ratio_a', 'total_s2g_ratio_last_3_a', 'total_s2g_ratio_last_5_a',
+                                'total_s2s_cum_ratio_h', 'total_s2s_ratio_last_3_h', 'total_s2s_ratio_last_5_h', 'total_s2s_cum_ratio_a', 'total_s2s_ratio_last_3_a',                                         'total_s2s_ratio_last_5_a', 'n_matches_played_h',
+                                'n_matches_played_a', 'max_points_h', 'max_points_a', 'points_h_cum', 'avg_acc_points_h', 'avg_points_accumulated_last_3_h',                                                   'avg_points_accumulated_last_5_h', 'points_a_cum', 'avg_acc_points_a', 'avg_points_accumulated_last_3_a', 'avg_points_accumulated_last_5_a',                                   'points_dropped_h', 'avg_dropped_points_h', 'avg_points_dropped_last_3_h', 'avg_points_dropped_last_5_h', 'points_dropped_a',                                                 'avg_dropped_points_a', 'avg_points_dropped_last_3_a', 'avg_points_dropped_last_5_a',
+                                'goals_scored_h_cum', 'avg_goals_scored_h', 'avg_goals_scored_last_3_h', 'avg_goals_scored_last_5_h', 'goals_scored_a_cum',                                                   'avg_goals_scored_a', 'avg_goals_scored_last_3_a', 'avg_goals_scored_last_5_a', 'goals_conceded_h_cum', 'avg_goals_conceded_h',                                               'avg_goals_conceded_last_3_h', 'avg_goals_conceded_last_5_h', 'goals_conceded_a_cum', 'avg_goals_conceded_a', 'avg_goals_conceded_last_3_a',
+                                'avg_goals_conceded_last_5_a', 'avg_possession_h',
                                 'avg_possession_a', 'avg_possession_last_3_h', 'avg_possession_last_3_a', 'avg_possession_last_5_h', 'avg_possession_last_5_a', 
-                                'avg_shots_on_target_h', 'avg_shots_on_target_a', 'avg_shots_on_target_last_3_h', 'avg_shots_on_target_last_3_a', 
-                                'avg_shots_on_target_last_5_h', 'avg_shots_on_target_last_5_a', 'avg_shots_h', 'avg_shots_a', 'avg_shots_last_3_h', 
+                                'shots_on_target_h_cum', 'avg_shots_on_target_h', 'shots_on_target_a_cum', 'avg_shots_on_target_a', 'avg_shots_on_target_last_3_h',                                           'avg_shots_on_target_last_3_a', 
+                                'avg_shots_on_target_last_5_h', 'avg_shots_on_target_last_5_a', 'shots_h_cum', 'avg_shots_h', 'shots_a_cum', 'avg_shots_a',                                                   'avg_shots_last_3_h', 
                                 'avg_shots_last_3_a', 'avg_shots_last_5_h', 'avg_shots_last_5_a', 'avg_touches_h', 'avg_touches_a', 'avg_touches_last_3_h', 
                                 'avg_touches_last_3_a', 'avg_touches_last_5_h', 'avg_touches_last_5_a', 'avg_passes_h', 'avg_passes_a', 'avg_passes_last_3_h', 
                                 'avg_passes_last_3_a', 'avg_passes_last_5_h', 'avg_passes_last_5_a', 'avg_tackles_h', 'avg_tackles_a', 'avg_tackles_last_3_h',
@@ -3097,12 +4081,14 @@ def apply_feature_engineering():
                                 'avg_offsides_a', 'avg_offsides_last_3_h', 'avg_offsides_last_3_a', 'avg_offsides_last_5_h', 'avg_offsides_last_5_a', 
                                 'avg_yellow_cards_h', 'avg_yellow_cards_a', 'avg_yellow_cards_last_3_h', 'avg_yellow_cards_last_3_a', 'avg_yellow_cards_last_5_h',
                                 'avg_yellow_cards_last_5_a', 'avg_fouls_conceded_h', 'avg_fouls_conceded_a', 'avg_fouls_conceded_last_3_h','avg_fouls_conceded_last_3_a', 
-                                'avg_fouls_conceded_last_5_h', 'avg_fouls_conceded_last_5_a', 'is_boxing_day', 'finished_top_4_last_season_h', 
+                                'avg_fouls_conceded_last_5_h', 'avg_fouls_conceded_last_5_a', 's2g_cum_ratio_h', 's2g_ratio_last_3_h', 's2g_ratio_last_5_h',                                                   's2g_cum_ratio_a', 's2g_ratio_last_3_a', 's2g_ratio_last_5_a', 's2s_cum_ratio_h', 's2s_ratio_last_3_h', 's2s_ratio_last_5_h',                                                 's2s_cum_ratio_a', 's2s_ratio_last_3_a', 's2s_ratio_last_5_a',
+                                'is_boxing_day', 'finished_top_4_last_season_h', 
                                 'finished_top_4_last_season_a', 'won_carabao_cup_last_season_h', 'won_carabao_cup_last_season_a', 'won_fa_cup_last_season_h', 
                                 'won_fa_cup_last_season_a', 'won_epl_last_season_h', 'won_epl_last_season_a', 'was_in_ucl_last_season_h', 'was_in_ucl_last_season_a', 
                                 'was_in_uel_last_season_h', 'was_in_uel_last_season_a', 'is_in_ucl_this_season_h', 'is_in_ucl_this_season_a', 'is_in_uel_this_season_h', 
                                 'is_in_uel_this_season_a', 'traditional_top_6_h', 'traditional_top_6_a', 'newly_promoted_h', 'newly_promoted_a', 'total_goal_difference_h',
-                                'total_goal_difference_a', 'goal_difference_h', 'goal_difference_a', 'positive_total_goal_difference_h', 'positive_total_goal_difference_a',                                                               'positive_goal_difference_h', 'positive_goal_difference_a', 'is_derby', 'derby_name', 'ground_truth', 'home_win', 'draw', 'away_win', 'link']
+                                'total_goal_difference_a', 'goal_difference_h', 'goal_difference_a', 'positive_total_goal_difference_h', 'positive_total_goal_difference_a',                                   'positive_goal_difference_h', 'positive_goal_difference_a', 'has_been_a_ucl_winner_h', 'has_been_a_ucl_winner_a', 'has_been_an_epl_winner_h',
+                                'has_been_an_epl_winner_a', 'is_derby', 'ground_truth', 'home_win', 'draw', 'away_win', 'link']
         
         # Reallocating the features
         df = df[reallocated_features]
@@ -3111,7 +4097,7 @@ def apply_feature_engineering():
         season = season.replace('/', '-')
         
         # Saving the data as a csv file
-        df.to_csv(path_or_buf = f'/Users/kzeynalzade/Documents/Project/Data/Processed data/{season}_processed.csv', index = False)
+        df.to_csv(path_or_buf = f'/Users/kzeynalzade/Documents/EPL Redevelopment/epl_engine/Data/Processed data/{season}_processed.csv', index = False)
         
         # Logging information to the log file
         logging.info(msg = f'Feature engineering has been applied for {season} season successfully')

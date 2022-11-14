@@ -1,9 +1,11 @@
 # Importing Dependencies
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.chrome.service import Service
 from selenium.webdriver import Chrome, ChromeOptions
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
+from chromedriver_py import binary_path
 
 import pandas as pd
 import numpy as np
@@ -32,7 +34,7 @@ def load_credentials(filename = None):
     return config
 
 # Assigning dictionary object to a variable
-config = load_credentials(filename = '/Users/kzeynalzade/Documents/Project/Configuration/config.yml')
+config = load_credentials(filename = '/Users/kzeynalzade/Documents/EPL Redevelopment/epl_engine/Configuration/config.yml')
 
 # Specifying the path for the driver and target URL
 DRIVER_PATH = config.get('credentials').get('driver_path')
@@ -42,31 +44,41 @@ TARGET_URL = config.get('credentials').get('target_url')
 options = ChromeOptions()
 options.add_argument(argument = '--incognito')
 
+# Assigning the environment key to a variable
+service_object = Service(binary_path)
+
 # Defining a function to scrape the data for the last seven seasons
 def scrape_data():
-    for x in range(7):
-        driver = Chrome(executable_path = DRIVER_PATH, chrome_options = options)
+    for x in range(17):
+        # driver = Chrome(executable_path = DRIVER_PATH, chrome_options = options)
+        driver = Chrome(service = service_object, chrome_options = options)
         driver.get(url = TARGET_URL)
         driver.maximize_window()
 
         time.sleep(5)
-        accept_all_cookies_full_xpath = '/html/body/div[12]/div/div/div[1]/div[5]/button[1]'
+        accept_all_cookies_full_xpath = '/html/body/div[2]/div/div/div[1]/div[5]/button[1]'
         WebDriverWait(driver = driver, timeout = 15).until(method = EC.element_to_be_clickable(mark = (By.XPATH, accept_all_cookies_full_xpath))).click()
         
         time.sleep(3)
         logo_xpath = '/html/body/header/div/a'
         WebDriverWait(driver = driver, timeout = 10).until(method = EC.element_to_be_clickable(mark = (By.XPATH, logo_xpath))).click()
         
-        # time.sleep(3)
-        # remove_advert = '/html/body/main/div[1]/nav/a[2]'
-        # WebDriverWait(driver = driver, timeout = 10).until(method = EC.element_to_be_clickable(mark = (By.XPATH, remove_advert))).click()
+        try:
+            time.sleep(3)
+            remove_advert = '/html/body/main/div[1]/nav/a[2]'
+            WebDriverWait(driver = driver, timeout = 10).until(method = EC.element_to_be_clickable(mark = (By.XPATH, remove_advert))).click()
+        except:
+            pass
 
         time.sleep(3)
         results_full_xpath = '/html/body/header/div/nav/ul/li[3]/a'
         WebDriverWait(driver = driver, timeout = 10).until(method = EC.element_to_be_clickable(mark = (By.XPATH, results_full_xpath))).click()
         
-        # time.sleep(3)
-        # WebDriverWait(driver = driver, timeout = 10).until(method = EC.element_to_be_clickable(mark = (By.XPATH, remove_advert))).click()
+        try:
+            time.sleep(3)
+            WebDriverWait(driver = driver, timeout = 10).until(method = EC.element_to_be_clickable(mark = (By.XPATH, remove_advert))).click()
+        except:
+            pass
 
         time.sleep(3)
         driver.execute_script(script = 'window.scrollTo(0, 200);')
@@ -293,7 +305,7 @@ def scrape_data():
         extension_df_3 = pd.DataFrame(data = scraped_data_v4, columns = features)
         df = pd.concat(objs = [df, extension_df_3], axis = 1)
         season = df.season.unique()[0].replace('/', '-')
-        df.to_csv(path_or_buf = f'/Users/kzeynalzade/Documents/Project/Data/Unprocessed data/{season}_unprocessed.csv', index = False)
+        df.to_csv(path_or_buf = f'/Users/kzeynalzade/Documents/EPL Redevelopment/epl_engine/Data/Unprocessed data/{season}_unprocessed.csv', index = False)
 
         print(f'Data for {season} season has been scraped successfully!')
 

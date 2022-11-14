@@ -8,13 +8,13 @@ import os
 warnings.filterwarnings(action = 'ignore')
 
 # Defining the settings for a logger file
-logging.basicConfig(filename = '/Users/kzeynalzade/Documents/Project/Logs/conversion.log', filemode = 'w', format = '%(asctime)s - %(levelname)s - %(message)s', level = logging.INFO)
+logging.basicConfig(filename = '/Users/kzeynalzade/Documents/EPL Redevelopment/epl_engine/Logs/conversion.log', filemode = 'w', format = '%(asctime)s - %(levelname)s - %(message)s', level = logging.INFO)
 
 # Defining the paths for csv files
-csv_files_path = '/Users/kzeynalzade/Documents/Project/Data/Processed data'
+csv_files_path = '/Users/kzeynalzade/Documents/EPL Redevelopment/epl_engine/Data/Processed data'
 
 # Defining the paths for parquet files
-target_path = '/Users/kzeynalzade/Documents/Project/Data/Converted data'
+target_path = '/Users/kzeynalzade/Documents/EPL Redevelopment/epl_engine/Data/Converted data'
 
 # Defining a function to convert csv files to parquet files
 def convert_csv_to_parquet(filepath = None):

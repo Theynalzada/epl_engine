@@ -1,3 +1,651 @@
+2006/07:
+  boxing_day: 26
+  finished_in_top_4_last_season:
+  - Chelsea
+  - Man Utd
+  - Liverpool
+  - Arsenal
+  is_in_ucl_this_season:
+  - Man Utd
+  - Chelsea
+  - Arsenal
+  - Liverpool
+  is_in_uel_this_season:
+  - Newcastle
+  - Blackburn
+  - Spurs
+  promoted_teams:
+  - Reading
+  - Sheffield Utd
+  - Watford
+  reigning_champion: Chelsea
+  traditional_top_6:
+  - Man Utd
+  - Liverpool
+  - Arsenal
+  - Chelsea
+  - Man City
+  - Spurs
+  was_in_ucl_last_season:
+  - Man Utd
+  - Chelsea
+  - Arsenal
+  - Liverpool
+  was_in_uel_last_season:
+  - Middlesbrough
+  - Bolton
+  won_carabao_cup_last_season: Man Utd
+  won_fa_cup_last_season: Liverpool
+  ucl_winners:
+    Nott'm Forest: 2
+    Aston Villa: 1
+    Liverpool: 5
+    Man Utd: 2
+  epl_winners:
+    Liverpool: 18
+    Man Utd: 15
+    Arsenal: 13
+    Everton: 9
+    Man City: 2
+    Aston Villa: 7
+    Chelsea: 3
+    Sunderland: 6
+    Newcastle: 4
+    Blackburn: 3
+    Huddersfield: 3
+    Leeds: 3
+    Wolves: 3
+    Burnley: 2
+    Derby: 2
+    Portsmouth: 2
+    Spurs: 2
+    Nott'm Forest: 1
+    Sheffield Utd: 1
+    West Brom: 1
+2007/08:
+  boxing_day: 26
+  finished_in_top_4_last_season:
+  - Man Utd
+  - Chelsea
+  - Liverpool
+  - Arsenal
+  is_in_ucl_this_season:
+  - Man Utd
+  - Chelsea
+  - Arsenal
+  - Liverpool
+  is_in_uel_this_season:
+  - Everton
+  - Spurs
+  - Bolton
+  promoted_teams:
+  - Birmingham
+  - Sunderland
+  - Derby
+  reigning_champion: Man Utd
+  traditional_top_6:
+  - Man Utd
+  - Liverpool
+  - Arsenal
+  - Chelsea
+  - Man City
+  - Spurs
+  was_in_ucl_last_season:
+  - Man Utd
+  - Chelsea
+  - Arsenal
+  - Liverpool
+  was_in_uel_last_season:
+  - Newcastle
+  - Blackburn
+  - Spurs
+  won_carabao_cup_last_season: Chelsea
+  won_fa_cup_last_season: Chelsea
+  ucl_winners:
+    Nott'm Forest: 2
+    Aston Villa: 1
+    Liverpool: 5
+    Man Utd: 2
+  epl_winners:
+    Liverpool: 18
+    Man Utd: 16
+    Arsenal: 13
+    Everton: 9
+    Man City: 2
+    Aston Villa: 7
+    Chelsea: 3
+    Sunderland: 6
+    Newcastle: 4
+    Blackburn: 3
+    Huddersfield: 3
+    Leeds: 3
+    Wolves: 3
+    Burnley: 2
+    Derby: 2
+    Portsmouth: 2
+    Spurs: 2
+    Nott'm Forest: 1
+    Sheffield Utd: 1
+    West Brom: 1
+2008/09:
+  boxing_day: 26
+  finished_in_top_4_last_season:
+  - Man Utd
+  - Chelsea
+  - Arsenal
+  - Liverpool
+  is_in_ucl_this_season:
+  - Man Utd
+  - Chelsea
+  - Arsenal
+  - Liverpool
+  is_in_uel_this_season:
+  - Man City
+  - Spurs
+  - Portsmouth
+  - Aston Villa
+  promoted_teams:
+  - West Brom
+  - Stoke
+  - Hull
+  reigning_champion: Man Utd
+  traditional_top_6:
+  - Man Utd
+  - Liverpool
+  - Arsenal
+  - Chelsea
+  - Man City
+  - Spurs
+  was_in_ucl_last_season:
+  - Man Utd
+  - Chelsea
+  - Arsenal
+  - Liverpool
+  was_in_uel_last_season:
+  - Everton
+  - Spurs
+  - Bolton
+  won_carabao_cup_last_season: Spurs
+  won_fa_cup_last_season: Portsmouth
+  ucl_winners:
+    Nott'm Forest: 2
+    Aston Villa: 1
+    Liverpool: 5
+    Man Utd: 3
+  epl_winners:
+    Liverpool: 18
+    Man Utd: 17
+    Arsenal: 13
+    Everton: 9
+    Man City: 2
+    Aston Villa: 7
+    Chelsea: 3
+    Sunderland: 6
+    Newcastle: 4
+    Blackburn: 3
+    Huddersfield: 3
+    Leeds: 3
+    Wolves: 3
+    Burnley: 2
+    Derby: 2
+    Portsmouth: 2
+    Spurs: 2
+    Nott'm Forest: 1
+    Sheffield Utd: 1
+    West Brom: 1
+2009/10:
+  boxing_day: 26
+  finished_in_top_4_last_season:
+  - Man Utd
+  - Liverpool
+  - Chelsea
+  - Arsenal
+  is_in_ucl_this_season:
+  - Man Utd
+  - Chelsea
+  - Arsenal
+  - Liverpool
+  is_in_uel_this_season:
+  - Fulham
+  - Everton
+  promoted_teams:
+  - Birmingham
+  - Burnley
+  - Wolves
+  reigning_champion: Man Utd
+  traditional_top_6:
+  - Man Utd
+  - Liverpool
+  - Arsenal
+  - Chelsea
+  - Man City
+  - Spurs
+  was_in_ucl_last_season:
+  - Man Utd
+  - Chelsea
+  - Arsenal
+  - Liverpool
+  was_in_uel_last_season:
+  - City
+  - Spurs
+  - Portsmouth
+  - Aston Villa
+  won_carabao_cup_last_season: Man Utd
+  won_fa_cup_last_season: Chelsea
+  ucl_winners:
+    Nott'm Forest: 2
+    Aston Villa: 1
+    Liverpool: 5
+    Man Utd: 3
+  epl_winners:
+    Liverpool: 18
+    Man Utd: 18
+    Arsenal: 13
+    Everton: 9
+    Man City: 2
+    Aston Villa: 7
+    Chelsea: 3
+    Sunderland: 6
+    Newcastle: 4
+    Blackburn: 3
+    Huddersfield: 3
+    Leeds: 3
+    Wolves: 3
+    Burnley: 2
+    Derby: 2
+    Portsmouth: 2
+    Spurs: 2
+    Nott'm Forest: 1
+    Sheffield Utd: 1
+    West Brom: 1
+2010/11:
+  boxing_day: 26
+  finished_in_top_4_last_season:
+  - Man Utd
+  - Chelsea
+  - Arsenal
+  - Spurs
+  is_in_ucl_this_season:
+  - Man Utd
+  - Chelsea
+  - Arsenal
+  - Spurs
+  is_in_uel_this_season:
+  - Man City
+  - Liverpool
+  promoted_teams:
+  - West Brom
+  - Newcastle
+  - Blackpool
+  reigning_champion: Chelsea
+  traditional_top_6:
+  - Man Utd
+  - Liverpool
+  - Arsenal
+  - Chelsea
+  - Man City
+  - Spurs
+  was_in_ucl_last_season:
+  - Man Utd
+  - Chelsea
+  - Arsenal
+  - Liverpool
+  was_in_uel_last_season:
+  - Fulham
+  - Everton
+  won_carabao_cup_last_season: Man Utd
+  won_fa_cup_last_season: Chelsea
+  ucl_winners:
+    Nott'm Forest: 2
+    Aston Villa: 1
+    Liverpool: 5
+    Man Utd: 3
+  epl_winners:
+    Liverpool: 18
+    Man Utd: 18
+    Arsenal: 13
+    Everton: 9
+    Man City: 2
+    Aston Villa: 7
+    Chelsea: 4
+    Sunderland: 6
+    Newcastle: 4
+    Blackburn: 3
+    Huddersfield: 3
+    Leeds: 3
+    Wolves: 3
+    Burnley: 2
+    Derby: 2
+    Portsmouth: 2
+    Spurs: 2
+    Nott'm Forest: 1
+    Sheffield Utd: 1
+    West Brom: 1
+2011/12:
+  boxing_day: 26
+  finished_in_top_4_last_season:
+  - Man Utd
+  - Chelsea
+  - Man City
+  - Arsenal
+  is_in_ucl_this_season:
+  - Man Utd
+  - Chelsea
+  - Man City
+  - Arsenal
+  is_in_uel_this_season:
+  - Fulham
+  - Spurs
+  - Stoke
+  - Birmingham
+  promoted_teams:
+  - Swansea
+  - Norwich
+  - QPR
+  reigning_champion: Man Utd
+  traditional_top_6:
+  - Man Utd
+  - Liverpool
+  - Arsenal
+  - Chelsea
+  - Man City
+  - Spurs
+  was_in_ucl_last_season:
+  - Man Utd
+  - Chelsea
+  - Arsenal
+  - Spurs
+  was_in_uel_last_season:
+  - Liverpool
+  - Man City
+  won_carabao_cup_last_season: Birmingham
+  won_fa_cup_last_season: Man City
+  ucl_winners:
+    Nott'm Forest: 2
+    Aston Villa: 1
+    Liverpool: 5
+    Man Utd: 3
+  epl_winners:
+    Liverpool: 18
+    Man Utd: 19
+    Arsenal: 13
+    Everton: 9
+    Man City: 2
+    Aston Villa: 7
+    Chelsea: 4
+    Sunderland: 6
+    Newcastle: 4
+    Blackburn: 3
+    Huddersfield: 3
+    Leeds: 3
+    Wolves: 3
+    Burnley: 2
+    Derby: 2
+    Portsmouth: 2
+    Spurs: 2
+    Nott'm Forest: 1
+    Sheffield Utd: 1
+    West Brom: 1
+2012/13:
+  boxing_day: 26
+  finished_in_top_4_last_season:
+  - Man City
+  - Man Utd
+  - Arsenal
+  - Spurs
+  is_in_ucl_this_season:
+  - Man City
+  - Man Utd
+  - Arsenal
+  - Chelsea
+  is_in_uel_this_season:
+  - Spurs
+  - Newcastle
+  - Liverpool
+  promoted_teams:
+  - Southampton
+  - West Ham
+  - Reading
+  reigning_champion: Man City
+  traditional_top_6:
+  - Man Utd
+  - Liverpool
+  - Arsenal
+  - Chelsea
+  - Man City
+  - Spurs
+  was_in_ucl_last_season:
+  - Man Utd
+  - Chelsea
+  - Arsenal
+  - Man City
+  was_in_uel_last_season:
+  - Fulham
+  - Spurs
+  - Stoke
+  - Birmingham
+  won_carabao_cup_last_season: Man Utd
+  won_fa_cup_last_season: Swansea
+  ucl_winners:
+    Nott'm Forest: 2
+    Aston Villa: 1
+    Liverpool: 5
+    Man Utd: 3
+    Chelsea: 1
+  epl_winners:
+    Liverpool: 18
+    Man Utd: 19
+    Arsenal: 13
+    Everton: 9
+    Man City: 3
+    Aston Villa: 7
+    Chelsea: 4
+    Sunderland: 6
+    Newcastle: 4
+    Blackburn: 3
+    Huddersfield: 3
+    Leeds: 3
+    Wolves: 3
+    Burnley: 2
+    Derby: 2
+    Portsmouth: 2
+    Spurs: 2
+    Nott'm Forest: 1
+    Sheffield Utd: 1
+    West Brom: 1
+2013/14:
+  boxing_day: 26
+  finished_in_top_4_last_season:
+  - Man Utd
+  - Man City
+  - Chelsea
+  - Arsenal
+  is_in_ucl_this_season:
+  - Man Utd
+  - Man City
+  - Chelsea
+  - Arsenal
+  is_in_uel_this_season:
+  - Spurs
+  - Swansea
+  promoted_teams:
+  - Crystal Palace
+  - Cardiff
+  - Hull
+  reigning_champion: Man Utd
+  traditional_top_6:
+  - Man Utd
+  - Liverpool
+  - Arsenal
+  - Chelsea
+  - Man City
+  - Spurs
+  was_in_ucl_last_season:
+  - Man Utd
+  - Man City
+  - Chelsea
+  - Arsenal
+  was_in_uel_last_season:
+  - Spurs
+  - Newcastle
+  - Liverpool
+  won_carabao_cup_last_season: Swansea
+  won_fa_cup_last_season: Man City
+  ucl_winners:
+    Nott'm Forest: 2
+    Aston Villa: 1
+    Liverpool: 5
+    Man Utd: 3
+    Chelsea: 1
+  epl_winners:
+    Liverpool: 18
+    Man Utd: 20
+    Arsenal: 13
+    Everton: 9
+    Man City: 3
+    Aston Villa: 7
+    Chelsea: 4
+    Sunderland: 6
+    Newcastle: 4
+    Blackburn: 3
+    Huddersfield: 3
+    Leeds: 3
+    Wolves: 3
+    Burnley: 2
+    Derby: 2
+    Portsmouth: 2
+    Spurs: 2
+    Nott'm Forest: 1
+    Sheffield Utd: 1
+    West Brom: 1
+2014/15:
+  boxing_day: 26
+  finished_in_top_4_last_season:
+  - Man City
+  - Liverpool
+  - Chelsea
+  - Arsenal
+  is_in_ucl_this_season:
+  - Man City
+  - Liverpool
+  - Chelsea
+  - Arsenal
+  is_in_uel_this_season:
+  - Liverpool
+  - Spurs
+  promoted_teams:
+  - Leicester
+  - Burnley
+  - QPR
+  reigning_champion: Man City
+  traditional_top_6:
+  - Man Utd
+  - Liverpool
+  - Arsenal
+  - Chelsea
+  - Man City
+  - Spurs
+  was_in_ucl_last_season:
+  - Man Utd
+  - Man City
+  - Chelsea
+  - Arsenal
+  was_in_uel_last_season:
+  - Spurs
+  - Swansea
+  won_carabao_cup_last_season: Man City
+  won_fa_cup_last_season: Arsenal
+  ucl_winners:
+    Nott'm Forest: 2
+    Aston Villa: 1
+    Liverpool: 5
+    Man Utd: 3
+    Chelsea: 1
+  epl_winners:
+    Liverpool: 18
+    Man Utd: 20
+    Arsenal: 13
+    Everton: 9
+    Man City: 4
+    Aston Villa: 7
+    Chelsea: 4
+    Sunderland: 6
+    Newcastle: 4
+    Blackburn: 3
+    Huddersfield: 3
+    Leeds: 3
+    Wolves: 3
+    Burnley: 2
+    Derby: 2
+    Portsmouth: 2
+    Spurs: 2
+    Nott'm Forest: 1
+    Sheffield Utd: 1
+    West Brom: 1
+2015/16:
+  boxing_day: 26
+  finished_in_top_4_last_season:
+  - Chelsea
+  - Man City
+  - Arsenal
+  - Man Utd
+  is_in_ucl_this_season:
+  - Chelsea
+  - Man City
+  - Arsenal
+  - Man Utd
+  is_in_uel_this_season:
+  - Spurs
+  - Liverpool
+  promoted_teams:
+  - Bournemouth
+  - Watford
+  - Norwich
+  reigning_champion: Chelsea
+  traditional_top_6:
+  - Man Utd
+  - Liverpool
+  - Arsenal
+  - Chelsea
+  - Man City
+  - Spurs
+  was_in_ucl_last_season:
+  - Man City
+  - Liverpool
+  - Chelsea
+  - Arsenal
+  was_in_uel_last_season:
+  - Spurs
+  - Everton
+  won_carabao_cup_last_season: Chelsea
+  won_fa_cup_last_season: Arsenal
+  ucl_winners:
+    Nott'm Forest: 2
+    Aston Villa: 1
+    Liverpool: 5
+    Man Utd: 3
+    Chelsea: 1
+  epl_winners:
+    Liverpool: 18
+    Man Utd: 20
+    Arsenal: 13
+    Everton: 9
+    Man City: 4
+    Aston Villa: 7
+    Chelsea: 5
+    Sunderland: 6
+    Newcastle: 4
+    Blackburn: 3
+    Huddersfield: 3
+    Leeds: 3
+    Wolves: 3
+    Burnley: 2
+    Derby: 2
+    Portsmouth: 2
+    Spurs: 2
+    Nott'm Forest: 1
+    Sheffield Utd: 1
+    West Brom: 1
 2016/17:
   boxing_day: 26
   finished_in_top_4_last_season:
@@ -35,6 +683,34 @@
   - Spurs
   won_carabao_cup_last_season: Man City
   won_fa_cup_last_season: Man Utd
+  ucl_winners:
+    Nott'm Forest: 2
+    Aston Villa: 1
+    Liverpool: 5
+    Man Utd: 3
+    Chelsea: 1
+  epl_winners:
+    Liverpool: 18
+    Man Utd: 20
+    Arsenal: 13
+    Everton: 9
+    Man City: 4
+    Aston Villa: 7
+    Chelsea: 5
+    Sunderland: 6
+    Newcastle: 4
+    Blackburn: 3
+    Huddersfield: 3
+    Leeds: 3
+    Wolves: 3
+    Burnley: 2
+    Derby: 2
+    Portsmouth: 2
+    Spurs: 2
+    Nott'm Forest: 1
+    Sheffield Utd: 1
+    West Brom: 1
+    Leicester: 1
 2017/18:
   boxing_day: 26
   finished_in_top_4_last_season:
@@ -73,6 +749,34 @@
   - Southampton
   won_carabao_cup_last_season: Man Utd
   won_fa_cup_last_season: Arsenal
+  ucl_winners:
+    Nott'm Forest: 2
+    Aston Villa: 1
+    Liverpool: 5
+    Man Utd: 3
+    Chelsea: 1
+  epl_winners:
+    Liverpool: 18
+    Man Utd: 20
+    Arsenal: 13
+    Everton: 9
+    Man City: 4
+    Aston Villa: 7
+    Chelsea: 6
+    Sunderland: 6
+    Newcastle: 4
+    Blackburn: 3
+    Huddersfield: 3
+    Leeds: 3
+    Wolves: 3
+    Burnley: 2
+    Derby: 2
+    Portsmouth: 2
+    Spurs: 2
+    Nott'm Forest: 1
+    Sheffield Utd: 1
+    West Brom: 1
+    Leicester: 1
 2018/19:
   boxing_day: 26
   finished_in_top_4_last_season:
@@ -111,6 +815,34 @@
   - Arsenal
   won_carabao_cup_last_season: Man City
   won_fa_cup_last_season: Chelsea
+  ucl_winners:
+    Nott'm Forest: 2
+    Aston Villa: 1
+    Liverpool: 5
+    Man Utd: 3
+    Chelsea: 1
+  epl_winners:
+    Liverpool: 18
+    Man Utd: 20
+    Arsenal: 13
+    Everton: 9
+    Man City: 5
+    Aston Villa: 7
+    Chelsea: 6
+    Sunderland: 6
+    Newcastle: 4
+    Blackburn: 3
+    Huddersfield: 3
+    Leeds: 3
+    Wolves: 3
+    Burnley: 2
+    Derby: 2
+    Portsmouth: 2
+    Spurs: 2
+    Nott'm Forest: 1
+    Sheffield Utd: 1
+    West Brom: 1
+    Leicester: 1
 2019/20:
   boxing_day: 26
   finished_in_top_4_last_season:
@@ -148,6 +880,34 @@
   - Chelsea
   won_carabao_cup_last_season: Man City
   won_fa_cup_last_season: Man City
+  ucl_winners:
+    Nott'm Forest: 2
+    Aston Villa: 1
+    Liverpool: 6
+    Man Utd: 3
+    Chelsea: 1
+  epl_winners:
+    Liverpool: 18
+    Man Utd: 20
+    Arsenal: 13
+    Everton: 9
+    Man City: 6
+    Aston Villa: 7
+    Chelsea: 6
+    Sunderland: 6
+    Newcastle: 4
+    Blackburn: 3
+    Huddersfield: 3
+    Leeds: 3
+    Wolves: 3
+    Burnley: 2
+    Derby: 2
+    Portsmouth: 2
+    Spurs: 2
+    Nott'm Forest: 1
+    Sheffield Utd: 1
+    West Brom: 1
+    Leicester: 1
 2020/21:
   boxing_day: 26
   finished_in_top_4_last_season:
@@ -186,6 +946,34 @@
   - Man Utd
   won_carabao_cup_last_season: Man City
   won_fa_cup_last_season: Arsenal
+  ucl_winners:
+    Nott'm Forest: 2
+    Aston Villa: 1
+    Liverpool: 6
+    Man Utd: 3
+    Chelsea: 1
+  epl_winners:
+    Liverpool: 19
+    Man Utd: 20
+    Arsenal: 13
+    Everton: 9
+    Man City: 6
+    Aston Villa: 7
+    Chelsea: 6
+    Sunderland: 6
+    Newcastle: 4
+    Blackburn: 3
+    Huddersfield: 3
+    Leeds: 3
+    Wolves: 3
+    Burnley: 2
+    Derby: 2
+    Portsmouth: 2
+    Spurs: 2
+    Nott'm Forest: 1
+    Sheffield Utd: 1
+    West Brom: 1
+    Leicester: 1
 2021/22:
   boxing_day: 26
   finished_in_top_4_last_season:
@@ -224,6 +1012,34 @@
   - Leicester
   won_carabao_cup_last_season: Man City
   won_fa_cup_last_season: Leicester
+  ucl_winners:
+    Nott'm Forest: 2
+    Aston Villa: 1
+    Liverpool: 6
+    Man Utd: 3
+    Chelsea: 2
+  epl_winners:
+    Liverpool: 19
+    Man Utd: 20
+    Arsenal: 13
+    Everton: 9
+    Man City: 7
+    Aston Villa: 7
+    Chelsea: 6
+    Sunderland: 6
+    Newcastle: 4
+    Blackburn: 3
+    Huddersfield: 3
+    Leeds: 3
+    Wolves: 3
+    Burnley: 2
+    Derby: 2
+    Portsmouth: 2
+    Spurs: 2
+    Nott'm Forest: 1
+    Sheffield Utd: 1
+    West Brom: 1
+    Leicester: 1
 2022/23:
   boxing_day: 26
   finished_in_top_4_last_season:
@@ -242,7 +1058,7 @@
   promoted_teams:
   - Fulham
   - Bournemouth
-  - Nott\'m Forest 
+  - Nott'm Forest 
   reigning_champion: Man City
   traditional_top_6:
   - Man Utd
@@ -261,6 +1077,34 @@
   - Leicester
   won_carabao_cup_last_season: Liverpool
   won_fa_cup_last_season: Liverpool
+  ucl_winners:
+    Nott'm Forest: 2
+    Aston Villa: 1
+    Liverpool: 6
+    Man Utd: 3
+    Chelsea: 2
+  epl_winners:
+    Liverpool: 19
+    Man Utd: 20
+    Arsenal: 13
+    Everton: 9
+    Man City: 8
+    Aston Villa: 7
+    Chelsea: 6
+    Sunderland: 6
+    Newcastle: 4
+    Blackburn: 3
+    Huddersfield: 3
+    Leeds: 3
+    Wolves: 3
+    Burnley: 2
+    Derby: 2
+    Portsmouth: 2
+    Spurs: 2
+    Nott'm Forest: 1
+    Sheffield Utd: 1
+    West Brom: 1
+    Leicester: 1
 credentials:
   driver_path: /Users/kzeynalzade/Downloads/.wdm/drivers/chromedriver/mac64/105.0.5195/chromedriver
   target_url: https://www.premierleague.com
@@ -270,6 +1114,13 @@ features:
   - month
   - day
   - weekday
+  - home_team
+  - away_team
+  - derby_name
+  - streak_h
+  - streak_a
+  - club_tier_h
+  - club_tier_a
   - h_position
   - a_position
   - total_n_matches_played_h
@@ -278,24 +1129,52 @@ features:
   - total_max_points_a
   - total_points_h_cum
   - total_points_a_cum
+  - total_avg_acc_points_h
+  - total_avg_acc_points_a
+  - total_avg_points_accumulated_last_3_h
+  - total_avg_points_accumulated_last_3_a
+  - total_avg_points_accumulated_last_5_h
+  - total_avg_points_accumulated_last_5_a
   - total_points_dropped_h
   - total_points_dropped_a
+  - total_avg_dropped_points_h
+  - total_avg_dropped_points_a
+  - total_avg_points_dropped_last_3_h
+  - total_avg_points_dropped_last_3_a
+  - total_avg_points_dropped_last_5_h
+  - total_avg_points_dropped_last_5_a
   - total_goals_scored_h
   - total_goals_scored_a
+  - total_avg_goals_scored_h
+  - total_avg_goals_scored_a
+  - total_avg_goals_scored_last_3_h
+  - total_avg_goals_scored_last_3_a
+  - total_avg_goals_scored_last_5_h
+  - total_avg_goals_scored_last_5_a
   - total_goals_conceded_h
   - total_goals_conceded_a
+  - total_avg_goals_conceded_h
+  - total_avg_goals_conceded_a
+  - total_avg_goals_conceded_last_3_h
+  - total_avg_goals_conceded_last_3_a
+  - total_avg_goals_conceded_last_5_h
+  - total_avg_goals_conceded_last_5_a
   - total_avg_possession_h
   - total_avg_possession_a
   - total_avg_possession_last_3_h
   - total_avg_possession_last_3_a
   - total_avg_possession_last_5_h
   - total_avg_possession_last_5_a
+  - total_shots_on_target_cum_h
+  - total_shots_on_target_cum_a
   - total_avg_shots_on_target_h
   - total_avg_shots_on_target_a
   - total_avg_shots_on_target_last_3_h
   - total_avg_shots_on_target_last_3_a
   - total_avg_shots_on_target_last_5_h
   - total_avg_shots_on_target_last_5_a
+  - total_shots_cum_h
+  - total_shots_cum_a
   - total_avg_shots_h
   - total_avg_shots_a
   - total_avg_shots_last_3_h
@@ -350,30 +1229,70 @@ features:
   - total_avg_fouls_conceded_last_3_a
   - total_avg_fouls_conceded_last_5_h
   - total_avg_fouls_conceded_last_5_a
+  - total_s2g_cum_ratio_h
+  - total_s2g_cum_ratio_a
+  - total_s2g_ratio_last_3_h
+  - total_s2g_ratio_last_3_a
+  - total_s2g_ratio_last_5_h
+  - total_s2g_ratio_last_5_a
+  - total_s2s_cum_ratio_h
+  - total_s2s_cum_ratio_a
+  - total_s2s_ratio_last_3_h
+  - total_s2s_ratio_last_3_a
+  - total_s2s_ratio_last_5_h
+  - total_s2s_ratio_last_5_a
   - n_matches_played_h
   - n_matches_played_a
   - max_points_h
   - max_points_a
   - points_h_cum
   - points_a_cum
+  - avg_acc_points_h
+  - avg_acc_points_a
+  - avg_points_accumulated_last_3_h
+  - avg_points_accumulated_last_3_a
+  - avg_points_accumulated_last_5_h
+  - avg_points_accumulated_last_5_a
   - points_dropped_h
   - points_dropped_a
+  - avg_dropped_points_h
+  - avg_dropped_points_a
+  - avg_points_dropped_last_3_h
+  - avg_points_dropped_last_3_a
+  - avg_points_dropped_last_5_h
+  - avg_points_dropped_last_5_a
   - goals_scored_h_cum
   - goals_scored_a_cum
+  - avg_goals_scored_h
+  - avg_goals_scored_a
+  - avg_goals_scored_last_3_h
+  - avg_goals_scored_last_3_a
+  - avg_goals_scored_last_5_h
+  - avg_goals_scored_last_5_a
   - goals_conceded_h_cum
   - goals_conceded_a_cum
+  - avg_goals_conceded_h
+  - avg_goals_conceded_a
+  - avg_goals_conceded_last_3_h
+  - avg_goals_conceded_last_3_a
+  - avg_goals_conceded_last_5_h
+  - avg_goals_conceded_last_5_a
   - avg_possession_h
   - avg_possession_a
   - avg_possession_last_3_h
   - avg_possession_last_3_a
   - avg_possession_last_5_h
   - avg_possession_last_5_a
+  - shots_on_target_h_cum
+  - shots_on_target_a_cum
   - avg_shots_on_target_h
   - avg_shots_on_target_a
   - avg_shots_on_target_last_3_h
   - avg_shots_on_target_last_3_a
   - avg_shots_on_target_last_5_h
   - avg_shots_on_target_last_5_a
+  - shots_h_cum
+  - shots_a_cum
   - avg_shots_h
   - avg_shots_a
   - avg_shots_last_3_h
@@ -428,6 +1347,18 @@ features:
   - avg_fouls_conceded_last_3_a
   - avg_fouls_conceded_last_5_h
   - avg_fouls_conceded_last_5_a
+  - s2g_cum_ratio_h
+  - s2g_cum_ratio_a
+  - s2g_ratio_last_3_h
+  - s2g_ratio_last_3_a
+  - s2g_ratio_last_5_h
+  - s2g_ratio_last_5_a
+  - s2s_cum_ratio_h
+  - s2s_cum_ratio_a
+  - s2s_ratio_last_3_h
+  - s2s_ratio_last_3_a
+  - s2s_ratio_last_5_h
+  - s2s_ratio_last_5_a
   - is_boxing_day
   - finished_top_4_last_season_h
   - finished_top_4_last_season_a
@@ -457,24 +1388,79 @@ features:
   - positive_total_goal_difference_a
   - positive_goal_difference_h
   - positive_goal_difference_a
+  - has_been_a_ucl_winner_h
+  - has_been_a_ucl_winner_a
+  - has_been_an_epl_winner_h
+  - has_been_an_epl_winner_a
+  - n_epls_h
+  - n_epls_a
+  - n_ucls_h
+  - n_ucls_a
   - is_derby
+  binary_features:
+  - is_boxing_day
+  - finished_top_4_last_season_h
+  - finished_top_4_last_season_a
+  - won_carabao_cup_last_season_h
+  - won_carabao_cup_last_season_a
+  - won_fa_cup_last_season_h
+  - won_fa_cup_last_season_a
+  - won_epl_last_season_h
+  - won_epl_last_season_a
+  - was_in_ucl_last_season_h
+  - was_in_ucl_last_season_a
+  - was_in_uel_last_season_h
+  - was_in_uel_last_season_a
+  - is_in_ucl_this_season_h
+  - is_in_ucl_this_season_a
+  - is_in_uel_this_season_h
+  - is_in_uel_this_season_a
+  - traditional_top_6_h
+  - traditional_top_6_a
+  - newly_promoted_h
+  - newly_promoted_a
+  - positive_total_goal_difference_h
+  - positive_total_goal_difference_a
+  - positive_goal_difference_h
+  - positive_goal_difference_a
+  - has_been_a_ucl_winner_h
+  - has_been_a_ucl_winner_a
+  - has_been_an_epl_winner_h
+  - has_been_an_epl_winner_a
+  - is_derby
+  date_features:
+  - match_week 
+  - month 
+  - day 
+  - weekday
+  ordinal_features:
+  - club_tier_h
+  - club_tier_a
+  - h_position
+  - a_position
+  - streak_h
+  - streak_a
+  nominal_features:
+  - derby_name
+  - home_team
+  - away_team
 models_paths:
-  draw_model_path: /Users/kzeynalzade/Documents/Project/Models/draw_model.pickle
-  loss_model_path: /Users/kzeynalzade/Documents/Project/Models/loss_model.pickle
-  win_model_path: /Users/kzeynalzade/Documents/Project/Models/win_model.pickle
-shadow_models_paths:
-  shadow_draw_model_path: /Users/kzeynalzade/Documents/Project/Models/shadow_draw_model.pickle
-  shadow_loss_model_path: /Users/kzeynalzade/Documents/Project/Models/shadow_loss_model.pickle
-  shadow_win_model_path: /Users/kzeynalzade/Documents/Project/Models/shadow_win_model.pickle
-model_summary_path:
-  draw_model_summary_path: /Users/kzeynalzade/Documents/Project/Data/Summary/untuned_draw_model_summary.csv
-  loss_model_summary_path: /Users/kzeynalzade/Documents/Project/Data/Summary/untuned_loss_model_summary.csv
-  win_model_summary_path: /Users/kzeynalzade/Documents/Project/Data/Summary/untuned_win_model_summary.csv
+  draw_model_path: /Users/kzeynalzade/Documents/EPL Redevelopment/epl_engine/Models/draw_model.pickle
+  loss_model_path: /Users/kzeynalzade/Documents/EPL Redevelopment/epl_engine/Models/loss_model.pickle
+  win_model_path: /Users/kzeynalzade/Documents/EPL Redevelopment/epl_engine/Models/win_model.pickle
 target:
   draw_model: draw
   loss_model: away_win
   win_model: home_win
-test_split:
-  test_season: 2021/22
+train_test_split:
+  cutoff_season: 2018/19
 current_season:
   2022/23
+thresholds:
+  outlier_boundary: 1.5
+  vif_threshold: 2.5
+metrics:
+  thresholding_metric: balanced_accuracy
+  optimizer_metric: roc_auc
+dataset_path:
+  /Users/kzeynalzade/Documents/EPL Redevelopment/epl_engine/Data/Converted data
