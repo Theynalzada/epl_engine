@@ -1,0 +1,381 @@
+season,home_team,away_team,goals_h,goals_a,stadium,link,match_week,match_date,month,day,weekday,referee,attendance,possession_h,possession_a,shots_on_target_h,shots_on_target_a,shots_h,shots_a,touches_h,touches_a,passes_h,passes_a,tackles_h,tackles_a,clearances_h,clearances_a,corners_h,corners_a,offsides_h,offsides_a,yellow_cards_h,yellow_cards_a,red_cards_h,red_cards_a,fouls_conceded_h,fouls_conceded_a,formation_h,formation_a
+2012/13,Chelsea,Everton,2,1,Stamford Bridge,https://www.premierleague.com/match/8234,39,2013-05-19,5,19,7,Anthony Taylor,41794,43.5,56.5,6,7,23,20,601,734,387,524,23,22,17,29,7,4,1,1,2,1,0,0,8,9,4-2-3-1,4-4-1-1
+2012/13,Liverpool,QPR,1,0,Anfield,https://www.premierleague.com/match/8235,39,2013-05-19,5,19,7,Martin Atkinson,44792,66.4,33.6,8,0,28,11,826,532,607,311,14,24,10,42,14,0,2,1,1,3,0,0,7,4,4-2-3-1,4-4-2
+2012/13,Man City,Norwich,2,3,Etihad Stadium,https://www.premierleague.com/match/8236,39,2013-05-19,5,19,7,Mark Halsey,47054,60.3,39.7,3,7,14,17,667,505,497,317,17,14,25,24,7,7,2,2,1,0,0,0,11,9,,
+2012/13,Newcastle,Arsenal,0,1,St James' Park,https://www.premierleague.com/match/8237,39,2013-05-19,5,19,7,Howard Webb,52354,50.7,49.3,1,2,7,10,656,645,467,458,20,32,24,18,4,4,2,2,1,2,0,0,18,10,,
+2012/13,Southampton,Stoke,1,1,The Friends Provident St Mary's Stadium,https://www.premierleague.com/match/8238,39,2013-05-19,5,19,7,Lee Probert,31539,63.0,37.0,7,3,12,8,710,482,522,296,20,17,31,35,3,4,3,2,0,2,0,0,10,7,,
+2012/13,Swansea,Fulham,0,3,Liberty Stadium,https://www.premierleague.com/match/8239,39,2013-05-19,5,19,7,Lee Mason,20365,64.4,35.6,10,5,27,9,859,573,654,367,20,18,5,44,8,0,5,1,2,1,0,0,12,10,,
+2012/13,Spurs,Sunderland,1,0,White Hart Lane,https://www.premierleague.com/match/8240,39,2013-05-19,5,19,7,Andre Marriner,36063,68.2,31.8,14,3,35,8,728,448,467,222,18,24,37,43,14,1,4,2,1,2,0,1,7,14,4-2-3-1,4-4-1-1
+2012/13,West Brom,Man Utd,5,5,The Hawthorns,https://www.premierleague.com/match/8241,39,2013-05-19,5,19,7,Michael Oliver,26438,35.4,64.6,6,6,19,15,477,779,321,601,19,15,15,20,3,5,4,2,0,1,0,0,12,8,4-2-3-1,4-2-3-1
+2012/13,West Ham,Reading,4,2,Boleyn Ground,https://www.premierleague.com/match/8242,39,2013-05-19,5,19,7,Mike Dean,34973,48.4,51.6,10,6,21,17,565,551,352,369,17,15,32,26,6,4,5,0,2,1,0,0,13,10,,
+2012/13,Wigan,Aston Villa,2,2,DW Stadium,https://www.premierleague.com/match/8243,39,2013-05-19,5,19,7,Neil Swarbrick,23001,54.0,46.0,4,3,17,8,683,625,512,432,25,15,22,13,4,2,2,4,2,1,0,0,11,13,,
+2012/13,Reading,Man City,0,2,Madejski Stadium,https://www.premierleague.com/match/8233,38,2013-05-15,5,15,3,Martin Atkinson,22859,38.7,61.3,7,11,12,30,540,780,361,597,12,12,26,21,4,10,1,2,0,1,0,0,7,8,,
+2012/13,Arsenal,Wigan,4,1,Emirates Stadium,https://www.premierleague.com/match/8232,38,2013-05-14,5,14,2,Mike Dean,60068,47.5,52.5,10,2,21,11,646,724,452,513,24,13,14,18,7,4,2,5,0,2,0,0,12,11,,
+2012/13,Stoke,Spurs,1,2,bet365 Stadium,https://www.premierleague.com/match/8230,38,2013-05-12,5,12,7,Kevin Friend,27531,32.7,67.3,1,7,6,25,431,746,231,516,25,11,31,53,2,11,0,4,3,1,1,0,12,6,,
+2012/13,Everton,West Ham,2,0,Goodison Park,https://www.premierleague.com/match/8225,38,2013-05-12,5,12,7,Phil Dowd,39475,64.7,35.3,7,2,28,7,702,430,493,264,11,18,24,31,7,1,3,0,1,2,0,0,7,12,,
+2012/13,Fulham,Liverpool,1,3,Craven Cottage,https://www.premierleague.com/match/8226,38,2013-05-12,5,12,7,Mark Halsey,25640,48.4,51.6,5,7,10,20,703,735,513,544,14,23,26,24,7,8,3,2,0,1,0,0,1,11,,
+2012/13,Norwich,West Brom,4,0,Carrow Road,https://www.premierleague.com/match/8228,38,2013-05-12,5,12,7,Howard Webb,26837,48.1,51.9,7,4,12,8,588,628,409,451,16,17,13,36,8,2,2,2,2,1,0,0,11,7,,
+2012/13,QPR,Newcastle,1,2,Loftus Road,https://www.premierleague.com/match/8229,38,2013-05-12,5,12,7,Lee Probert,17278,56.2,43.8,2,4,10,11,648,556,445,360,22,24,18,27,2,2,7,4,1,2,0,1,9,10,4-4-2,4-2-3-1
+2012/13,Sunderland,Southampton,1,1,Stadium of Light,https://www.premierleague.com/match/8231,38,2013-05-12,5,12,7,Mike Dean,41988,36.0,64.0,2,8,6,17,500,759,274,510,24,14,47,32,3,10,1,1,0,2,0,0,9,10,,
+2012/13,Man Utd,Swansea,2,1,Old Trafford,https://www.premierleague.com/match/8227,38,2013-05-12,5,12,7,Jonathan Moss,75572,52.1,47.9,6,2,15,9,694,667,557,507,11,7,20,29,7,5,0,0,2,0,0,0,5,7,,
+2012/13,Aston Villa,Chelsea,1,2,Villa Park,https://www.premierleague.com/match/8224,38,2013-05-11,5,11,6,Lee Mason,42084,43.2,56.8,2,7,15,15,600,691,371,500,19,12,32,30,6,7,4,2,1,2,1,1,13,8,,
+2012/13,Chelsea,Spurs,2,2,Stamford Bridge,https://www.premierleague.com/match/8223,37,2013-05-08,5,8,3,Mike Dean,41581,44.1,55.9,5,5,15,14,545,675,335,437,29,21,22,44,6,5,3,3,1,2,0,0,6,17,,
+2012/13,Sunderland,Stoke,1,1,Stadium of Light,https://www.premierleague.com/match/8220,37,2013-05-07,5,7,2,Lee Mason,38130,47.6,52.4,3,3,15,12,532,551,331,367,17,17,23,23,5,6,0,3,2,2,1,0,8,11,,
+2012/13,Man City,West Brom,1,0,Etihad Stadium,https://www.premierleague.com/match/8221,37,2013-05-07,5,7,2,Phil Dowd,46158,53.6,46.4,7,7,24,20,658,585,438,378,15,12,39,26,6,8,0,1,2,1,0,0,10,10,,
+2012/13,Wigan,Swansea,2,3,DW Stadium,https://www.premierleague.com/match/8222,37,2013-05-07,5,7,2,Kevin Friend,18550,53.3,46.7,8,4,16,12,689,626,488,427,19,24,13,28,4,4,1,1,2,2,0,0,15,13,4-3-3,4-2-3-1
+2012/13,Liverpool,Everton,0,0,Anfield,https://www.premierleague.com/match/8218,37,2013-05-05,5,5,7,Michael Oliver,44991,54.8,45.2,3,2,15,11,682,596,451,366,23,33,19,31,3,5,3,1,1,2,0,0,10,11,4-2-3-1,4-4-1-1
+2012/13,Man Utd,Chelsea,0,1,Old Trafford,https://www.premierleague.com/match/8219,37,2013-05-05,5,5,7,Howard Webb,75500,48.7,51.3,2,3,10,17,575,579,393,414,15,16,32,18,2,7,5,2,2,1,1,0,14,10,,
+2012/13,Fulham,Reading,2,4,Craven Cottage,https://www.premierleague.com/match/8211,37,2013-05-04,5,4,6,Neil Swarbrick,24087,49.0,51.0,10,10,22,21,620,646,409,437,18,13,25,27,3,3,2,3,2,1,0,0,16,10,,
+2012/13,Norwich,Aston Villa,1,2,Carrow Road,https://www.premierleague.com/match/8212,37,2013-05-04,5,4,6,Kevin Friend,26842,53.7,46.3,2,4,9,13,571,531,386,342,11,15,20,49,6,5,2,1,2,3,0,0,16,13,,
+2012/13,Swansea,Man City,0,0,Liberty Stadium,https://www.premierleague.com/match/8214,37,2013-05-04,5,4,6,Mike Jones,20242,38.1,61.9,1,3,7,12,555,792,388,640,17,8,22,17,4,4,0,0,2,2,0,0,9,10,,
+2012/13,Spurs,Southampton,1,0,White Hart Lane,https://www.premierleague.com/match/8215,37,2013-05-04,5,4,6,Mark Clattenburg,36190,49.5,50.5,1,3,6,8,630,616,393,407,18,21,43,30,5,5,5,2,1,1,0,0,10,10,,
+2012/13,West Brom,Wigan,2,3,The Hawthorns,https://www.premierleague.com/match/8216,37,2013-05-04,5,4,6,Lee Probert,25756,47.9,52.1,8,5,18,14,567,642,393,426,20,16,21,29,7,5,0,1,4,3,0,0,9,9,,
+2012/13,West Ham,Newcastle,0,0,Boleyn Ground,https://www.premierleague.com/match/8217,37,2013-05-04,5,4,6,Phil Dowd,34962,45.8,54.2,3,3,10,12,452,529,272,342,16,16,31,47,7,3,6,4,1,1,0,0,13,13,,
+2012/13,QPR,Arsenal,0,1,Loftus Road,https://www.premierleague.com/match/8213,37,2013-05-04,5,4,6,Jonathan Moss,18178,41.2,58.8,4,7,13,12,608,811,399,582,23,22,31,25,3,7,5,5,2,1,0,0,8,9,4-4-2,4-2-3-1
+2012/13,Aston Villa,Sunderland,6,1,Villa Park,https://www.premierleague.com/match/8210,36,2013-04-30,4,30,2,Lee Probert,37428,55.5,44.5,11,2,16,10,672,582,474,376,18,22,18,38,4,4,2,1,0,3,0,1,10,15,,
+2012/13,Reading,QPR,0,0,Madejski Stadium,https://www.premierleague.com/match/8209,36,2013-04-28,4,28,7,Kevin Friend,23388,46.1,53.9,5,2,16,15,521,603,311,387,14,12,32,33,9,7,1,2,0,2,0,0,12,16,,
+2012/13,Chelsea,Swansea,2,0,Stamford Bridge,https://www.premierleague.com/match/8208,36,2013-04-28,4,28,7,Mark Clattenburg,41780,51.8,48.2,8,3,24,13,730,708,536,497,16,15,16,39,6,3,3,1,1,3,0,0,9,11,,
+2012/13,Arsenal,Man Utd,1,1,Emirates Stadium,https://www.premierleague.com/match/8207,36,2013-04-28,4,28,7,Phil Dowd,60112,51.8,48.2,6,4,19,12,678,662,499,464,18,15,19,43,7,2,1,1,3,5,0,0,11,12,,
+2012/13,Everton,Fulham,1,0,Goodison Park,https://www.premierleague.com/match/8201,36,2013-04-27,4,27,6,Jonathan Moss,34563,53.9,46.1,4,0,21,6,625,562,420,364,23,14,21,34,7,2,4,4,1,3,0,0,12,17,,
+2012/13,Southampton,West Brom,0,3,The Friends Provident St Mary's Stadium,https://www.premierleague.com/match/8204,36,2013-04-27,4,27,6,Robert Madley,31946,61.7,38.3,3,8,17,10,678,468,450,272,14,16,24,31,7,6,2,4,2,2,2,1,9,11,,
+2012/13,Newcastle,Liverpool,0,6,St James' Park,https://www.premierleague.com/match/8203,36,2013-04-27,4,27,6,Andre Marriner,52351,53.2,46.8,2,9,11,16,788,710,565,504,21,31,30,24,5,7,2,5,2,2,1,0,14,6,4-4-1-1,4-2-3-1
+2012/13,Man City,West Ham,2,1,Etihad Stadium,https://www.premierleague.com/match/8202,36,2013-04-27,4,27,6,Howard Webb,47189,62.0,38.0,8,3,17,11,766,525,554,315,19,25,41,28,9,4,3,2,1,3,0,0,9,7,,
+2012/13,Stoke,Norwich,1,0,bet365 Stadium,https://www.premierleague.com/match/8205,36,2013-04-27,4,27,6,Anthony Taylor,27488,47.5,52.5,3,0,12,6,507,563,337,373,14,14,19,49,6,3,4,1,4,2,0,0,10,10,,
+2012/13,Wigan,Spurs,2,2,DW Stadium,https://www.premierleague.com/match/8206,36,2013-04-27,4,27,6,Martin Atkinson,22326,39.0,61.0,5,3,7,15,515,712,325,525,22,15,31,30,3,3,1,5,3,1,0,0,13,11,,
+2012/13,Man Utd,Aston Villa,3,0,Old Trafford,https://www.premierleague.com/match/8200,35,2013-04-23,4,23,2,Anthony Taylor,75591,51.9,48.1,4,4,12,9,740,693,553,528,25,23,15,20,5,3,4,0,1,0,0,0,10,6,,
+2012/13,Spurs,Man City,3,1,White Hart Lane,https://www.premierleague.com/match/8199,35,2013-04-21,4,21,7,Lee Mason,36121,45.3,54.7,6,4,11,11,615,679,394,488,24,20,30,31,4,5,4,2,3,2,0,0,12,10,,
+2012/13,Liverpool,Chelsea,2,2,Anfield,https://www.premierleague.com/match/8198,35,2013-04-21,4,21,7,Kevin Friend,45009,57.0,43.0,8,5,21,11,710,592,499,385,18,24,24,22,8,5,1,1,5,3,0,0,9,13,4-2-3-1,4-2-3-1
+2012/13,Fulham,Arsenal,0,1,Craven Cottage,https://www.premierleague.com/match/8191,35,2013-04-20,4,20,6,Andre Marriner,25700,28.8,71.2,3,3,7,11,480,945,285,768,17,14,19,24,7,3,8,3,0,2,1,1,12,9,,
+2012/13,Norwich,Reading,2,1,Carrow Road,https://www.premierleague.com/match/8192,35,2013-04-20,4,20,6,Mike Dean,26460,45.5,54.5,8,2,20,16,548,587,349,422,13,14,22,25,8,8,5,2,2,3,0,0,9,11,,
+2012/13,QPR,Stoke,0,2,Loftus Road,https://www.premierleague.com/match/8193,35,2013-04-20,4,20,6,Chris Foy,17391,48.9,51.1,5,4,23,14,488,482,267,269,21,25,35,20,5,5,4,2,1,2,0,0,9,15,4-2-3-1,4-5-1
+2012/13,Sunderland,Everton,1,0,Stadium of Light,https://www.premierleague.com/match/8194,35,2013-04-20,4,20,6,Phil Dowd,44614,36.4,63.6,4,2,8,11,442,625,248,429,20,21,33,25,3,10,1,3,1,2,0,0,8,15,,
+2012/13,Swansea,Southampton,0,0,Liberty Stadium,https://www.premierleague.com/match/8195,35,2013-04-20,4,20,6,Mark Halsey,20561,54.7,45.3,3,4,14,9,728,640,502,426,23,22,30,25,7,2,0,0,3,0,0,0,13,13,,
+2012/13,West Brom,Newcastle,1,1,The Hawthorns,https://www.premierleague.com/match/8196,35,2013-04-20,4,20,6,Mike Jones,25671,57.2,42.8,4,6,11,10,573,506,363,284,14,28,22,60,15,2,6,1,0,2,0,0,9,11,,
+2012/13,West Ham,Wigan,2,0,Boleyn Ground,https://www.premierleague.com/match/8197,35,2013-04-20,4,20,6,Neil Swarbrick,34544,36.6,63.4,8,8,20,19,483,669,268,480,14,19,45,17,3,6,4,2,3,1,0,0,14,12,4-2-3-1,3-4-3
+2012/13,Fulham,Chelsea,0,3,Craven Cottage,https://www.premierleague.com/match/8188,34,2013-04-18,4,18,4,Mike Dean,25002,52.8,47.2,2,7,11,17,681,623,469,415,23,24,17,21,6,5,3,0,2,1,0,0,14,13,,
+2012/13,Man City,Wigan,1,0,Etihad Stadium,https://www.premierleague.com/match/8189,34,2013-04-17,4,17,3,Jonathan Moss,47106,50.4,49.6,2,4,12,10,668,641,461,456,15,21,13,12,5,4,6,2,2,1,0,0,12,6,,
+2012/13,West Ham,Man Utd,2,2,Boleyn Ground,https://www.premierleague.com/match/8190,34,2013-04-17,4,17,3,Lee Probert,34692,33.5,66.5,2,6,12,17,498,794,292,598,15,20,28,35,2,5,2,1,1,0,0,0,9,7,,
+2012/13,Arsenal,Everton,0,0,Emirates Stadium,https://www.premierleague.com/match/8187,34,2013-04-16,4,16,2,Neil Swarbrick,60071,56.8,43.2,2,2,11,12,747,614,507,389,19,33,18,35,8,1,1,2,2,3,0,0,11,13,,
+2012/13,Newcastle,Sunderland,0,3,St James' Park,https://www.premierleague.com/match/8185,33,2013-04-14,4,14,7,Howard Webb,52355,65.8,34.2,5,6,19,10,622,409,375,186,17,22,37,39,10,9,4,2,3,2,0,0,14,7,,
+2012/13,Stoke,Man Utd,0,2,bet365 Stadium,https://www.premierleague.com/match/8186,33,2013-04-14,4,14,7,Jonathan Moss,27191,42.2,57.8,3,4,13,11,507,672,343,472,21,19,17,38,3,7,0,2,1,1,0,0,9,9,,
+2012/13,Arsenal,Norwich,3,1,Emirates Stadium,https://www.premierleague.com/match/8180,33,2013-04-13,4,13,6,Mike Jones,60095,67.9,32.1,7,4,14,5,809,484,616,287,25,19,15,38,9,3,3,4,1,2,0,0,10,11,,
+2012/13,Aston Villa,Fulham,1,1,Villa Park,https://www.premierleague.com/match/8181,33,2013-04-13,4,13,6,Phil Dowd,37011,48.7,51.3,4,0,18,10,641,665,439,475,19,15,17,40,8,5,5,2,1,2,0,0,5,15,,
+2012/13,Everton,QPR,2,0,Goodison Park,https://www.premierleague.com/match/8182,33,2013-04-13,4,13,6,Lee Mason,34876,60.2,39.8,5,3,13,10,613,511,399,276,26,24,12,52,13,5,2,6,3,3,0,0,6,13,,
+2012/13,Reading,Liverpool,0,0,Madejski Stadium,https://www.premierleague.com/match/8183,33,2013-04-13,4,13,6,Mark Clattenburg,24139,39.9,60.1,2,11,9,28,518,729,307,503,16,19,21,35,4,9,2,6,2,1,0,0,12,9,4-2-3-1,4-3-3
+2012/13,Southampton,West Ham,1,1,The Friends Provident St Mary's Stadium,https://www.premierleague.com/match/8184,33,2013-04-13,4,13,6,Mike Dean,31984,61.2,38.8,5,3,19,8,659,481,429,268,23,14,39,43,7,4,3,4,2,3,0,0,12,17,,
+2012/13,Man Utd,Man City,1,2,Old Trafford,https://www.premierleague.com/match/8179,32,2013-04-09,4,9,2,Mike Dean,75498,45.0,55.0,5,3,15,10,572,654,345,438,29,23,27,42,9,4,3,1,3,5,0,0,13,21,,
+2012/13,Liverpool,West Ham,0,0,Anfield,https://www.premierleague.com/match/8175,32,2013-04-07,4,7,7,Anthony Taylor,45007,65.0,35.0,8,1,20,11,811,541,597,315,18,29,18,47,12,2,4,0,0,1,0,0,8,5,4-3-3,4-2-3-1
+2012/13,Spurs,Everton,2,2,White Hart Lane,https://www.premierleague.com/match/8178,32,2013-04-07,4,7,7,Andre Marriner,36192,61.9,38.1,7,4,20,9,791,541,516,309,19,34,44,44,7,6,2,2,1,1,0,0,17,8,,
+2012/13,Chelsea,Sunderland,2,1,Stamford Bridge,https://www.premierleague.com/match/8174,32,2013-04-07,4,7,7,Neil Swarbrick,41500,61.7,38.3,3,0,16,8,726,513,514,319,20,23,27,26,8,5,3,1,0,2,0,0,9,16,,
+2012/13,Newcastle,Fulham,1,0,St James' Park,https://www.premierleague.com/match/8176,32,2013-04-07,4,7,7,Kevin Friend,51847,49.6,50.4,5,2,28,8,622,634,404,432,20,20,24,46,10,3,4,0,2,2,0,0,13,11,,
+2012/13,QPR,Wigan,1,1,Loftus Road,https://www.premierleague.com/match/8177,32,2013-04-07,4,7,7,Phil Dowd,16658,32.1,67.9,1,7,9,18,491,774,264,589,29,21,23,26,2,10,3,2,2,3,1,0,9,12,,
+2012/13,Reading,Southampton,0,2,Madejski Stadium,https://www.premierleague.com/match/8171,32,2013-04-06,4,6,6,Mike Jones,24108,39.4,60.6,2,4,10,13,563,787,312,520,28,22,20,50,8,4,0,0,1,6,0,0,6,11,,
+2012/13,Norwich,Swansea,2,2,Carrow Road,https://www.premierleague.com/match/8170,32,2013-04-06,4,6,6,Michael Oliver,26372,34.7,65.3,4,7,12,18,499,795,294,571,24,18,32,40,2,5,0,1,5,3,0,0,8,16,,
+2012/13,Stoke,Aston Villa,1,3,bet365 Stadium,https://www.premierleague.com/match/8172,32,2013-04-06,4,6,6,Mark Clattenburg,27544,45.6,54.4,3,6,13,12,529,606,333,406,15,22,22,39,4,2,2,3,3,1,0,0,16,12,4-5-1,4-2-3-1
+2012/13,West Brom,Arsenal,1,2,The Hawthorns,https://www.premierleague.com/match/8173,32,2013-04-06,4,6,6,Howard Webb,26144,51.9,48.1,5,6,19,11,607,608,442,419,15,15,14,41,6,4,6,1,2,4,0,1,7,16,,
+2012/13,Fulham,QPR,3,2,Craven Cottage,https://www.premierleague.com/match/8169,31,2013-04-02,4,2,2,Lee Probert,25117,48.3,51.7,3,7,9,21,605,633,404,432,17,16,41,15,3,6,6,4,2,1,1,0,12,7,,
+2012/13,Aston Villa,Liverpool,1,2,Villa Park,https://www.premierleague.com/match/8168,31,2013-03-31,3,31,7,Lee Mason,42037,46.5,53.5,4,7,10,23,678,745,452,538,27,21,19,29,7,8,3,6,1,1,0,0,9,9,4-3-3,4-3-3
+2012/13,Arsenal,Reading,4,1,Emirates Stadium,https://www.premierleague.com/match/8160,31,2013-03-30,3,30,6,Chris Foy,60082,70.1,29.9,6,2,26,5,860,461,673,276,11,19,14,39,11,3,3,1,0,1,0,0,10,14,,
+2012/13,Man City,Newcastle,4,0,Etihad Stadium,https://www.premierleague.com/match/8162,31,2013-03-30,3,30,6,Neil Swarbrick,47201,63.6,36.4,9,1,21,5,733,505,544,303,14,16,23,47,9,2,6,3,0,2,0,0,7,9,,
+2012/13,Southampton,Chelsea,2,1,The Friends Provident St Mary's Stadium,https://www.premierleague.com/match/8163,31,2013-03-30,3,30,6,Jonathan Moss,31779,50.8,49.2,4,2,12,9,671,639,438,426,20,19,33,30,7,7,3,3,2,1,0,0,13,8,,
+2012/13,Everton,Stoke,1,0,Goodison Park,https://www.premierleague.com/match/8161,31,2013-03-30,3,30,6,Mike Jones,33977,54.0,46.0,6,3,18,11,619,553,397,330,15,26,43,37,4,3,1,2,1,3,0,0,13,18,,
+2012/13,Sunderland,Man Utd,0,1,Stadium of Light,https://www.premierleague.com/match/8164,31,2013-03-30,3,30,6,Kevin Friend,43760,38.6,61.4,1,8,9,14,527,754,330,541,23,21,15,52,3,6,1,3,3,1,0,0,12,9,,
+2012/13,Swansea,Spurs,1,2,Liberty Stadium,https://www.premierleague.com/match/8165,31,2013-03-30,3,30,6,Anthony Taylor,20604,62.7,37.3,3,7,15,10,874,606,639,377,30,24,23,50,5,2,4,0,2,4,0,0,5,10,,
+2012/13,West Ham,West Brom,3,1,Boleyn Ground,https://www.premierleague.com/match/8166,31,2013-03-30,3,30,6,Andre Marriner,34966,39.5,60.5,5,7,14,19,519,643,291,471,13,17,64,17,5,3,3,2,1,1,0,1,11,14,,
+2012/13,Wigan,Norwich,1,0,DW Stadium,https://www.premierleague.com/match/8167,31,2013-03-30,3,30,6,Howard Webb,17784,52.8,47.2,3,0,14,7,599,540,391,345,20,18,49,28,10,3,4,4,1,2,0,0,14,12,,
+2012/13,Sunderland,Norwich,1,1,Stadium of Light,https://www.premierleague.com/match/8157,30,2013-03-17,3,17,7,Chris Foy,38625,65.1,34.9,6,1,15,8,646,456,451,231,16,16,30,45,5,9,3,1,1,3,0,1,12,14,,
+2012/13,Spurs,Fulham,0,1,White Hart Lane,https://www.premierleague.com/match/8158,30,2013-03-17,3,17,7,Mike Jones,36004,59.5,40.5,3,2,15,7,729,570,503,344,13,20,36,40,5,5,1,4,1,1,0,0,10,8,,
+2012/13,Chelsea,West Ham,2,0,Stamford Bridge,https://www.premierleague.com/match/8156,30,2013-03-17,3,17,7,Michael Oliver,41639,63.8,36.2,11,5,24,13,737,494,539,282,13,17,31,44,5,5,1,0,0,2,0,0,5,14,,
+2012/13,Wigan,Newcastle,2,1,DW Stadium,https://www.premierleague.com/match/8159,30,2013-03-17,3,17,7,Mark Halsey,22297,49.8,50.2,4,2,16,9,618,653,417,427,21,21,21,29,7,3,1,6,1,2,0,0,9,12,,
+2012/13,Everton,Man City,2,0,Goodison Park,https://www.premierleague.com/match/8151,30,2013-03-16,3,16,6,Lee Probert,36519,40.6,59.4,3,8,12,20,508,636,270,435,20,10,29,36,13,6,3,0,3,3,1,0,16,10,,
+2012/13,Aston Villa,QPR,3,2,Villa Park,https://www.premierleague.com/match/8150,30,2013-03-16,3,16,6,Kevin Friend,38594,60.1,39.9,6,7,13,21,653,494,467,313,14,22,23,29,9,6,0,0,3,2,0,0,17,10,,
+2012/13,Southampton,Liverpool,3,1,The Friends Provident St Mary's Stadium,https://www.premierleague.com/match/8153,30,2013-03-16,3,16,6,Phil Dowd,32070,47.9,52.1,11,5,18,10,620,642,386,435,15,21,27,36,7,5,0,6,0,1,0,0,12,10,4-2-3-1,4-4-1-1
+2012/13,Stoke,West Brom,0,0,bet365 Stadium,https://www.premierleague.com/match/8154,30,2013-03-16,3,16,6,Mike Dean,26317,48.5,51.5,1,4,17,9,529,565,342,376,18,9,21,41,7,1,2,2,2,2,0,0,15,11,,
+2012/13,Swansea,Arsenal,0,2,Liberty Stadium,https://www.premierleague.com/match/8155,30,2013-03-16,3,16,6,Jonathan Moss,20583,56.9,43.1,0,6,9,16,804,629,618,454,16,13,28,8,3,7,3,1,1,1,0,0,3,8,,
+2012/13,Man Utd,Reading,1,0,Old Trafford,https://www.premierleague.com/match/8152,30,2013-03-16,3,16,6,Lee Mason,75605,56.8,43.2,4,0,16,6,667,536,461,338,20,22,45,32,5,4,0,1,0,2,0,0,6,16,,
+2012/13,Newcastle,Stoke,2,1,St James' Park,https://www.premierleague.com/match/8149,29,2013-03-10,3,10,7,Andre Marriner,50703,56.2,43.8,4,4,16,8,623,521,399,313,19,21,42,31,14,4,1,3,1,1,0,0,10,14,,
+2012/13,Liverpool,Spurs,3,2,Anfield,https://www.premierleague.com/match/8148,29,2013-03-10,3,10,7,Michael Oliver,44752,46.5,53.5,4,7,12,16,611,679,397,452,27,33,28,24,1,4,6,0,1,1,0,0,9,9,4-4-1-1,4-4-1-1
+2012/13,Norwich,Southampton,0,0,Carrow Road,https://www.premierleague.com/match/8144,29,2013-03-09,3,9,6,Mark Clattenburg,26783,40.9,59.1,2,5,6,15,497,660,280,413,21,23,27,42,1,7,5,2,2,3,0,0,9,11,,
+2012/13,QPR,Sunderland,3,1,Loftus Road,https://www.premierleague.com/match/8145,29,2013-03-09,3,9,6,Mike Jones,18169,49.7,50.3,6,2,15,9,592,580,351,349,31,20,51,42,4,5,0,0,0,2,0,0,4,19,,
+2012/13,Reading,Aston Villa,1,2,Madejski Stadium,https://www.premierleague.com/match/8146,29,2013-03-09,3,9,6,Jonathan Moss,24102,41.5,58.5,3,4,9,19,491,684,285,454,9,18,27,63,6,1,2,1,2,3,0,0,8,7,,
+2012/13,West Brom,Swansea,2,1,The Hawthorns,https://www.premierleague.com/match/8147,29,2013-03-09,3,9,6,Lee Mason,24832,44.2,55.8,5,2,14,11,613,776,451,572,19,15,11,35,3,3,1,4,1,1,0,0,11,10,,
+2012/13,Aston Villa,Man City,0,1,Villa Park,https://www.premierleague.com/match/8143,28,2013-03-05,3,5,2,Mike Dean,33217,47.2,52.8,1,8,10,20,631,670,416,475,16,24,29,32,6,5,3,1,2,0,0,0,12,14,,
+2012/13,Spurs,Arsenal,2,1,White Hart Lane,https://www.premierleague.com/match/8142,28,2013-03-03,3,3,7,Mark Clattenburg,36170,39.5,60.5,4,2,11,11,517,697,328,504,21,14,35,19,4,6,5,2,3,1,0,0,21,13,,
+2012/13,Chelsea,West Brom,1,0,Stamford Bridge,https://www.premierleague.com/match/8134,28,2013-03-02,3,2,6,Kevin Friend,41548,52.9,47.1,9,3,24,7,658,585,470,419,18,18,21,20,9,7,2,1,1,2,0,0,12,17,,
+2012/13,Everton,Reading,3,1,Goodison Park,https://www.premierleague.com/match/8135,28,2013-03-02,3,2,6,Anthony Taylor,35244,60.0,40.0,12,5,21,14,677,490,432,270,16,19,51,33,9,10,1,4,1,1,0,0,8,8,,
+2012/13,Man Utd,Norwich,4,0,Old Trafford,https://www.premierleague.com/match/8136,28,2013-03-02,3,2,6,Neil Swarbrick,75586,65.0,35.0,7,0,19,1,838,512,665,361,11,21,18,17,7,3,3,2,0,4,0,0,5,14,,
+2012/13,Southampton,QPR,1,2,The Friends Provident St Mary's Stadium,https://www.premierleague.com/match/8137,28,2013-03-02,3,2,6,Howard Webb,31728,67.0,33.0,7,3,21,7,800,502,562,275,22,14,25,45,6,3,3,1,1,3,0,0,7,16,,
+2012/13,Stoke,West Ham,0,1,bet365 Stadium,https://www.premierleague.com/match/8138,28,2013-03-02,3,2,6,Jonathan Moss,22690,52.1,47.9,2,3,9,12,538,553,331,305,25,21,31,61,4,2,2,3,1,2,0,0,12,12,,
+2012/13,Sunderland,Fulham,2,2,Stadium of Light,https://www.premierleague.com/match/8139,28,2013-03-02,3,2,6,Mark Halsey,39312,49.5,50.5,5,5,18,10,614,650,406,439,21,19,16,45,7,3,3,1,1,3,0,0,9,14,,
+2012/13,Swansea,Newcastle,1,0,Liberty Stadium,https://www.premierleague.com/match/8140,28,2013-03-02,3,2,6,Craig Pawson,20405,63.1,36.9,6,5,12,17,798,525,567,317,23,14,51,29,7,7,1,1,0,2,0,0,9,17,,
+2012/13,Wigan,Liverpool,0,4,DW Stadium,https://www.premierleague.com/match/8141,28,2013-03-02,3,2,6,Martin Atkinson,20804,52.1,47.9,6,6,14,8,723,682,523,480,20,25,11,30,4,3,0,4,2,2,0,0,12,15,3-4-3,4-3-3
+2012/13,West Ham,Spurs,2,3,Boleyn Ground,https://www.premierleague.com/match/8133,27,2013-02-26,2,26,2,Howard Webb,35005,38.3,61.7,6,13,14,27,505,712,282,468,25,17,38,52,6,12,2,2,4,1,0,0,12,8,,
+2012/13,Man City,Chelsea,2,0,Etihad Stadium,https://www.premierleague.com/match/8131,27,2013-02-24,2,24,7,Andre Marriner,47256,47.0,53.0,6,2,15,9,627,666,416,461,20,17,48,25,6,6,2,1,3,1,0,0,20,5,,
+2012/13,Newcastle,Southampton,4,2,St James' Park,https://www.premierleague.com/match/8132,27,2013-02-24,2,24,7,Chris Foy,52259,41.4,58.6,4,3,14,11,543,683,308,449,22,27,45,40,7,3,5,3,0,4,0,0,13,15,,
+2012/13,Fulham,Stoke,1,0,Craven Cottage,https://www.premierleague.com/match/8126,27,2013-02-23,2,23,6,Lee Probert,25458,60.7,39.3,4,3,20,10,726,513,513,322,13,21,41,28,9,4,1,2,1,3,0,0,7,10,,
+2012/13,Arsenal,Aston Villa,2,1,Emirates Stadium,https://www.premierleague.com/match/8125,27,2013-02-23,2,23,6,Martin Atkinson,60079,63.9,36.1,7,3,26,8,821,556,599,339,19,17,20,49,12,3,3,3,1,2,0,0,7,10,,
+2012/13,Norwich,Everton,2,1,Carrow Road,https://www.premierleague.com/match/8127,27,2013-02-23,2,23,6,Lee Mason,26828,44.8,55.2,5,3,10,15,588,709,397,502,17,19,26,45,7,5,2,2,1,1,0,0,17,10,,
+2012/13,QPR,Man Utd,0,2,Loftus Road,https://www.premierleague.com/match/8128,27,2013-02-23,2,23,6,Anthony Taylor,18337,48.4,51.6,3,6,14,14,633,660,405,440,23,23,27,35,2,4,0,0,1,2,0,0,11,6,,
+2012/13,Reading,Wigan,0,3,Madejski Stadium,https://www.premierleague.com/match/8129,27,2013-02-23,2,23,6,Phil Dowd,22321,29.9,70.1,0,7,7,17,433,849,270,660,23,11,20,33,2,9,1,1,1,1,1,0,9,11,4-1-4-1,3-4-3
+2012/13,West Brom,Sunderland,2,1,The Hawthorns,https://www.premierleague.com/match/8130,27,2013-02-23,2,23,6,Roger East,25924,58.9,41.1,6,5,19,13,677,545,487,317,22,12,28,40,5,5,0,3,2,1,0,0,14,10,,
+2012/13,Liverpool,Swansea,5,0,Anfield,https://www.premierleague.com/match/8124,26,2013-02-17,2,17,7,Howard Webb,44832,54.3,45.7,10,2,35,3,730,643,555,459,14,16,8,35,10,1,1,3,0,1,0,0,7,9,4-2-3-1,4-2-3-1
+2012/13,Liverpool,West Brom,0,2,Anfield,https://www.premierleague.com/match/8123,26,2013-02-12,2,12,2,Jonathan Moss,44752,58.5,41.5,7,3,25,5,741,589,529,377,19,24,24,32,13,5,4,1,1,4,0,0,10,11,4-2-3-1,4-2-3-1
+2012/13,Aston Villa,West Ham,2,1,Villa Park,https://www.premierleague.com/match/8121,26,2013-02-10,2,10,7,Mark Clattenburg,30503,48.2,51.8,3,4,10,15,614,601,361,366,32,25,54,33,4,10,5,3,3,2,0,0,18,13,,
+2012/13,Man Utd,Everton,2,0,Old Trafford,https://www.premierleague.com/match/8122,26,2013-02-10,2,10,7,Mark Halsey,75525,47.0,53.0,6,2,11,11,659,692,434,490,20,22,42,22,7,6,4,1,0,2,0,0,13,11,,
+2012/13,Spurs,Newcastle,2,1,White Hart Lane,https://www.premierleague.com/match/8120,26,2013-02-09,2,9,6,Phil Dowd,36244,54.3,45.7,5,3,18,10,673,591,426,350,28,15,56,45,11,5,4,2,0,2,0,0,6,11,,
+2012/13,Chelsea,Wigan,4,1,Stamford Bridge,https://www.premierleague.com/match/8114,26,2013-02-09,2,9,6,Mike Dean,41562,53.0,47.0,12,6,27,14,677,619,472,415,14,21,16,21,10,6,2,3,1,2,0,0,9,13,4-2-3-1,3-4-3
+2012/13,Norwich,Fulham,0,0,Carrow Road,https://www.premierleague.com/match/8115,26,2013-02-09,2,9,6,Howard Webb,26816,43.1,56.9,4,1,15,7,579,726,407,541,14,24,21,33,3,4,2,0,2,2,0,0,10,16,,
+2012/13,Stoke,Reading,2,1,bet365 Stadium,https://www.premierleague.com/match/8117,26,2013-02-09,2,9,6,Michael Oliver,26737,58.1,41.9,6,2,12,7,617,539,411,311,19,11,28,56,11,3,0,2,2,0,0,0,10,5,,
+2012/13,Sunderland,Arsenal,0,1,Stadium of Light,https://www.premierleague.com/match/8118,26,2013-02-09,2,9,6,Anthony Taylor,46402,38.7,61.3,6,8,15,19,540,803,336,605,14,19,10,50,11,2,5,1,3,1,0,1,6,13,,
+2012/13,Swansea,QPR,4,1,Liberty Stadium,https://www.premierleague.com/match/8119,26,2013-02-09,2,9,6,Neil Swarbrick,20529,62.5,37.5,9,4,15,18,797,537,599,354,17,17,23,17,5,2,3,0,1,3,0,0,9,11,4-2-3-1,4-2-3-1
+2012/13,Southampton,Man City,3,1,The Friends Provident St Mary's Stadium,https://www.premierleague.com/match/8116,26,2013-02-09,2,9,6,Martin Atkinson,31738,44.3,55.7,4,4,15,8,670,741,410,506,24,20,54,38,6,6,6,3,1,2,0,0,12,14,,
+2012/13,West Brom,Spurs,0,1,The Hawthorns,https://www.premierleague.com/match/8113,25,2013-02-03,2,3,7,Mark Clattenburg,24978,30.3,69.7,3,7,5,21,438,830,263,610,20,11,30,29,2,17,6,2,1,0,1,0,10,8,,
+2012/13,Man City,Liverpool,2,2,Etihad Stadium,https://www.premierleague.com/match/8112,25,2013-02-03,2,3,7,Anthony Taylor,47301,45.7,54.3,3,5,11,22,619,709,419,511,22,19,29,18,9,10,0,2,2,4,0,0,16,9,4-4-1-1,4-4-1-1
+2012/13,QPR,Norwich,0,0,Loftus Road,https://www.premierleague.com/match/8108,25,2013-02-02,2,2,6,Jonathan Moss,17543,49.7,50.3,5,6,16,13,595,564,332,342,25,24,46,36,10,8,2,1,2,5,0,0,6,22,4-4-1-1,4-4-1-1
+2012/13,Arsenal,Stoke,1,0,Emirates Stadium,https://www.premierleague.com/match/8104,25,2013-02-02,2,2,6,Chris Foy,59872,65.4,34.6,5,1,23,7,833,500,620,321,10,12,28,35,11,1,2,2,0,3,0,0,3,13,,
+2012/13,Everton,Aston Villa,3,3,Goodison Park,https://www.premierleague.com/match/8105,25,2013-02-02,2,2,6,Mike Jones,38121,68.3,31.7,8,3,21,8,646,460,426,204,18,18,29,92,15,2,5,5,1,4,0,0,7,23,,
+2012/13,Newcastle,Chelsea,3,2,St James' Park,https://www.premierleague.com/match/8107,25,2013-02-02,2,2,6,Howard Webb,52314,45.8,54.2,11,5,21,17,645,688,392,472,21,15,56,40,5,4,3,0,2,3,0,0,11,5,,
+2012/13,Reading,Sunderland,2,1,Madejski Stadium,https://www.premierleague.com/match/8109,25,2013-02-02,2,2,6,Lee Mason,23829,48.6,51.4,3,6,11,12,551,547,332,352,12,24,42,41,6,8,0,0,1,3,0,0,13,15,,
+2012/13,West Ham,Swansea,1,0,Boleyn Ground,https://www.premierleague.com/match/8110,25,2013-02-02,2,2,6,Lee Probert,34962,35.9,64.1,7,3,16,10,523,789,302,560,14,21,62,44,5,3,2,4,1,1,0,0,7,10,,
+2012/13,Wigan,Southampton,2,2,DW Stadium,https://www.premierleague.com/match/8111,25,2013-02-02,2,2,6,Andre Marriner,18598,45.4,54.6,3,2,7,17,636,742,386,471,24,23,31,30,8,5,3,2,0,2,0,0,7,17,3-4-3,4-2-3-1
+2012/13,Fulham,Man Utd,0,1,Craven Cottage,https://www.premierleague.com/match/8106,25,2013-02-02,2,2,6,Kevin Friend,25670,44.8,55.2,6,7,16,16,575,675,360,437,21,20,35,59,5,8,2,7,1,1,0,0,10,15,,
+2012/13,Fulham,West Ham,3,1,Craven Cottage,https://www.premierleague.com/match/8100,24,2013-01-31,1,31,4,Chris Foy,24791,44.0,56.0,5,4,18,12,586,644,313,377,37,23,73,48,2,8,2,2,2,0,0,0,8,11,,
+2012/13,Man Utd,Southampton,2,1,Old Trafford,https://www.premierleague.com/match/8101,24,2013-01-31,1,31,4,Lee Mason,75600,42.7,57.3,5,4,11,20,617,718,398,536,17,21,53,13,4,8,3,1,2,1,0,0,10,11,,
+2012/13,Reading,Chelsea,2,2,Madejski Stadium,https://www.premierleague.com/match/8103,24,2013-01-31,1,31,4,Mark Halsey,24097,32.4,67.6,2,4,5,15,450,762,271,596,16,14,50,28,0,6,4,5,1,2,0,0,8,21,,
+2012/13,Arsenal,Liverpool,2,2,Emirates Stadium,https://www.premierleague.com/match/8098,24,2013-01-30,1,30,3,Kevin Friend,60089,61.8,38.2,6,5,19,13,825,599,599,373,23,28,19,40,8,6,1,3,3,1,0,0,9,11,4-2-3-1,4-3-3
+2012/13,Everton,West Brom,2,1,Goodison Park,https://www.premierleague.com/match/8099,24,2013-01-30,1,30,3,Michael Oliver,31376,55.9,44.1,6,2,16,7,687,563,492,377,16,25,23,30,5,2,2,6,0,2,0,0,10,15,,
+2012/13,Norwich,Spurs,1,1,Carrow Road,https://www.premierleague.com/match/8102,24,2013-01-30,1,30,3,Neil Swarbrick,26818,41.6,58.4,1,4,9,13,522,678,324,445,28,14,34,53,3,6,3,0,4,1,0,0,15,15,,
+2012/13,Aston Villa,Newcastle,1,2,Villa Park,https://www.premierleague.com/match/8094,24,2013-01-29,1,29,2,Mike Dean,30334,51.7,48.3,5,3,12,12,606,569,359,327,17,20,70,65,3,4,2,2,5,2,0,0,15,11,,
+2012/13,QPR,Man City,0,0,Loftus Road,https://www.premierleague.com/match/8095,24,2013-01-29,1,29,2,Phil Dowd,17894,31.3,68.7,1,4,6,17,497,793,269,603,20,16,46,12,2,10,1,1,2,2,0,0,9,10,4-2-3-1,4-4-1-1
+2012/13,Stoke,Wigan,2,2,bet365 Stadium,https://www.premierleague.com/match/8096,24,2013-01-29,1,29,2,Mike Jones,24421,36.9,63.1,3,6,10,13,467,713,299,530,13,8,18,19,0,1,1,4,1,1,0,0,12,10,4-5-1,3-4-3
+2012/13,Sunderland,Swansea,0,0,Stadium of Light,https://www.premierleague.com/match/8097,24,2013-01-29,1,29,2,Andre Marriner,35628,36.1,63.9,0,4,3,17,538,841,341,628,22,15,22,35,3,4,1,1,1,2,0,0,13,12,,
+2012/13,Arsenal,West Ham,5,1,Emirates Stadium,https://www.premierleague.com/match/8093,23,2013-01-23,1,23,3,Andre Marriner,60081,69.1,30.9,10,4,24,10,814,484,618,271,16,14,26,42,13,5,2,5,0,1,0,0,9,11,,
+2012/13,Southampton,Everton,0,0,The Friends Provident St Mary's Stadium,https://www.premierleague.com/match/8092,23,2013-01-22,1,22,2,Neil Swarbrick,28359,53.4,46.6,4,5,16,9,696,608,450,387,21,20,40,26,10,6,1,3,2,1,0,0,14,11,,
+2012/13,Chelsea,Arsenal,2,1,Stamford Bridge,https://www.premierleague.com/match/8090,23,2013-01-20,1,20,7,Martin Atkinson,41784,50.3,49.7,7,6,14,12,643,647,415,394,38,24,30,30,3,9,5,5,2,1,0,0,10,11,,
+2012/13,Spurs,Man Utd,1,1,White Hart Lane,https://www.premierleague.com/match/8091,23,2013-01-20,1,20,7,Chris Foy,35956,51.0,49.0,8,2,25,5,624,620,384,390,19,16,31,40,9,4,1,7,2,4,0,0,8,14,,
+2012/13,Liverpool,Norwich,5,0,Anfield,https://www.premierleague.com/match/8083,23,2013-01-19,1,19,6,Michael Oliver,44901,67.7,32.3,9,1,18,4,875,481,694,318,12,21,20,28,9,4,2,1,1,1,0,0,10,8,4-2-3-1,4-4-1-1
+2012/13,Man City,Fulham,2,0,Etihad Stadium,https://www.premierleague.com/match/8084,23,2013-01-19,1,19,6,Jonathan Moss,47286,45.5,54.5,7,0,20,2,646,731,468,549,27,19,22,14,1,2,2,1,1,2,0,0,14,6,,
+2012/13,Newcastle,Reading,1,2,St James' Park,https://www.premierleague.com/match/8085,23,2013-01-19,1,19,6,Andre Marriner,49411,55.6,44.4,7,2,16,7,674,583,445,369,14,19,48,43,6,2,4,1,2,3,0,0,10,10,,
+2012/13,Swansea,Stoke,3,1,Liberty Stadium,https://www.premierleague.com/match/8086,23,2013-01-19,1,19,6,Mike Dean,19603,56.1,43.9,3,2,15,10,726,561,515,402,14,12,48,22,7,6,0,0,2,0,0,0,11,10,,
+2012/13,West Ham,QPR,1,1,Boleyn Ground,https://www.premierleague.com/match/8088,23,2013-01-19,1,19,6,Howard Webb,34962,69.6,30.4,9,2,23,9,696,461,458,204,13,30,13,70,12,2,2,5,1,0,0,0,7,12,4-2-3-1,4-2-3-1
+2012/13,West Brom,Aston Villa,2,2,The Hawthorns,https://www.premierleague.com/match/8087,23,2013-01-19,1,19,6,Lee Probert,25583,57.4,42.6,6,6,29,15,580,503,374,264,17,16,27,44,8,8,2,3,3,3,0,0,8,10,,
+2012/13,Wigan,Sunderland,2,3,DW Stadium,https://www.premierleague.com/match/8089,23,2013-01-19,1,19,6,Anthony Taylor,19219,70.4,29.6,6,5,23,11,794,446,623,257,12,18,5,36,9,0,2,1,3,2,0,0,11,17,3-4-3,4-1-4-1
+2012/13,Chelsea,Southampton,2,2,Stamford Bridge,https://www.premierleague.com/match/8082,22,2013-01-16,1,16,3,Michael Oliver,38484,58.6,41.4,3,2,18,6,773,610,593,400,13,21,23,44,4,3,3,3,1,0,0,0,11,11,,
+2012/13,Man Utd,Liverpool,2,1,Old Trafford,https://www.premierleague.com/match/8081,22,2013-01-13,1,13,7,Howard Webb,75501,46.0,54.0,5,3,15,13,615,689,404,487,25,31,28,28,3,1,1,1,1,4,0,0,14,16,4-2-3-1,4-3-3
+2012/13,Arsenal,Man City,0,2,Emirates Stadium,https://www.premierleague.com/match/8080,22,2013-01-13,1,13,7,Mike Dean,60107,40.0,60.0,3,6,9,18,572,766,375,585,13,16,21,27,2,7,3,2,2,4,1,1,12,19,,
+2012/13,QPR,Spurs,0,0,Loftus Road,https://www.premierleague.com/match/8076,22,2013-01-12,1,12,6,Lee Probert,18018,38.1,61.9,0,7,4,18,559,803,353,585,31,26,20,31,2,6,2,1,1,1,0,0,11,9,4-3-3,4-4-2
+2012/13,Aston Villa,Southampton,0,1,Villa Park,https://www.premierleague.com/match/8072,22,2013-01-12,1,12,6,Mark Halsey,32500,51.0,49.0,5,4,16,15,599,615,354,340,20,15,40,58,9,5,3,1,1,1,0,0,11,6,,
+2012/13,Everton,Swansea,0,0,Goodison Park,https://www.premierleague.com/match/8073,22,2013-01-12,1,12,6,Phil Dowd,35782,55.3,44.7,5,3,18,4,712,619,513,424,11,17,25,50,7,1,3,1,1,4,0,0,13,10,,
+2012/13,Fulham,Wigan,1,1,Craven Cottage,https://www.premierleague.com/match/8074,22,2013-01-12,1,12,6,Mark Clattenburg,25442,49.2,50.8,2,7,12,16,663,643,443,466,13,23,26,28,6,8,2,0,0,1,0,0,9,17,4-4-1-1,3-5-1-1
+2012/13,Norwich,Newcastle,0,0,Carrow Road,https://www.premierleague.com/match/8075,22,2013-01-12,1,12,6,Anthony Taylor,26752,54.7,45.3,2,2,12,8,673,603,455,378,20,17,25,74,5,4,4,0,0,1,0,0,5,9,,
+2012/13,Reading,West Brom,3,2,Madejski Stadium,https://www.premierleague.com/match/8077,22,2013-01-12,1,12,6,Kevin Friend,23495,57.5,42.5,7,3,8,12,658,543,447,339,9,22,42,54,8,4,2,2,1,1,0,0,8,14,,
+2012/13,Stoke,Chelsea,0,4,bet365 Stadium,https://www.premierleague.com/match/8078,22,2013-01-12,1,12,6,Andre Marriner,27348,43.4,56.6,5,6,12,13,509,630,319,428,14,14,31,42,6,7,3,1,1,0,0,0,14,9,,
+2012/13,Sunderland,West Ham,3,0,Stadium of Light,https://www.premierleague.com/match/8079,22,2013-01-12,1,12,6,Neil Swarbrick,39918,48.0,52.0,7,3,18,11,590,630,384,414,24,18,32,41,4,5,5,2,0,3,0,0,10,14,,
+2012/13,Newcastle,Everton,1,2,St James' Park,https://www.premierleague.com/match/8071,21,2013-01-03,1,3,4,Martin Atkinson,49391,50.5,49.5,5,6,17,13,591,568,378,355,23,15,49,42,4,6,1,5,3,2,0,0,21,10,,
+2012/13,Chelsea,QPR,0,1,Stamford Bridge,https://www.premierleague.com/match/8069,21,2013-01-02,1,2,3,Lee Mason,41634,63.9,36.1,2,3,26,7,741,500,529,297,10,19,21,26,14,2,1,4,1,1,0,0,13,8,4-2-3-1,4-3-3
+2012/13,Liverpool,Sunderland,3,0,Anfield,https://www.premierleague.com/match/8070,21,2013-01-02,1,2,3,Phil Dowd,44228,66.2,33.8,10,2,29,8,825,479,620,303,18,19,25,32,9,5,7,0,0,1,0,0,9,6,4-2-3-1,4-4-1-1
+2012/13,West Brom,Fulham,1,2,The Hawthorns,https://www.premierleague.com/match/8066,21,2013-01-01,1,1,2,Mike Dean,25436,44.7,55.3,4,3,18,10,592,723,380,504,17,26,23,40,10,5,0,0,2,2,0,0,14,9,,
+2012/13,Man City,Stoke,3,0,Etihad Stadium,https://www.premierleague.com/match/8062,21,2013-01-01,1,1,2,Michael Oliver,47192,61.6,38.4,6,1,20,5,750,523,567,346,13,22,22,39,7,2,0,1,2,2,0,0,6,10,,
+2012/13,Swansea,Aston Villa,2,2,Liberty Stadium,https://www.premierleague.com/match/8064,21,2013-01-01,1,1,2,Mark Halsey,20406,69.5,30.5,6,5,25,9,804,508,587,252,16,18,28,93,3,2,2,2,0,4,0,0,7,18,,
+2012/13,Spurs,Reading,3,1,White Hart Lane,https://www.premierleague.com/match/8065,21,2013-01-01,1,1,2,Howard Webb,36180,68.0,32.0,11,3,34,7,814,455,611,281,13,16,32,31,12,3,0,0,2,4,0,0,10,11,,
+2012/13,West Ham,Norwich,2,1,Boleyn Ground,https://www.premierleague.com/match/8067,21,2013-01-01,1,1,2,Mark Clattenburg,35005,50.5,49.5,5,2,16,8,602,597,384,388,13,14,49,42,11,3,0,0,1,5,0,0,17,8,,
+2012/13,Wigan,Man Utd,0,4,DW Stadium,https://www.premierleague.com/match/8068,21,2013-01-01,1,1,2,Andre Marriner,20342,52.8,47.2,0,7,8,15,687,627,517,449,20,21,19,17,1,6,2,4,1,1,0,0,13,6,3-4-3,4-4-2
+2012/13,Southampton,Arsenal,1,1,The Friends Provident St Mary's Stadium,https://www.premierleague.com/match/8063,21,2013-01-01,1,1,2,Lee Probert,31743,44.1,55.9,5,1,9,6,652,766,413,538,24,27,30,31,3,3,4,3,2,0,0,0,9,7,,
+2012/13,Everton,Chelsea,1,2,Goodison Park,https://www.premierleague.com/match/8060,20,2012-12-30,12,30,7,Howard Webb,39485,48.0,52.0,6,5,14,17,586,622,349,411,14,16,41,49,7,7,5,4,2,3,0,0,14,12,,
+2012/13,QPR,Liverpool,0,3,Loftus Road,https://www.premierleague.com/match/8061,20,2012-12-30,12,30,7,Anthony Taylor,18304,33.5,66.5,6,7,14,19,529,820,302,614,27,26,28,13,1,9,3,0,2,1,0,0,11,9,4-4-1-1,4-2-3-1
+2012/13,Sunderland,Spurs,1,2,Stadium of Light,https://www.premierleague.com/match/8059,20,2012-12-29,12,29,6,Martin Atkinson,41168,44.7,55.3,4,8,8,17,576,685,359,448,23,18,22,51,3,8,2,1,1,3,0,0,12,16,,
+2012/13,Aston Villa,Wigan,0,3,Villa Park,https://www.premierleague.com/match/8053,20,2012-12-29,12,29,6,Kevin Friend,33374,45.9,54.1,2,5,12,9,621,692,425,518,16,16,26,28,4,3,2,2,3,2,0,0,16,9,5-3-2,3-4-3
+2012/13,Fulham,Swansea,1,2,Craven Cottage,https://www.premierleague.com/match/8054,20,2012-12-29,12,29,6,Andre Marriner,25700,59.4,40.6,6,7,23,10,719,558,500,327,13,18,16,58,9,8,1,0,2,1,0,0,14,12,,
+2012/13,Man Utd,West Brom,2,0,Old Trafford,https://www.premierleague.com/match/8055,20,2012-12-29,12,29,6,Jonathan Moss,75595,58.0,42.0,7,1,17,14,719,542,492,348,17,15,49,33,9,6,1,0,1,0,0,0,10,8,,
+2012/13,Norwich,Man City,3,4,Carrow Road,https://www.premierleague.com/match/8056,20,2012-12-29,12,29,6,Mike Jones,26827,46.4,53.6,4,7,11,15,580,672,390,466,20,19,29,31,4,9,3,1,0,1,0,0,10,11,,
+2012/13,Reading,West Ham,1,0,Madejski Stadium,https://www.premierleague.com/match/8057,20,2012-12-29,12,29,6,Michael Oliver,24183,33.8,66.2,2,3,3,13,423,621,214,417,18,23,52,21,2,2,5,3,3,4,0,0,18,10,,
+2012/13,Stoke,Southampton,3,3,bet365 Stadium,https://www.premierleague.com/match/8058,20,2012-12-29,12,29,6,Mark Clattenburg,26391,54.9,45.1,5,5,13,8,591,539,348,284,14,21,34,68,7,4,2,4,1,2,1,0,6,9,,
+2012/13,Arsenal,Newcastle,7,3,Emirates Stadium,https://www.premierleague.com/match/8052,20,2012-12-29,12,29,6,Chris Foy,60087,44.2,55.8,10,7,16,11,604,711,411,519,24,18,26,20,5,6,2,1,0,1,0,0,9,11,,
+2012/13,Everton,Wigan,2,1,Goodison Park,https://www.premierleague.com/match/8044,19,2012-12-26,12,26,3,Lee Mason,38749,47.3,52.7,3,3,17,11,612,662,398,465,22,11,18,35,11,2,2,1,1,3,0,0,10,12,4-4-2,3-4-3
+2012/13,Fulham,Southampton,1,1,Craven Cottage,https://www.premierleague.com/match/8045,19,2012-12-26,12,26,3,Phil Dowd,25700,50.6,49.4,1,3,9,8,635,647,430,400,19,17,34,43,3,5,2,3,3,0,0,0,14,12,,
+2012/13,Man Utd,Newcastle,4,3,Old Trafford,https://www.premierleague.com/match/8046,19,2012-12-26,12,26,3,Mike Dean,75596,60.7,39.3,7,7,15,15,666,493,467,297,10,20,42,32,2,2,3,0,3,3,0,0,13,18,,
+2012/13,Norwich,Chelsea,0,1,Carrow Road,https://www.premierleague.com/match/8047,19,2012-12-26,12,26,3,Jonathan Moss,26831,36.9,63.1,1,3,9,18,548,828,358,635,20,17,22,31,5,7,4,1,1,1,0,0,8,8,,
+2012/13,QPR,West Brom,1,2,Loftus Road,https://www.premierleague.com/match/8048,19,2012-12-26,12,26,3,Chris Foy,17782,49.8,50.2,5,4,21,12,596,552,329,348,18,26,35,36,14,9,2,3,1,0,0,0,9,13,,
+2012/13,Reading,Swansea,0,0,Madejski Stadium,https://www.premierleague.com/match/8049,19,2012-12-26,12,26,3,Mike Jones,24050,28.0,72.0,1,2,3,10,391,827,220,631,23,12,25,51,6,4,2,1,2,1,0,0,17,16,,
+2012/13,Aston Villa,Spurs,0,4,Villa Park,https://www.premierleague.com/match/8043,19,2012-12-26,12,26,3,Mark Clattenburg,36863,40.9,59.1,1,9,4,21,569,707,343,486,17,14,48,18,2,16,4,1,1,0,0,0,12,7,,
+2012/13,Stoke,Liverpool,3,1,bet365 Stadium,https://www.premierleague.com/match/8050,19,2012-12-26,12,26,3,Howard Webb,27490,37.6,62.4,5,4,10,17,482,718,284,496,26,21,17,40,6,8,1,4,3,1,0,0,11,6,4-5-1,4-3-3
+2012/13,Sunderland,Man City,1,0,Stadium of Light,https://www.premierleague.com/match/8051,19,2012-12-26,12,26,3,Kevin Friend,42190,33.0,67.0,4,7,12,23,461,770,273,579,21,13,20,31,3,7,1,1,1,3,0,0,15,16,,
+2012/13,Swansea,Man Utd,1,1,Liberty Stadium,https://www.premierleague.com/match/8042,18,2012-12-23,12,23,7,Michael Oliver,20650,40.3,59.7,9,7,14,20,586,752,390,574,16,14,44,18,3,6,3,0,2,4,0,0,11,16,,
+2012/13,Chelsea,Aston Villa,8,0,Stamford Bridge,https://www.premierleague.com/match/8041,18,2012-12-23,12,23,7,Phil Dowd,41363,56.6,43.4,15,1,26,7,737,613,559,420,14,19,18,27,8,4,0,0,3,5,0,0,6,11,,
+2012/13,Wigan,Arsenal,0,1,DW Stadium,https://www.premierleague.com/match/8040,18,2012-12-22,12,22,6,Jonathan Moss,21754,50.4,49.6,3,4,14,11,679,685,487,480,25,16,11,21,4,4,5,1,1,1,0,0,17,9,,
+2012/13,Man City,Reading,1,0,Etihad Stadium,https://www.premierleague.com/match/8034,18,2012-12-22,12,22,6,Mike Dean,47007,73.3,26.7,3,1,21,5,867,409,677,235,8,15,24,36,12,3,0,1,2,3,0,0,12,16,,
+2012/13,Newcastle,QPR,1,0,St James' Park,https://www.premierleague.com/match/8035,18,2012-12-22,12,22,6,Kevin Friend,50180,58.6,41.4,4,3,21,4,643,528,411,303,11,20,36,48,10,3,2,6,3,2,0,0,9,16,4-3-3,4-1-4-1
+2012/13,Southampton,Sunderland,0,1,The Friends Provident St Mary's Stadium,https://www.premierleague.com/match/8036,18,2012-12-22,12,22,6,Howard Webb,31275,57.6,42.4,2,5,12,10,660,526,444,330,10,16,20,46,8,5,2,2,0,3,0,0,13,16,,
+2012/13,Spurs,Stoke,0,0,White Hart Lane,https://www.premierleague.com/match/8037,18,2012-12-22,12,22,6,Lee Mason,35702,63.2,36.8,5,1,22,4,682,484,433,254,24,25,44,54,11,4,1,2,2,5,0,0,8,12,,
+2012/13,West Brom,Norwich,2,1,The Hawthorns,https://www.premierleague.com/match/8038,18,2012-12-22,12,22,6,Martin Atkinson,25799,49.6,50.4,6,3,13,10,584,598,393,408,15,15,29,28,6,5,2,0,1,1,0,0,14,11,,
+2012/13,West Ham,Everton,1,2,Boleyn Ground,https://www.premierleague.com/match/8039,18,2012-12-22,12,22,6,Anthony Taylor,35005,37.7,62.3,2,7,6,18,458,653,270,452,11,14,40,37,3,5,3,6,1,0,1,1,13,8,,
+2012/13,Liverpool,Fulham,4,0,Anfield,https://www.premierleague.com/match/8033,18,2012-12-22,12,22,6,Mark Clattenburg,44570,55.6,44.4,9,4,23,8,740,622,553,431,24,19,18,21,8,2,2,0,1,2,0,0,13,6,4-2-3-1,4-5-1
+2012/13,Reading,Arsenal,2,5,Madejski Stadium,https://www.premierleague.com/match/8032,17,2012-12-18,12,18,2,Anthony Taylor,24125,32.9,67.1,3,13,9,26,525,911,339,718,12,16,26,17,3,7,5,3,1,1,0,0,7,4,,
+2012/13,Spurs,Swansea,1,0,White Hart Lane,https://www.premierleague.com/match/8030,17,2012-12-16,12,16,7,Mike Dean,35783,49.9,50.1,8,0,29,3,691,664,476,481,19,19,33,19,9,3,1,5,3,3,0,0,13,8,,
+2012/13,West Brom,West Ham,0,0,The Hawthorns,https://www.premierleague.com/match/8031,17,2012-12-16,12,16,7,Phil Dowd,24816,55.3,44.7,4,2,20,12,623,531,394,323,12,18,39,53,8,2,2,0,3,3,0,0,14,10,,
+2012/13,Newcastle,Man City,1,3,St James' Park,https://www.premierleague.com/match/8026,17,2012-12-15,12,15,6,Andre Marriner,49579,53.7,46.3,5,8,17,17,630,596,405,357,20,27,33,54,12,7,0,5,3,2,0,0,9,17,,
+2012/13,Liverpool,Aston Villa,1,3,Anfield,https://www.premierleague.com/match/8024,17,2012-12-15,12,15,6,Neil Swarbrick,44607,72.1,27.9,8,6,29,11,780,422,564,211,11,25,13,53,7,2,3,0,1,2,0,0,5,10,4-3-3,3-5-2
+2012/13,Man Utd,Sunderland,3,1,Old Trafford,https://www.premierleague.com/match/8025,17,2012-12-15,12,15,6,Chris Foy,75582,61.5,38.5,5,7,16,15,727,500,520,307,15,23,42,20,9,9,0,0,2,1,0,0,13,10,,
+2012/13,Norwich,Wigan,2,1,Carrow Road,https://www.premierleague.com/match/8027,17,2012-12-15,12,15,6,Lee Probert,26677,48.2,51.8,8,4,17,14,616,668,417,453,20,19,18,25,7,3,1,6,3,1,0,0,8,4,,
+2012/13,QPR,Fulham,2,1,Loftus Road,https://www.premierleague.com/match/8028,17,2012-12-15,12,15,6,Martin Atkinson,18233,44.9,55.1,6,2,20,5,575,675,404,486,17,9,38,23,3,3,2,2,1,2,0,0,10,15,,
+2012/13,Stoke,Everton,1,1,bet365 Stadium,https://www.premierleague.com/match/8029,17,2012-12-15,12,15,6,Mark Halsey,27008,48.7,51.3,5,2,13,10,530,550,328,338,14,25,26,41,4,8,1,1,1,0,0,0,13,13,,
+2012/13,Fulham,Newcastle,2,1,Craven Cottage,https://www.premierleague.com/match/8022,16,2012-12-11,12,11,2,Lee Mason,25270,45.3,54.7,7,8,16,20,635,714,401,475,25,19,43,41,5,4,0,0,0,1,0,0,14,11,,
+2012/13,Sunderland,Reading,3,0,Stadium of Light,https://www.premierleague.com/match/8023,16,2012-12-11,12,11,2,Neil Swarbrick,37723,49.3,50.7,8,3,16,15,611,589,384,386,21,19,60,26,6,8,3,2,2,1,0,0,10,12,,
+2012/13,Man City,Man Utd,2,3,Etihad Stadium,https://www.premierleague.com/match/8020,16,2012-12-09,12,9,7,Martin Atkinson,47166,56.2,43.8,9,3,18,10,698,575,481,372,16,28,20,37,8,2,4,4,4,3,0,0,12,9,,
+2012/13,Everton,Spurs,2,1,Goodison Park,https://www.premierleague.com/match/8019,16,2012-12-09,12,9,7,Kevin Friend,36494,49.6,50.4,4,5,20,12,603,626,398,403,22,22,27,48,4,5,4,0,3,2,0,0,12,11,,
+2012/13,West Ham,Liverpool,2,3,Boleyn Ground,https://www.premierleague.com/match/8021,16,2012-12-09,12,9,7,Lee Probert,35005,38.6,61.4,4,4,11,17,557,754,308,535,27,22,37,39,2,5,5,1,1,2,0,0,12,12,4-2-3-1,4-3-3
+2012/13,Arsenal,West Brom,2,0,Emirates Stadium,https://www.premierleague.com/match/8013,16,2012-12-08,12,8,6,Mike Jones,60083,59.0,41.0,3,1,19,8,701,524,494,331,24,21,17,30,7,4,6,5,2,3,0,0,13,12,,
+2012/13,Aston Villa,Stoke,0,0,Villa Park,https://www.premierleague.com/match/8014,16,2012-12-08,12,8,6,Roger East,30110,56.3,43.7,2,0,13,2,670,547,460,351,20,12,53,31,3,2,3,3,0,1,0,0,9,15,,
+2012/13,Southampton,Reading,1,0,The Friends Provident St Mary's Stadium,https://www.premierleague.com/match/8015,16,2012-12-08,12,8,6,Jonathan Moss,29331,65.1,34.9,5,2,18,6,686,446,465,231,22,15,31,41,7,4,0,0,2,4,0,0,12,13,,
+2012/13,Sunderland,Chelsea,1,3,Stadium of Light,https://www.premierleague.com/match/8016,16,2012-12-08,12,8,6,Mark Halsey,39273,45.3,54.7,5,5,12,14,549,668,352,456,19,26,25,45,11,1,0,2,1,3,0,0,11,16,,
+2012/13,Swansea,Norwich,3,4,Liberty Stadium,https://www.premierleague.com/match/8017,16,2012-12-08,12,8,6,Howard Webb,20294,66.8,33.2,5,7,20,9,840,493,661,320,11,18,33,26,6,2,1,1,2,1,0,0,12,10,,
+2012/13,Wigan,QPR,2,2,DW Stadium,https://www.premierleague.com/match/8018,16,2012-12-08,12,8,6,Phil Dowd,17163,56.7,43.3,8,4,15,8,641,542,409,323,31,25,18,40,11,4,4,3,0,1,0,0,8,12,3-4-3,4-1-4-1
+2012/13,Newcastle,Wigan,3,0,St James' Park,https://www.premierleague.com/match/8012,15,2012-12-04,12,4,2,Mike Jones,43858,50.2,49.8,8,1,18,10,643,631,471,457,16,17,28,15,4,4,2,1,1,3,0,1,13,15,4-3-3,3-4-3
+2012/13,Norwich,Sunderland,2,1,Carrow Road,https://www.premierleague.com/match/8011,15,2012-12-02,12,2,7,Phil Dowd,26228,49.6,50.4,3,5,8,16,620,633,441,440,14,15,39,24,2,6,3,4,0,2,0,0,11,17,,
+2012/13,Arsenal,Swansea,0,2,Emirates Stadium,https://www.premierleague.com/match/8003,15,2012-12-01,12,1,6,Mark Clattenburg,60098,52.5,47.5,5,7,10,14,780,725,608,561,14,22,14,22,8,5,0,6,1,0,0,0,12,10,,
+2012/13,Fulham,Spurs,0,3,Craven Cottage,https://www.premierleague.com/match/8004,15,2012-12-01,12,1,6,Chris Foy,25426,45.8,54.2,2,6,8,10,641,755,459,553,20,22,14,46,2,1,2,2,0,2,0,0,10,10,,
+2012/13,Liverpool,Southampton,1,0,Anfield,https://www.premierleague.com/match/8005,15,2012-12-01,12,1,6,Michael Oliver,44525,63.9,36.1,8,1,23,9,774,544,555,302,19,34,20,37,10,4,3,0,2,0,0,0,14,9,4-3-3,4-2-3-1
+2012/13,Man City,Everton,1,1,Etihad Stadium,https://www.premierleague.com/match/8006,15,2012-12-01,12,1,6,Lee Probert,47386,59.2,40.8,4,4,10,9,740,552,546,380,15,12,31,34,5,2,1,0,2,1,0,0,18,12,,
+2012/13,QPR,Aston Villa,1,1,Loftus Road,https://www.premierleague.com/match/8007,15,2012-12-01,12,1,6,Howard Webb,17387,54.5,45.5,8,2,17,7,682,606,447,389,20,21,38,47,11,4,9,4,1,2,0,0,5,6,4-1-4-1,4-5-1
+2012/13,West Brom,Stoke,0,1,The Hawthorns,https://www.premierleague.com/match/8009,15,2012-12-01,12,1,6,Kevin Friend,24739,57.2,42.8,5,2,15,5,659,537,452,333,17,22,36,34,5,5,4,2,0,3,0,0,9,15,,
+2012/13,Reading,Man Utd,3,4,Madejski Stadium,https://www.premierleague.com/match/8008,15,2012-12-01,12,1,6,Mark Halsey,24095,41.7,58.3,7,6,12,11,584,778,397,586,19,19,16,41,6,1,0,2,1,1,0,0,10,12,,
+2012/13,West Ham,Chelsea,3,1,Boleyn Ground,https://www.premierleague.com/match/8010,15,2012-12-01,12,1,6,Martin Atkinson,35005,42.2,57.8,9,7,16,15,562,690,338,494,23,15,43,38,14,5,3,3,1,2,0,0,15,10,,
+2012/13,Man Utd,West Ham,1,0,Old Trafford,https://www.premierleague.com/match/7997,14,2012-11-29,11,29,4,Mike Jones,75572,66.1,33.9,7,1,22,10,847,501,646,305,12,14,53,32,5,5,2,1,1,1,0,0,9,11,,
+2012/13,Wigan,Man City,0,2,DW Stadium,https://www.premierleague.com/match/8002,14,2012-11-29,11,29,4,Mark Halsey,19623,45.6,54.4,1,6,9,17,593,682,411,502,20,21,18,25,6,6,1,1,1,1,0,0,13,13,,
+2012/13,Aston Villa,Reading,1,0,Villa Park,https://www.premierleague.com/match/7993,14,2012-11-28,11,28,3,Lee Probert,28692,55.2,44.8,5,3,16,12,641,556,372,292,22,11,71,63,8,3,2,3,1,0,0,0,11,6,,
+2012/13,Chelsea,Fulham,0,0,Stamford Bridge,https://www.premierleague.com/match/7995,14,2012-11-28,11,28,3,Anthony Taylor,41707,59.7,40.3,3,4,17,9,773,623,582,405,14,26,8,55,10,2,4,2,3,0,0,0,10,12,,
+2012/13,Everton,Arsenal,1,1,Goodison Park,https://www.premierleague.com/match/7996,14,2012-11-28,11,28,3,Michael Oliver,37141,42.6,57.4,9,3,14,11,610,774,383,526,30,23,30,38,6,6,6,0,2,1,0,0,15,9,,
+2012/13,Southampton,Norwich,1,1,The Friends Provident St Mary's Stadium,https://www.premierleague.com/match/7998,14,2012-11-28,11,28,3,Mark Clattenburg,29325,57.8,42.2,2,5,10,11,721,575,498,361,26,17,30,34,3,6,2,3,1,1,0,0,11,7,,
+2012/13,Stoke,Newcastle,2,1,bet365 Stadium,https://www.premierleague.com/match/7999,14,2012-11-28,11,28,3,Howard Webb,26793,52.2,47.8,5,6,13,9,605,586,366,344,24,25,30,62,7,2,3,0,2,2,0,0,13,14,,
+2012/13,Swansea,West Brom,3,1,Liberty Stadium,https://www.premierleague.com/match/8000,14,2012-11-28,11,28,3,Lee Mason,20377,64.7,35.3,4,1,13,6,869,521,679,366,16,21,32,22,5,2,6,2,0,4,0,0,11,16,,
+2012/13,Spurs,Liverpool,2,1,White Hart Lane,https://www.premierleague.com/match/8001,14,2012-11-28,11,28,3,Phil Dowd,36162,35.0,65.0,7,5,16,17,538,765,307,556,37,18,55,13,1,12,0,1,1,2,0,0,8,18,4-2-3-1,4-3-3
+2012/13,Sunderland,QPR,0,0,Stadium of Light,https://www.premierleague.com/match/7994,14,2012-11-27,11,27,2,Andre Marriner,36513,50.2,49.8,4,5,14,15,664,642,444,430,21,23,25,26,5,8,3,1,1,3,0,0,10,15,,
+2012/13,Swansea,Liverpool,0,0,Liberty Stadium,https://www.premierleague.com/match/7991,13,2012-11-25,11,25,7,Jonathan Moss,20621,49.5,50.5,2,9,18,21,759,750,522,533,29,15,32,23,7,6,0,3,1,0,0,0,7,10,4-2-3-1,4-3-3
+2012/13,Southampton,Newcastle,2,0,The Friends Provident St Mary's Stadium,https://www.premierleague.com/match/7990,13,2012-11-25,11,25,7,Martin Atkinson,31410,49.1,50.9,8,3,18,8,582,596,339,332,31,28,49,42,4,3,2,6,2,2,0,0,12,13,,
+2012/13,Chelsea,Man City,0,0,Stamford Bridge,https://www.premierleague.com/match/7989,13,2012-11-25,11,25,7,Chris Foy,41792,42.3,57.7,1,5,6,9,617,731,381,519,24,31,42,34,6,11,3,1,0,3,0,0,10,17,,
+2012/13,Spurs,West Ham,3,1,White Hart Lane,https://www.premierleague.com/match/7992,13,2012-11-25,11,25,7,Andre Marriner,36043,59.4,40.6,9,4,28,12,670,484,453,306,10,17,42,27,4,2,1,2,1,2,0,0,9,10,,
+2012/13,Sunderland,West Brom,2,4,Stadium of Light,https://www.premierleague.com/match/7987,13,2012-11-24,11,24,6,Mike Dean,36390,49.0,51.0,10,6,20,14,622,652,428,469,17,20,16,32,7,2,2,1,3,3,0,0,12,16,,
+2012/13,Everton,Norwich,1,1,Goodison Park,https://www.premierleague.com/match/7984,13,2012-11-24,11,24,6,Mike Jones,34502,57.9,42.1,7,4,14,9,613,483,443,312,10,13,34,32,4,2,3,9,1,3,0,0,12,19,,
+2012/13,Man Utd,QPR,3,1,Old Trafford,https://www.premierleague.com/match/7985,13,2012-11-24,11,24,6,Lee Probert,75603,62.5,37.5,7,3,17,11,832,588,651,386,22,22,18,31,9,7,2,2,1,1,0,0,6,10,4-2-3-1,4-2-3-1
+2012/13,Stoke,Fulham,1,0,bet365 Stadium,https://www.premierleague.com/match/7986,13,2012-11-24,11,24,6,Michael Oliver,26921,40.3,59.7,2,2,16,9,539,710,323,489,19,17,38,47,7,2,2,2,1,1,0,0,18,11,,
+2012/13,Wigan,Reading,3,2,DW Stadium,https://www.premierleague.com/match/7988,13,2012-11-24,11,24,6,Howard Webb,15436,66.7,33.3,9,5,18,17,718,452,484,226,20,15,36,42,9,5,5,1,2,0,0,0,16,11,,
+2012/13,Aston Villa,Arsenal,0,0,Villa Park,https://www.premierleague.com/match/7983,13,2012-11-24,11,24,6,Lee Mason,34607,37.4,62.6,4,1,9,12,538,804,346,596,15,19,20,27,7,6,3,3,1,0,0,0,8,10,,
+2012/13,West Ham,Stoke,1,1,Boleyn Ground,https://www.premierleague.com/match/7982,12,2012-11-20,11,20,2,Chris Foy,35005,58.0,42.0,5,2,15,8,669,541,430,327,14,16,46,66,12,4,1,3,1,0,0,0,9,9,,
+2012/13,Fulham,Sunderland,1,3,Craven Cottage,https://www.premierleague.com/match/7981,12,2012-11-18,11,18,7,Lee Probert,25646,49.3,50.7,7,6,20,11,661,678,480,499,15,12,32,27,4,4,4,2,1,3,1,0,10,13,,
+2012/13,Arsenal,Spurs,5,2,Emirates Stadium,https://www.premierleague.com/match/7973,12,2012-11-17,11,17,6,Howard Webb,60111,65.8,34.2,7,3,13,7,763,488,584,298,15,18,23,46,6,6,4,2,1,2,0,1,13,13,,
+2012/13,Liverpool,Wigan,3,0,Anfield,https://www.premierleague.com/match/7974,12,2012-11-17,11,17,6,Kevin Friend,44913,48.9,51.1,6,2,22,10,627,639,418,447,23,20,13,25,10,5,1,2,0,3,0,0,9,11,4-2-3-1,3-4-3
+2012/13,Man City,Aston Villa,5,0,Etihad Stadium,https://www.premierleague.com/match/7975,12,2012-11-17,11,17,6,Jonathan Moss,47072,66.6,33.4,10,2,26,11,810,479,621,298,15,26,17,32,9,4,1,4,0,1,0,0,9,7,,
+2012/13,Newcastle,Swansea,1,2,St James' Park,https://www.premierleague.com/match/7976,12,2012-11-17,11,17,6,Phil Dowd,49403,52.0,48.0,9,7,32,16,673,650,439,406,18,23,30,60,5,4,2,2,1,3,0,0,10,8,,
+2012/13,QPR,Southampton,1,3,Loftus Road,https://www.premierleague.com/match/7978,12,2012-11-17,11,17,6,Mike Dean,18174,46.8,53.2,5,10,12,20,651,711,406,467,32,28,40,27,4,13,1,1,1,0,0,0,13,8,4-2-3-1,4-1-4-1
+2012/13,Reading,Everton,2,1,Madejski Stadium,https://www.premierleague.com/match/7979,12,2012-11-17,11,17,6,Martin Atkinson,24184,39.6,60.4,3,7,14,21,448,619,247,402,14,14,33,36,7,13,2,4,3,2,0,0,12,13,,
+2012/13,West Brom,Chelsea,2,1,The Hawthorns,https://www.premierleague.com/match/7980,12,2012-11-17,11,17,6,Michael Oliver,25933,35.3,64.7,5,7,9,19,521,811,342,608,23,13,41,18,0,12,0,0,2,1,0,0,7,13,,
+2012/13,Norwich,Man Utd,1,0,Carrow Road,https://www.premierleague.com/match/7977,12,2012-11-17,11,17,6,Anthony Taylor,26840,37.7,62.3,4,6,11,14,547,776,354,581,11,17,41,30,0,12,3,1,0,1,0,0,10,7,,
+2012/13,Man City,Spurs,2,1,Etihad Stadium,https://www.premierleague.com/match/7971,11,2012-11-11,11,11,7,Michael Oliver,47208,61.9,38.1,5,2,14,7,678,482,482,277,17,19,22,38,8,2,8,0,1,2,0,0,16,7,,
+2012/13,Newcastle,West Ham,0,1,St James' Park,https://www.premierleague.com/match/7972,11,2012-11-11,11,11,7,Mike Dean,51855,49.8,50.2,8,3,16,11,597,626,366,385,21,24,33,67,11,3,1,1,1,2,0,0,10,14,,
+2012/13,Chelsea,Liverpool,1,1,Stamford Bridge,https://www.premierleague.com/match/7970,11,2012-11-11,11,11,7,Howard Webb,41627,43.1,56.9,3,3,15,9,607,723,386,507,35,31,24,15,4,7,1,7,1,3,0,0,12,13,4-2-3-1,3-4-1-2
+2012/13,Arsenal,Fulham,3,3,Emirates Stadium,https://www.premierleague.com/match/7963,11,2012-11-10,11,10,6,Phil Dowd,60093,56.4,43.6,6,5,14,11,750,636,557,439,23,14,18,37,8,6,1,5,1,2,0,0,11,12,,
+2012/13,Everton,Sunderland,2,1,Goodison Park,https://www.premierleague.com/match/7965,11,2012-11-10,11,10,6,Lee Mason,35999,62.6,37.4,6,3,18,9,739,528,537,326,16,18,27,45,6,2,1,2,1,3,0,0,14,15,,
+2012/13,Reading,Norwich,0,0,Madejski Stadium,https://www.premierleague.com/match/7966,11,2012-11-10,11,10,6,Chris Foy,24080,49.3,50.7,2,1,9,11,536,551,316,348,11,20,31,49,10,3,4,3,0,1,0,0,9,17,,
+2012/13,Southampton,Swansea,1,1,The Friends Provident St Mary's Stadium,https://www.premierleague.com/match/7967,11,2012-11-10,11,10,6,Andre Marriner,30501,48.4,51.6,4,3,16,7,643,685,449,489,19,15,17,54,10,6,2,2,2,2,0,0,13,13,,
+2012/13,Stoke,QPR,1,0,bet365 Stadium,https://www.premierleague.com/match/7968,11,2012-11-10,11,10,6,Martin Atkinson,27529,45.1,54.9,2,2,12,18,516,640,340,425,19,11,23,45,5,5,2,1,2,3,0,0,13,18,,
+2012/13,Aston Villa,Man Utd,2,3,Villa Park,https://www.premierleague.com/match/7964,11,2012-11-10,11,10,6,Kevin Friend,40538,30.5,69.5,3,5,8,20,491,875,283,670,17,14,47,37,5,6,0,3,1,1,0,0,14,8,,
+2012/13,Wigan,West Brom,1,2,DW Stadium,https://www.premierleague.com/match/7969,11,2012-11-10,11,10,6,Neil Swarbrick,17812,65.9,34.1,4,4,14,9,749,478,553,277,21,21,19,34,5,8,1,3,1,4,0,0,12,14,3-4-3,4-4-2
+2012/13,West Brom,Southampton,2,0,The Hawthorns,https://www.premierleague.com/match/7962,10,2012-11-06,11,6,2,Mark Halsey,25635,43.5,56.5,3,3,17,10,588,701,381,501,21,23,31,21,8,6,3,3,1,0,0,0,7,11,,
+2012/13,QPR,Reading,1,1,Loftus Road,https://www.premierleague.com/match/7961,10,2012-11-04,11,4,7,Michael Oliver,16797,56.1,43.9,6,3,23,19,594,533,356,279,25,15,41,44,8,8,3,4,0,2,0,0,11,17,,
+2012/13,Liverpool,Newcastle,1,1,Anfield,https://www.premierleague.com/match/7960,10,2012-11-04,11,4,7,Anthony Taylor,44803,65.3,34.7,6,3,23,11,746,512,522,276,27,26,13,58,14,3,1,1,0,1,0,1,11,14,4-2-3-1,4-5-1
+2012/13,Man Utd,Arsenal,2,1,Old Trafford,https://www.premierleague.com/match/7954,10,2012-11-03,11,3,6,Mike Dean,75492,47.7,52.3,6,2,14,7,704,758,532,596,22,10,26,29,6,1,5,1,5,2,0,1,15,15,,
+2012/13,Fulham,Everton,2,2,Craven Cottage,https://www.premierleague.com/match/7953,10,2012-11-03,11,3,6,Neil Swarbrick,25699,40.9,59.1,4,9,9,27,569,723,343,492,26,21,38,15,5,9,0,1,3,1,0,0,17,10,,
+2012/13,Norwich,Stoke,1,0,Carrow Road,https://www.premierleague.com/match/7955,10,2012-11-03,11,3,6,Andre Marriner,26072,43.6,56.4,4,4,14,9,558,685,348,471,21,13,43,37,9,1,2,2,1,5,0,0,12,15,,
+2012/13,Sunderland,Aston Villa,0,1,Stadium of Light,https://www.premierleague.com/match/7956,10,2012-11-03,11,3,6,Mike Jones,41515,55.6,44.4,0,3,12,9,611,551,409,336,20,20,26,60,6,7,5,2,2,3,0,0,9,17,,
+2012/13,Swansea,Chelsea,1,1,Liberty Stadium,https://www.premierleague.com/match/7957,10,2012-11-03,11,3,6,Kevin Friend,20527,52.2,47.8,2,5,10,11,667,611,481,442,19,22,32,21,8,6,3,2,4,1,0,0,12,10,,
+2012/13,Spurs,Wigan,0,1,White Hart Lane,https://www.premierleague.com/match/7958,10,2012-11-03,11,3,6,Martin Atkinson,35534,51.1,48.9,5,3,13,7,627,593,401,406,16,16,40,29,9,2,3,3,1,1,0,0,13,12,4-2-3-1,3-4-2-1
+2012/13,West Ham,Man City,0,0,Boleyn Ground,https://www.premierleague.com/match/7959,10,2012-11-03,11,3,6,Howard Webb,35005,35.0,65.0,0,5,6,22,479,770,283,570,23,9,50,30,3,7,2,3,3,0,0,0,11,12,,
+2012/13,Everton,Liverpool,2,2,Goodison Park,https://www.premierleague.com/match/7950,9,2012-10-28,10,28,7,Andre Marriner,39613,56.2,43.8,4,3,16,13,625,534,399,314,20,23,15,53,9,5,3,3,4,3,0,0,17,19,4-4-1-1,4-2-3-1
+2012/13,Newcastle,West Brom,2,1,St James' Park,https://www.premierleague.com/match/7951,9,2012-10-28,10,28,7,Chris Foy,49731,50.4,49.6,5,4,13,11,623,611,403,404,19,23,35,35,6,4,3,7,3,2,0,0,13,7,,
+2012/13,Southampton,Spurs,1,2,The Friends Provident St Mary's Stadium,https://www.premierleague.com/match/7952,9,2012-10-28,10,28,7,Lee Mason,31944,52.3,47.7,2,4,15,12,659,661,473,448,19,15,14,61,2,3,3,5,0,3,0,0,15,10,,
+2012/13,Chelsea,Man Utd,2,3,Stamford Bridge,https://www.premierleague.com/match/7949,9,2012-10-28,10,28,7,Mark Clattenburg,41644,48.7,51.3,8,5,15,15,618,665,421,457,21,26,13,45,8,6,1,4,1,2,2,0,14,12,,
+2012/13,Aston Villa,Norwich,1,1,Villa Park,https://www.premierleague.com/match/7944,9,2012-10-27,10,27,6,Phil Dowd,33184,41.5,58.5,4,4,7,17,524,655,330,452,16,13,45,28,3,8,2,8,1,0,1,0,12,6,,
+2012/13,Arsenal,QPR,1,0,Emirates Stadium,https://www.premierleague.com/match/7943,9,2012-10-27,10,27,6,Anthony Taylor,60103,66.5,33.5,9,2,22,6,809,508,599,294,21,21,14,32,5,2,1,7,1,2,0,1,16,9,,
+2012/13,Reading,Fulham,3,3,Madejski Stadium,https://www.premierleague.com/match/7946,9,2012-10-27,10,27,6,Mike Jones,24093,34.1,65.9,8,6,15,19,480,811,288,612,11,15,30,43,6,8,1,0,1,1,0,0,6,17,,
+2012/13,Stoke,Sunderland,0,0,bet365 Stadium,https://www.premierleague.com/match/7947,9,2012-10-27,10,27,6,Mark Halsey,27005,52.2,47.8,4,0,16,7,593,560,390,359,14,22,17,38,7,3,2,0,2,2,0,0,12,7,,
+2012/13,Wigan,West Ham,2,1,DW Stadium,https://www.premierleague.com/match/7948,9,2012-10-27,10,27,6,Jonathan Moss,19090,54.4,45.6,7,4,16,15,616,532,424,334,15,19,42,22,6,6,3,1,3,4,0,0,11,17,3-4-3,4-3-3
+2012/13,Man City,Swansea,1,0,Etihad Stadium,https://www.premierleague.com/match/7945,9,2012-10-27,10,27,6,Martin Atkinson,46801,53.7,46.3,4,2,11,9,775,710,599,503,21,17,20,25,3,0,2,5,1,2,0,0,8,10,,
+2012/13,Sunderland,Newcastle,1,1,Stadium of Light,https://www.premierleague.com/match/7942,8,2012-10-21,10,21,7,Martin Atkinson,47456,65.5,34.5,2,5,21,11,689,474,451,241,26,24,23,59,8,4,3,0,0,4,0,1,14,16,,
+2012/13,QPR,Everton,1,1,Loftus Road,https://www.premierleague.com/match/7941,8,2012-10-21,10,21,7,Jonathan Moss,17959,57.0,43.0,5,3,15,16,664,522,431,329,15,19,29,31,5,4,4,3,2,0,0,1,12,18,,
+2012/13,Spurs,Chelsea,2,4,White Hart Lane,https://www.premierleague.com/match/7938,8,2012-10-20,10,20,6,Mike Dean,36060,42.2,57.8,10,7,26,10,587,709,344,493,21,20,44,37,7,4,1,5,3,2,0,0,8,9,,
+2012/13,Fulham,Aston Villa,1,0,Craven Cottage,https://www.premierleague.com/match/7933,8,2012-10-20,10,20,6,Chris Foy,25693,50.7,49.3,5,1,19,12,678,652,455,451,8,18,36,40,6,4,2,2,1,2,0,0,7,12,,
+2012/13,Liverpool,Reading,1,0,Anfield,https://www.premierleague.com/match/7934,8,2012-10-20,10,20,6,Roger East,44874,56.8,43.2,7,3,27,10,729,584,497,366,22,22,35,22,6,5,3,3,1,1,0,0,13,6,4-3-3,4-5-1
+2012/13,Man Utd,Stoke,4,2,Old Trafford,https://www.premierleague.com/match/7935,8,2012-10-20,10,20,6,Anthony Taylor,75585,64.0,36.0,7,3,16,9,803,485,625,336,11,17,39,15,3,4,3,0,1,1,0,0,9,10,,
+2012/13,Swansea,Wigan,2,1,Liberty Stadium,https://www.premierleague.com/match/7937,8,2012-10-20,10,20,6,Mike Jones,19696,47.6,52.4,8,6,20,11,620,648,427,486,14,14,15,27,9,2,1,4,2,3,0,0,14,12,4-3-3,3-4-3
+2012/13,West Brom,Man City,1,2,The Hawthorns,https://www.premierleague.com/match/7939,8,2012-10-20,10,20,6,Mark Clattenburg,24891,43.9,56.1,4,8,17,24,507,636,353,451,17,10,22,32,6,9,0,1,4,3,0,1,13,16,,
+2012/13,West Ham,Southampton,4,1,Boleyn Ground,https://www.premierleague.com/match/7940,8,2012-10-20,10,20,6,Neil Swarbrick,34925,38.7,61.3,6,2,11,11,475,667,283,472,24,18,43,28,6,3,3,6,0,2,0,0,11,13,,
+2012/13,Norwich,Arsenal,1,0,Carrow Road,https://www.premierleague.com/match/7936,8,2012-10-20,10,20,6,Lee Probert,26825,28.0,72.0,3,5,7,14,436,862,244,669,26,14,31,23,2,10,4,4,4,0,0,0,13,10,,
+2012/13,Southampton,Fulham,2,2,The Friends Provident St Mary's Stadium,https://www.premierleague.com/match/7931,7,2012-10-07,10,7,7,Mark Clattenburg,28004,41.9,58.1,4,3,14,13,573,735,365,521,22,12,43,40,8,8,0,0,4,0,0,0,14,7,,
+2012/13,Liverpool,Stoke,0,0,Anfield,https://www.premierleague.com/match/7929,7,2012-10-07,10,7,7,Lee Mason,44531,62.9,37.1,2,2,18,6,733,500,525,296,13,25,32,42,5,5,0,2,0,6,0,0,9,18,4-3-3,4-5-1
+2012/13,Spurs,Aston Villa,2,0,White Hart Lane,https://www.premierleague.com/match/7932,7,2012-10-07,10,7,7,Neil Swarbrick,35802,55.9,44.1,6,3,22,8,687,550,455,360,18,17,46,27,8,0,1,3,1,3,0,0,11,10,,
+2012/13,Newcastle,Man Utd,0,3,St James' Park,https://www.premierleague.com/match/7930,7,2012-10-07,10,7,7,Howard Webb,52203,45.5,54.5,2,8,15,13,638,729,422,529,11,32,23,53,8,6,0,2,4,4,0,0,15,12,,
+2012/13,Chelsea,Norwich,4,1,Stamford Bridge,https://www.premierleague.com/match/7923,7,2012-10-06,10,6,6,Anthony Taylor,41784,68.9,31.1,9,2,23,8,899,495,731,317,11,17,15,37,10,2,0,0,2,1,0,0,7,3,,
+2012/13,Swansea,Reading,2,2,Liberty Stadium,https://www.premierleague.com/match/7925,7,2012-10-06,10,6,6,Mike Dean,20336,71.5,28.5,10,5,26,9,803,440,600,224,16,19,36,43,11,3,2,5,1,3,0,0,9,11,,
+2012/13,West Brom,QPR,3,2,The Hawthorns,https://www.premierleague.com/match/7926,7,2012-10-06,10,6,6,Mike Jones,23987,44.9,55.1,5,3,14,13,555,666,382,463,22,17,23,25,2,5,3,4,2,2,0,0,17,14,,
+2012/13,Wigan,Everton,2,2,DW Stadium,https://www.premierleague.com/match/7928,7,2012-10-06,10,6,6,Kevin Friend,18759,46.1,53.9,3,7,11,17,529,583,340,401,16,8,41,20,7,6,2,1,2,5,0,0,15,16,3-4-3,4-4-1-1
+2012/13,West Ham,Arsenal,1,3,Boleyn Ground,https://www.premierleague.com/match/7927,7,2012-10-06,10,6,6,Phil Dowd,34974,31.3,68.7,3,7,9,21,456,803,266,606,15,21,49,27,4,16,1,1,3,2,0,0,12,8,,
+2012/13,Man City,Sunderland,3,0,Etihad Stadium,https://www.premierleague.com/match/7924,7,2012-10-06,10,6,6,Lee Probert,47036,60.5,39.5,9,4,28,8,739,536,529,339,15,17,29,30,15,4,2,3,0,3,0,0,12,11,,
+2012/13,QPR,West Ham,1,2,Loftus Road,https://www.premierleague.com/match/7922,6,2012-10-02,10,2,2,Mark Clattenburg,17363,50.5,49.5,7,5,13,18,610,584,355,334,19,21,73,51,4,13,1,1,1,8,1,0,10,22,,
+2012/13,Aston Villa,West Brom,1,1,Villa Park,https://www.premierleague.com/match/7921,6,2012-09-30,9,30,7,Anthony Taylor,34489,57.4,42.6,3,3,21,14,634,547,422,322,19,26,16,54,11,4,3,3,1,1,0,0,8,12,,
+2012/13,Arsenal,Chelsea,1,2,Emirates Stadium,https://www.premierleague.com/match/7913,6,2012-09-29,9,29,6,Martin Atkinson,60101,51.4,48.6,4,3,16,10,690,664,470,459,30,26,19,28,6,5,4,3,2,3,0,0,14,14,,
+2012/13,Everton,Southampton,3,1,Goodison Park,https://www.premierleague.com/match/7914,6,2012-09-29,9,29,6,Lee Probert,37922,52.4,47.6,8,5,22,10,723,652,482,441,16,26,25,33,10,3,0,0,6,2,0,0,4,7,,
+2012/13,Fulham,Man City,1,2,Craven Cottage,https://www.premierleague.com/match/7915,6,2012-09-29,9,29,6,Mark Halsey,25698,28.9,71.1,3,7,7,23,466,888,276,726,15,13,28,16,2,4,1,2,0,1,0,0,8,12,,
+2012/13,Norwich,Liverpool,2,5,Carrow Road,https://www.premierleague.com/match/7917,6,2012-09-29,9,29,6,Mike Jones,26831,32.9,67.1,4,5,16,16,475,901,320,700,21,11,17,30,5,5,2,5,1,0,0,0,11,6,4-4-2,4-3-3
+2012/13,Reading,Newcastle,2,2,Madejski Stadium,https://www.premierleague.com/match/7918,6,2012-09-29,9,29,6,Andre Marriner,24097,47.4,52.6,5,2,16,9,579,663,348,409,21,22,30,80,6,3,3,1,0,3,0,0,8,9,,
+2012/13,Stoke,Swansea,2,0,bet365 Stadium,https://www.premierleague.com/match/7919,6,2012-09-29,9,29,6,Jonathan Moss,27330,39.0,61.0,5,3,12,10,517,737,313,519,24,20,29,47,6,8,0,1,1,1,0,0,18,10,,
+2012/13,Sunderland,Wigan,1,0,Stadium of Light,https://www.premierleague.com/match/7920,6,2012-09-29,9,29,6,Howard Webb,37742,49.8,50.2,1,3,10,10,578,559,382,404,16,21,22,27,8,1,2,0,2,5,0,1,22,17,4-4-1-1,3-4-3
+2012/13,Man Utd,Spurs,2,3,Old Trafford,https://www.premierleague.com/match/7916,6,2012-09-29,9,29,6,Chris Foy,75566,74.1,25.9,7,3,16,10,897,483,701,243,24,28,20,73,9,5,0,0,2,2,0,0,7,9,,
+2012/13,Liverpool,Man Utd,1,2,Anfield,https://www.premierleague.com/match/7909,5,2012-09-23,9,23,7,Mark Halsey,44263,52.0,48.0,6,3,14,8,657,636,459,420,23,29,19,44,7,3,0,1,1,2,1,0,14,7,4-2-3-1,4-2-3-1
+2012/13,Newcastle,Norwich,1,0,St James' Park,https://www.premierleague.com/match/7911,5,2012-09-23,9,23,7,Neil Swarbrick,49402,52.8,47.2,6,3,18,10,642,553,430,368,17,15,45,33,4,5,3,1,1,1,0,0,11,20,,
+2012/13,Man City,Arsenal,1,1,Etihad Stadium,https://www.premierleague.com/match/7910,5,2012-09-23,9,23,7,Mike Dean,47318,41.2,58.8,6,4,15,11,637,869,433,638,38,23,22,27,9,4,1,1,1,0,0,0,12,8,,
+2012/13,Spurs,QPR,2,1,White Hart Lane,https://www.premierleague.com/match/7912,5,2012-09-23,9,23,7,Phil Dowd,36052,43.3,56.7,8,4,20,9,580,655,336,459,19,18,57,31,10,9,2,3,0,2,0,0,8,12,,
+2012/13,Swansea,Everton,0,3,Liberty Stadium,https://www.premierleague.com/match/7905,5,2012-09-22,9,22,6,Anthony Taylor,20464,48.5,51.5,4,11,18,31,583,611,393,414,16,11,33,31,8,3,1,3,4,1,1,0,23,9,,
+2012/13,Chelsea,Stoke,1,0,Stamford Bridge,https://www.premierleague.com/match/7903,5,2012-09-22,9,22,6,Michael Oliver,41112,59.7,40.3,4,3,19,13,652,524,466,306,18,20,16,43,13,3,2,2,2,1,0,0,14,18,,
+2012/13,Southampton,Aston Villa,4,1,The Friends Provident St Mary's Stadium,https://www.premierleague.com/match/7904,5,2012-09-22,9,22,6,Jonathan Moss,30713,60.4,39.6,7,2,16,11,734,525,492,314,25,20,39,36,1,4,5,3,1,3,0,0,6,15,,
+2012/13,West Brom,Reading,1,0,The Hawthorns,https://www.premierleague.com/match/7906,5,2012-09-22,9,22,6,Chris Foy,23854,52.9,47.1,4,1,11,10,631,599,440,382,11,14,27,33,9,1,1,1,1,0,0,0,15,7,,
+2012/13,West Ham,Sunderland,1,1,Boleyn Ground,https://www.premierleague.com/match/7907,5,2012-09-22,9,22,6,Lee Mason,33052,61.3,38.7,4,1,24,5,681,505,454,291,23,28,29,48,10,1,1,1,2,1,0,0,13,13,,
+2012/13,Wigan,Fulham,1,2,DW Stadium,https://www.premierleague.com/match/7908,5,2012-09-22,9,22,6,Lee Probert,19284,63.6,36.4,5,7,19,12,750,509,581,320,16,9,17,34,8,7,4,0,0,3,0,0,7,13,3-4-3,4-4-2
+2012/13,Everton,Newcastle,2,2,Goodison Park,https://www.premierleague.com/match/7902,4,2012-09-18,9,18,2,Mike Jones,32510,58.3,41.7,6,3,18,11,631,510,406,294,17,22,40,56,3,3,3,3,3,3,0,0,18,13,,
+2012/13,Reading,Spurs,1,3,Madejski Stadium,https://www.premierleague.com/match/7901,4,2012-09-16,9,16,7,Howard Webb,24160,42.3,57.7,2,8,6,23,527,679,314,479,18,21,20,44,7,4,1,1,0,1,0,0,5,12,,
+2012/13,Norwich,West Ham,0,0,Carrow Road,https://www.premierleague.com/match/7897,4,2012-09-15,9,15,6,Chris Foy,26806,48.9,51.1,9,3,25,14,561,573,365,373,15,16,33,42,8,5,3,3,0,1,0,0,12,14,4-4-2,4-2-3-1
+2012/13,Arsenal,Southampton,6,1,Emirates Stadium,https://www.premierleague.com/match/7893,4,2012-09-15,9,15,6,Kevin Friend,60097,50.0,50.0,9,3,23,10,778,758,567,574,21,27,19,29,8,3,0,0,0,0,0,0,4,7,,
+2012/13,Aston Villa,Swansea,2,0,Villa Park,https://www.premierleague.com/match/7894,4,2012-09-15,9,15,6,Lee Mason,34005,42.1,57.9,8,3,16,10,552,694,327,474,18,19,24,61,10,4,2,1,3,1,0,0,13,4,,
+2012/13,Fulham,West Brom,3,0,Craven Cottage,https://www.premierleague.com/match/7895,4,2012-09-15,9,15,6,Roger East,25691,63.0,37.0,10,5,23,10,847,533,638,373,14,18,14,23,5,4,3,1,0,1,0,0,7,10,,
+2012/13,Man Utd,Wigan,4,0,Old Trafford,https://www.premierleague.com/match/7896,4,2012-09-15,9,15,6,Michael Oliver,75142,52.2,47.8,5,1,20,7,627,562,424,388,20,19,20,25,5,5,1,0,2,2,0,0,10,14,4-4-1-1,3-4-3
+2012/13,QPR,Chelsea,0,0,Loftus Road,https://www.premierleague.com/match/7898,4,2012-09-15,9,15,6,Andre Marriner,18271,52.7,47.3,3,4,12,12,669,602,451,401,33,22,43,19,2,4,3,1,0,2,0,0,18,18,,
+2012/13,Stoke,Man City,1,1,bet365 Stadium,https://www.premierleague.com/match/7899,4,2012-09-15,9,15,6,Mark Clattenburg,27101,33.8,66.2,2,8,4,15,494,781,287,585,22,20,32,24,6,5,2,1,0,1,0,0,13,12,4-5-1,4-4-1-1
+2012/13,Sunderland,Liverpool,1,1,Stadium of Light,https://www.premierleague.com/match/7900,4,2012-09-15,9,15,6,Martin Atkinson,41997,34.1,65.9,1,6,7,23,496,809,306,611,25,27,20,19,2,7,1,1,1,2,0,0,18,12,4-4-1-1,4-2-3-1
+2012/13,Liverpool,Arsenal,0,2,Anfield,https://www.premierleague.com/match/7890,3,2012-09-02,9,2,7,Howard Webb,44932,53.0,47.0,4,5,19,11,757,719,544,491,25,32,17,36,10,2,3,1,2,2,0,0,12,7,4-3-3,4-2-3-1
+2012/13,Newcastle,Aston Villa,1,1,St James' Park,https://www.premierleague.com/match/7891,3,2012-09-02,9,2,7,Lee Probert,48245,51.7,48.3,4,5,17,13,615,566,389,364,11,29,31,25,10,6,3,0,1,4,0,0,6,21,,
+2012/13,Southampton,Man Utd,2,3,The Friends Provident St Mary's Stadium,https://www.premierleague.com/match/7892,3,2012-09-02,9,2,7,Mike Dean,31609,45.1,54.9,4,7,15,20,680,782,487,587,21,16,27,33,4,7,2,2,1,0,0,0,8,4,,
+2012/13,West Ham,Fulham,3,0,Boleyn Ground,https://www.premierleague.com/match/7888,3,2012-09-01,9,1,6,Anthony Taylor,33458,45.1,54.9,6,9,16,15,659,757,453,554,26,21,33,18,6,6,0,0,1,2,0,0,12,5,,
+2012/13,Swansea,Sunderland,2,2,Liberty Stadium,https://www.premierleague.com/match/7885,3,2012-09-01,9,1,6,Roger East,20350,63.8,36.2,7,2,15,4,815,507,622,354,21,31,28,19,8,0,1,1,1,0,0,0,13,7,,
+2012/13,Spurs,Norwich,1,1,White Hart Lane,https://www.premierleague.com/match/7886,3,2012-09-01,9,1,6,Mark Halsey,36142,61.6,38.4,5,4,15,12,708,506,510,308,20,17,40,32,4,2,4,0,1,0,1,0,7,12,,
+2012/13,West Brom,Everton,2,0,The Hawthorns,https://www.premierleague.com/match/7887,3,2012-09-01,9,1,6,Jonathan Moss,25383,44.3,55.7,5,2,12,13,529,639,366,451,10,21,22,41,6,3,5,1,1,4,0,0,12,16,,
+2012/13,Wigan,Stoke,2,2,DW Stadium,https://www.premierleague.com/match/7889,3,2012-09-01,9,1,6,Martin Atkinson,16247,68.7,31.3,3,7,13,19,715,422,540,228,13,20,24,20,2,1,1,5,1,2,0,0,15,11,5-4-1,4-4-1-1
+2012/13,Man City,QPR,3,1,Etihad Stadium,https://www.premierleague.com/match/7884,3,2012-09-01,9,1,6,Chris Foy,45579,59.9,40.1,7,4,18,11,832,605,634,421,19,22,31,29,8,3,3,0,2,1,0,0,12,3,,
+2012/13,Stoke,Arsenal,0,0,bet365 Stadium,https://www.premierleague.com/match/7883,2,2012-08-26,8,26,7,Lee Mason,27072,33.3,66.7,1,2,6,17,457,747,240,517,28,28,42,31,0,11,2,1,2,0,0,0,10,9,,
+2012/13,Liverpool,Man City,2,2,Anfield,https://www.premierleague.com/match/7882,2,2012-08-26,8,26,7,Andre Marriner,44942,48.7,51.3,3,3,17,11,658,694,462,484,18,26,20,41,4,4,0,1,1,0,0,0,10,8,4-3-3,3-5-2
+2012/13,Swansea,West Ham,3,0,Liberty Stadium,https://www.premierleague.com/match/7880,2,2012-08-25,8,25,6,Martin Atkinson,20424,62.2,37.8,5,5,12,9,808,523,629,376,20,28,35,18,5,4,4,2,2,4,0,0,14,19,,
+2012/13,Aston Villa,Everton,1,3,Villa Park,https://www.premierleague.com/match/7875,2,2012-08-25,8,25,6,Michael Oliver,36565,39.2,60.8,3,6,9,21,496,699,321,507,18,14,22,31,1,9,2,3,1,0,1,0,12,12,,
+2012/13,Man Utd,Fulham,3,2,Old Trafford,https://www.premierleague.com/match/7877,2,2012-08-25,8,25,6,Kevin Friend,75352,59.9,40.1,7,6,20,16,804,608,614,409,25,24,20,34,8,8,1,0,0,1,0,0,12,7,,
+2012/13,Norwich,QPR,1,1,Carrow Road,https://www.premierleague.com/match/7878,2,2012-08-25,8,25,6,Mark Clattenburg,26317,55.1,44.9,3,3,15,8,542,503,360,290,22,11,23,50,6,2,2,5,0,2,0,0,17,13,4-4-1-1,4-4-2
+2012/13,Southampton,Wigan,0,2,The Friends Provident St Mary's Stadium,https://www.premierleague.com/match/7879,2,2012-08-25,8,25,6,Anthony Taylor,29604,49.2,50.8,6,4,16,13,653,668,451,484,12,27,21,28,10,3,0,0,0,2,0,0,11,9,4-1-4-1,5-4-1
+2012/13,Spurs,West Brom,1,1,White Hart Lane,https://www.premierleague.com/match/7881,2,2012-08-25,8,25,6,Mike Dean,36166,59.0,41.0,7,6,22,13,689,533,487,343,22,17,28,22,7,5,2,3,1,3,0,0,9,6,,
+2012/13,Chelsea,Newcastle,2,0,Stamford Bridge,https://www.premierleague.com/match/7876,2,2012-08-25,8,25,6,Phil Dowd,41718,52.5,47.5,6,3,12,11,667,641,513,451,17,18,22,27,2,3,1,3,1,0,0,0,8,11,,
+2012/13,Chelsea,Reading,4,2,Stamford Bridge,https://www.premierleague.com/match/7874,1,2012-08-22,8,22,3,Lee Mason,41733,71.6,28.4,6,4,27,7,856,419,651,234,13,10,28,38,1,5,0,0,0,2,0,0,13,14,,
+2012/13,Everton,Man Utd,1,0,Goodison Park,https://www.premierleague.com/match/7873,1,2012-08-21,8,21,2,Andre Marriner,38415,30.8,69.2,7,4,18,14,485,850,275,646,19,15,42,33,6,8,0,1,1,2,0,0,13,11,,
+2012/13,Wigan,Chelsea,0,2,DW Stadium,https://www.premierleague.com/match/7872,1,2012-08-19,8,19,7,Mike Jones,19738,52.0,48.0,4,4,15,6,643,639,473,456,23,17,6,29,7,1,0,2,2,2,0,0,17,11,5-4-1,4-2-3-1
+2012/13,Man City,Southampton,3,2,Etihad Stadium,https://www.premierleague.com/match/7871,1,2012-08-19,8,19,7,Howard Webb,46190,64.1,35.9,8,2,23,10,884,569,689,374,19,26,16,31,7,3,2,1,1,2,0,0,4,7,,
+2012/13,Arsenal,Sunderland,0,0,Emirates Stadium,https://www.premierleague.com/match/7864,1,2012-08-18,8,18,6,Chris Foy,60078,70.1,29.9,3,2,23,4,899,474,703,294,16,28,7,34,7,0,0,0,2,1,0,0,12,9,,
+2012/13,Fulham,Norwich,5,0,Craven Cottage,https://www.premierleague.com/match/7865,1,2012-08-18,8,18,6,Michael Oliver,25062,59.8,40.2,9,2,15,9,734,527,568,376,11,16,28,24,6,3,0,0,2,1,0,0,12,11,,
+2012/13,QPR,Swansea,0,5,Loftus Road,https://www.premierleague.com/match/7867,1,2012-08-18,8,18,6,Lee Probert,18072,49.9,50.1,4,6,21,13,610,632,423,434,19,19,15,43,5,3,0,2,2,2,0,0,12,16,4-2-3-1,4-3-3
+2012/13,Reading,Stoke,1,1,Madejski Stadium,https://www.premierleague.com/match/7868,1,2012-08-18,8,18,6,Kevin Friend,23973,52.6,47.4,2,3,10,11,520,467,299,264,13,17,57,43,4,3,1,3,2,4,0,1,11,17,,
+2012/13,West Brom,Liverpool,3,0,The Hawthorns,https://www.premierleague.com/match/7869,1,2012-08-18,8,18,6,Phil Dowd,26039,40.5,59.5,6,2,18,16,508,711,349,523,19,15,10,29,7,3,2,4,1,4,0,1,11,12,4-2-3-1,4-2-3-1
+2012/13,West Ham,Aston Villa,1,0,Boleyn Ground,https://www.premierleague.com/match/7870,1,2012-08-18,8,18,6,Mike Dean,34172,34.2,65.8,2,2,8,13,480,759,277,566,18,24,37,37,6,4,0,2,0,1,0,0,17,9,4-3-3,4-2-3-1
+2012/13,Newcastle,Spurs,2,1,St James' Park,https://www.premierleague.com/match/7866,1,2012-08-18,8,18,6,Martin Atkinson,52385,51.9,48.1,3,4,7,15,603,568,405,373,18,17,35,31,3,5,3,2,2,2,0,0,13,9,,

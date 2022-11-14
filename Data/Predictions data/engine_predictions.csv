@@ -1,0 +1,24 @@
+season,match_week,match_date,home_team,away_team,goals_h,goals_a,prediction,probability,confidence,output,bet,ground_truth
+2022/23,2,2022-08-13,Man City,Bournemouth,4,0,1,0.7,High,Probability of Man City beating Bournemouth at home is 70%.,True,1
+2022/23,4,2022-08-27,Arsenal,Fulham,2,1,1,0.68,High,Probability of Arsenal beating Fulham at home is 68%.,True,1
+2022/23,4,2022-08-27,Man City,Crystal Palace,4,2,1,0.75,High,Probability of Man City beating Crystal Palace at home is 75%.,True,1
+2022/23,4,2022-08-27,Liverpool,Bournemouth,9,0,1,0.75,High,Probability of Liverpool beating Bournemouth at home is 75%.,True,1
+2022/23,5,2022-08-31,Man City,Nott'm Forest,6,0,1,0.77,High,Probability of Man City beating Nott'm Forest at home is 77%.,True,1
+2022/23,6,2022-09-03,Spurs,Fulham,2,1,1,0.69,High,Probability of Spurs beating Fulham at home is 69%.,True,1
+2022/23,6,2022-09-03,Aston Villa,Man City,1,1,-1,0.69,High,Probability of Man City defeating Aston Villa away from home is 69%.,True,0
+2022/23,8,2022-09-17,Spurs,Leicester,6,2,1,0.7,High,Probability of Spurs beating Leicester at home is 70%.,True,1
+2022/23,8,2022-09-17,Newcastle,Bournemouth,1,1,1,0.7,High,Probability of Newcastle beating Bournemouth at home is 70%.,True,0
+2022/23,9,2022-10-01,Liverpool,Brighton,3,3,1,0.68,High,Probability of Liverpool beating Brighton at home is 68%.,True,0
+2022/23,9,2022-10-02,Man City,Man Utd,6,3,1,0.66,High,Probability of Man City beating Man Utd at home is 66%.,True,1
+2022/23,10,2022-10-08,Man City,Southampton,4,0,1,0.81,High,Probability of Man City beating Southampton at home is 81%.,True,1
+2022/23,12,2022-10-18,Brighton,Nott'm Forest,0,0,1,0.66,High,Probability of Brighton beating Nott'm Forest at home is 66%.,True,0
+2022/23,12,2022-10-19,Liverpool,West Ham,1,0,1,0.69,High,Probability of Liverpool beating West Ham at home is 69%.,True,1
+2022/23,13,2022-10-22,Man City,Brighton,3,1,1,0.72,High,Probability of Man City beating Brighton at home is 72%.,True,1
+2022/23,13,2022-10-22,Nott'm Forest,Liverpool,1,0,-1,0.68,High,Probability of Liverpool defeating Nott'm Forest away from home is 68%.,True,1
+2022/23,14,2022-10-29,Liverpool,Leeds,1,2,1,0.72,High,Probability of Liverpool beating Leeds at home is 72%.,True,-1
+2022/23,14,2022-10-29,Leicester,Man City,0,1,-1,0.68,High,Probability of Man City defeating Leicester away from home is 68%.,True,-1
+2022/23,14,2022-10-30,Arsenal,Nott'm Forest,5,0,1,0.77,High,Probability of Arsenal beating Nott'm Forest at home is 77%.,True,1
+2022/23,15,2022-11-05,Man City,Fulham,2,1,1,0.78,High,Probability of Man City beating Fulham at home is 78%.,True,1
+2022/23,16,2022-11-12,Man City,Brentford,1,2,1,0.79,High,Probability of Man City beating Brentford at home is 79%.,True,-1
+2022/23,16,2022-11-12,Liverpool,Southampton,3,1,1,0.77,High,Probability of Liverpool beating Southampton at home is 77%.,True,1
+2022/23,16,2022-11-12,Spurs,Leeds,4,3,1,0.67,High,Probability of Spurs beating Leeds at home is 67%.,True,1

@@ -1,0 +1,11 @@
+season,match_week,match_date,home_team,away_team,prediction,probability,confidence,output,bet
+2022/23,17,2022-12-26,Brentford,Spurs,-1,0.55,Medium,Probability of Spurs defeating Brentford away from home is 55%.,False
+2022/23,17,2022-12-26,Everton,Wolves,1,0.47,Low,Probability of Everton beating Wolves at home is 47%.,False
+2022/23,17,2022-12-26,Leicester,Newcastle,-1,0.45,Low,Probability of Newcastle defeating Leicester away from home is 45%.,False
+2022/23,17,2022-12-26,Southampton,Brighton,-1,0.43,Low,Probability of Brighton defeating Southampton away from home is 43%.,False
+2022/23,17,2022-12-26,Aston Villa,Liverpool,-1,0.62,Medium,Probability of Liverpool defeating Aston Villa away from home is 62%.,False
+2022/23,17,2022-12-26,Crystal Palace,Fulham,1,0.43,Low,Probability of Crystal Palace beating Fulham at home is 43%.,False
+2022/23,17,2022-12-27,Arsenal,West Ham,1,0.71,High,Probability of Arsenal beating West Ham at home is 71%.,True
+2022/23,17,2022-12-27,Chelsea,Bournemouth,1,0.68,High,Probability of Chelsea beating Bournemouth at home is 68%.,True
+2022/23,17,2022-12-27,Man Utd,Nott'm Forest,1,0.73,High,Probability of Man Utd beating Nott'm Forest at home is 73%.,True
+2022/23,17,2022-12-28,Leeds,Man City,-1,0.65,High,Probability of Man City defeating Leeds away from home is 65%.,True
