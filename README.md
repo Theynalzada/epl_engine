@@ -1,10 +1,12 @@
 # Data Science Project: Premier League Engine
 
+![](https://i.imgur.com/E56czoZ.jpg)
+
 ## Project Description
-The goal of the project is to make accurate and precise predictions for the **English Premier League (EPL)** matches. The motivation behind the project actually came from my passion for football and taking into account that I am a huge **Manchester United** fan, choosing EPL to start the project was inevitable. This project roughly took eight months to complete because of its scope and what I was trying to achieve. 
+The goal of the project is to make accurate and precise predictions for the **English Premier League (EPL)** matches. The motivation behind the project actually came from my passion for football and taking into account that I am a huge **Manchester United** fan, choosing the EPL to start the project was inevitable. This project roughly took eight months to complete because of its scope and what I was trying to achieve. 
 
 ## Data Collection
-Considering the data I was looking for was not available, I built a web scraping bot which I refer it as scraper using **Selenium** framework in **Pyhon** programming language to scrape data from the official [website](https://www.premierleague.com) of EPL. The **2016/17** season for EPL was a turning point in many ways but mostly due to reputation of managers and the statue of the clubs they were appointed to. The managers such as Jose Mourinho (Manchester United), Pep Guardiola (Manchester City) and Antonio Conte (Chelsea) were introduced to EPL where Arsene Wenger (Arsenal), Jurgen Klopp (Liverpool) and Mauricio Pochettino (Spurs) were already operating. So, I decided to start scraping data from 2016/17 season up to the 2022/23 (*current season*) so that the data includes the most recent events in the league. The scraper initially scrapes **40** variables for each season which are as follow.
+Considering the data I was looking for was not available, I built a web scraping bot which I refer it as ***Scraper*** using **Selenium** framework in **Pyhon** programming language to scrape data from the official [website](https://www.premierleague.com) of the EPL. Taking into account that in game statistics for matches had been stored since 2006/07 season, I scraped all the data available from 2006/07 season. The bot initially scrapes **40** variables for each season which are as follow.
 
 1. **season** - A season in which a match took place
 2. **home_team** - A home team in a match
@@ -89,208 +91,301 @@ I proceeded with the former technique to build three separate models, one for ea
     4. **46 - 60** -> A multiclass model will be trained on historical data aggregated from minute 46 to minute 60 of a football match to predict the outcome.
     5. **61 - 75** -> A multiclass model will be trained on historical data aggregated from minute 61 to minute 75 of a football match to predict the outcome.
 
-    In this kind of approach the confidence of a model for a given prediction increases when the time for a final whistle decreases. Let's take a look at Manchester United vs Arsenal match that took place in 2022-09-04 as an example. The score was 0-0 until the minute 35 and by that time a model would have made 2 predictions, one in minute 15 and the other one in minute 30. Since no team had found a breakthrough goal a model's probability for a given prediction would not be that accurate. Then in minute 35 Manchested United finally found the breakthrough goal which was in the third time partition and 10 minutes later the model would have made the third prediction at half time but with increased probability for a given prediction. Arsenal equalized in minute 60 and the model would have made the fourth prediction in which the probability of Manchester United beating Arsenal would have decreased and the probability of Arsenal defeating Manchester United away from home would be higher. Then in minute 66 and 75 the red devils scored their second and third goal and the probability of Manchester United defeating Arsenal at Old Trafford would have been much higher. This is the workflow of the online prediction. In order to build a model to make prediction online there needs to be a minute by minute data for each match which is much harder to collect.
-
+    In this kind of approach the confidence of a model for a given prediction increases when the time for a final whistle decreases. Let's take a look at Manchester United vs Arsenal match that took place in 2022-09-04 as an example. The score was 0-0 until the minute 35 and by that time a model would have made 2 predictions, one in minute 15 and the other one in minute 30. Since no team had found a breakthrough goal a model's probability for a given prediction would not be that accurate. Then in minute 35 Manchested United finally found the breakthrough goal which was in the third time partition and 10 minutes later the model would have made the third prediction at half time but with increased probability for a given prediction. Arsenal equalized in minute 60 and the model would have made the fourth prediction in which the probability of Manchester United beating Arsenal would have decreased and the probability of Arsenal defeating Manchester United away from home would be higher. Then in minute 66 and 75 the red devils scored their second and third goal and the probability of Manchester United defeating Arsenal at Old Trafford would have been much higher. This is the workflow of the online prediction. In order to build a model to make prediction online there needs to be a minute by minute data also known as **events data** for each match which is much harder to collect.
+    
 2. **Batch prediction** - Unlike online prediction batch prediction for this particular project is based on the idea of predicting the outcome of a football match before that particular match took place. By this logic, the features the scraper scraped cannot be used since they are derived from in game statistics. Primary approach when building a batch model for this particular project is based on teaching a model the historical behavior of teams. My initial idea had always been to build a model that was capable of predicting the outcome of a match beforehand which makes it much harder for two primary reasons.
 
     1. A model will not be using in game statistics but historical features which will be aggregation of various parameters of previous matches.
     2. Unexpected occations such as red cards, major players injured during a match, last minute penalties, virtual assistant referee (VAR) involvement might drastically change the final outcome of a match. Considering the fact that a batch model will not be using the in game statistics, it will be unaware of these unexpected occations.
 
 ## Feature Engineering
-Considering the fact that I was going to build a model to predict the outcome of a football match before it even took place, I had to do some feature engineering. I created a Python script called **feature_engineering.py** which creates **189** features which are following.
+Considering the fact that I was going to build a model to predict the outcome of a football match before it even took place, I had to do some feature engineering. I created a Python script called **feature_engineering.py** which creates **283** features which are following.
 
 ---
 
-1. **is_boxing_day** - Whether or not a match took place on **boxing day** which is a unique fixture for EPL
+1. **is_boxing_day** - Whether or not a match is played on a boxing day
 2. **finished_top_4_last_season_h** - Whether or not a home team finished top four last season
 3. **finished_top_4_last_season_a** - Whether or not an away team finished top four last season
-4. **won_carabao_cup_last_season_h** - Whether or not a home team won Carabao Cup last season
-5. **won_carabao_cup_last_season_a** - Whether or not an away team won Carabao Cup last season
-6. **was_in_ucl_last_season_h** - Whether or not a home team was in Uefa Champions League (UCL) last season
-7. **was_in_ucl_last_season_a** - Whether or not an away team was in UCL last season
-8. **was_in_uel_last_season_h** - Whether or not a home team was in Uefa Europa League (UEL) last season
-9. **was_in_uel_last_season_a** - Whether or not an away team was in UEL last season
-10. **is_in_ucl_this_season_h** - Whether or not a home team is in UCL this season
-11. **is_in_ucl_this_season_a** - Whether or not an away team is in UCL this season
-12. **is_in_uel_this_season_h** - Whether or not a home team is in UEL this season
-13. **is_in_uel_this_season_a** - Whether or not an away team is in UEL this season
-14. **won_fa_cup_last_season_h** - Whether or not a home won FA Cup last season
-15. **won_fa_cup_last_season_a** - Whether or not an away won FA Cup last season
-16. **traditional_top_6_h** - Whether or not a home team is a traditional top six club
-17. **traditional_top_6_a** - Whether or not an away team is a traditional top six club
-18. **won_epl_last_season_h** - Whether or not a home team won English Premier League (EPL) last season
-19. **won_epl_last_season_a** - Whether or not an away team won English Premier League (EPL) last season
+4. **won_carabao_cup_last_season_h** - Whether or not a home team won Carabao cup last season
+5. **won_carabao_cup_last_season_a** - Whether or not an away team won Carabao cup last season
+6. **won_fa_cup_last_season_h** - Whether or not a home team won FA cup last season
+7. **won_fa_cup_last_season_a** - Whether or not an away team won FA cup last season
+8. **won_epl_cup_last_season_h** - Whether or not a home team won the EPL last season
+9. **won_epl_cup_last_season_a** - Whether or not an away team won the EPL last season
+10. **was_in_ucl_last_season_h** - Whether or not a home team was in Uefa Champions League last season
+11. **was_in_ucl_last_season_a** - Whether or not an away team was in Uefa Champions League last season
+12. **was_in_uel_last_season_h** - Whether or not a home team was in Uefa Europa League last season
+13. **was_in_uel_last_season_a** - Whether or not a home team was in Uefa Europa League last season
+14. **is_in_ucl_last_season_h** - Whether or not a home team is in Uefa Champions League this season
+15. **is_in_ucl_last_season_a** - Whether or not an away team is in Uefa Champions League this season
+16. **is_in_uel_last_season_h** - Whether or not a home team is in Uefa Europa League this season
+17. **is_in_uel_last_season_a** - Whether or not an away team is in Uefa Europa League last season
+18. **traditional_top_6_h** - Whether or not a home team is a traditional top six club
+19. **traditional_top_6_a** - Whether or not an away team is a traditional top six club
 20. **newly_promoted_h** - Whether or not a home team is a newly promoted team
 21. **newly_promoted_a** - Whether or not an away team is a newly promoted team
-22. **avg_shots_on_target_last_3_h** - Average number of shots on target in the last three home matches for a home team
-23. **avg_shots_on_target_last_5_h** - Average number of shots on target in the last five home matches for a home team
-24. **avg_shots_on_target_last_3_a** - Average number of shots on target in the last three away matches for an away team
-25. **avg_shots_on_target_last_5_a** - Average number of shots on target in the last five away matches for an away team
-26. **avg_fouls_conceded_last_3_h** - Average number of fouls conceded in the last three home matches for a home team
-27. **avg_fouls_conceded_last_5_h** - Average number of fouls conceded in the last five home matches for a home team
-28. **avg_fouls_conceded_last_3_a** - Average number of fouls conceded in the last three away matches for an away team
-29. **avg_fouls_conceded_last_5_a** - Average number of fouls conceded in the last five away matches for an away team
-30. **avg_yellow_cards_last_3_h** - Average number of yellow cards received in last three home matches for a home team
-31. **avg_yellow_cards_last_5_h** - Average number of yellow cards received in last five home matches for a home team
-32. **avg_yellow_cards_last_3_a** - Average number of yellow cards received in last three home matches for an away team
-33. **avg_yellow_cards_last_5_a** - Average number of yellow cards received in last five home matches for an away team
-34. **avg_possession_last_3_h** - Average ball possession in the last three home matches for a home team
-35. **avg_possession_last_5_h** - Average ball possession in the last five home matches for a home team
-36. **avg_possession_last_3_a** - Average ball possession in the last three away matches for an away team
-37. **avg_possession_last_5_a** - Average ball possession in the last five away matches for an away team
-38. **avg_clearances_last_3_h** - Average number of clearances in last three home matches for a home team
-39. **avg_clearances_last_5_h** - Average number of clearances in last five home matches for a home team
-40. **avg_clearances_last_3_a** - Average number of clearances in last three away matches for an away team
-41. **avg_clearances_last_5_a** - Average number of clearances in last five away matches for an away team
-42. **avg_shots_on_target_h** - Average shots on target in home matches for a home team
-43. **avg_shots_on_target_a** - Average shots on target in away matches for an away team
-44. **total_avg_shots_on_target_last_3_h** - Average shots on target in the last three matches for a home team
-45. **total_avg_shots_on_target_last_3_a** - Average shots on target in the last three matches for an away team
-46. **total_avg_shots_on_target_last_5_h** - Average shots on target in the last five matches for a home team
-47. **total_avg_shots_on_target_last_5_a** - Average shots on target in the last five matches for an away team
-48. **total_avg_fouls_conceded_last_3_h** - Average number of fouls conceded in the last three matches for a home team
-49. **total_avg_fouls_conceded_last_3_a** - Average number of fouls conceded in the last three matches for an away team
-50. **total_avg_fouls_conceded_last_5_h** - Average number of fouls conceded in the last five matches for a home team
-51. **total_avg_fouls_conceded_last_5_a** - Average number of fouls conceded in the last five matches for an away team
-52. **total_avg_yellow_cards_last_3_h** - Average number of yellow cards received in last three matches for a home team
-53. **total_avg_yellow_cards_last_3_a** - Average number of yellow cards received in last three matches for an away team
-54. **total_avg_yellow_cards_last_5_h** - Average number of yellow cards received in last five matches for a home team
-55. **total_avg_yellow_cards_last_5_a** - Average number of yellow cards received in last five matches for an away team
-56. **total_avg_clearances_last_3_h** - Average number of clearances in last three matches for a home team
-57. **total_avg_clearances_last_3_a** - Average number of clearances in last three matches for an away team
-58. **total_avg_clearances_last_5_h** - Average number of clearances in last five matches for a home team
-59. **total_avg_clearances_last_5_a** - Average number of clearances in last five matches for an away team
-60. **avg_offsides_last_3_h** - Average number of offsides in the last three matches for a home team
-61. **avg_offsides_last_3_a** - Average number of offsides in the last three matches for an away team
-62. **avg_offsides_last_5_h** - Average number of offsides in the last five matches for a home team
-63. **avg_offsides_last_5_a** - Average number of offsides in the last five matches for an away team
-64. **goals_conceded_h_cum** - Total number of goals conceded by a home team in home matches
-65. **goals_conceded_a_cum** - Total number of goals conceded by an away team in away matches
-66. **avg_fouls_conceded_h** - Average number of fouls conceded by a home team in home matches
-67. **avg_fouls_conceded_a** - Average number of fouls conceded by an away team in away matches
-68. **avg_corners_last_3_h** - Average number of corners in the last three home matches for a home team
-69. **avg_corners_last_5_h** - Average number of corners in the last five home matches for a home team
-70. **avg_corners_last_3_a** - Average number of corners in the last three home matches for an away team
-71. **avg_corners_last_5_a** - Average number of corners in the last five home matches for an away team
-72. **avg_touches_last_3_h** - Average number of touches in the last three home matches for a home team
-73. **avg_touches_last_5_h** - Average number of touches in the last five home matches for a home team
-74. **avg_touches_last_3_a** - Average number of touches in the last three away matches for an away team
-75. **avg_touches_last_5_a** - Average number of touches in the last five away matches for an away team
-76. **avg_tackles_last_3_h** - Average number of tackles in the last three home matches for a home team
-77. **avg_tackles_last_5_h** - Average number of tackles in the last five home matches for a home team
-78. **avg_tackles_last_3_a** - Average number of tackles in the last three away matches for an away team
-79. **avg_tackles_last_5_a** - Average number of tackles in the last five away matches for an away team
-80. **total_avg_offsides_last_3_h** - Total number of offsides by a home team in the last three matches
-81. **total_avg_offsides_last_3_a** - Total number of offsides by an away team in the last three matches
-82. **total_avg_offsides_last_5_h** - Total number of offsides by a home team in the last five matches
-83. **total_avg_offsides_last_5_a** - Total number of offsides by an away team in the last five matches
-84. **goals_scored_h_cum** - Total number of goals scored by a home team in home matches
-85. **goals_scored_a_cum** - Total number of goals scored by an away team in away matches
-86. **avg_yellow_cards_h** - Total number of yellow cards received by a home team in home matches
-87. **avg_yellow_cards_a** - Total number of yellow cards received by an away team in away matches
-88. **avg_passes_last_3_h** - Average number of passes in the last three home matches for a home team
-89. **avg_passes_last_5_h** - Average number of passes in the last five home matches for a home team
-90. **avg_passes_last_3_a** - Average number of passes in the last three away matches for an away team
-91. **avg_passes_last_5_a** - Average number of passes in the last five away matches for an away team
-92. **total_avg_corners_last_3_h** - Average number of corners for a home team in the last three matches
-93. **total_avg_corners_last_3_a** - Average number of corners for an away team in the last three matches
-94. **total_avg_corners_last_5_h** - Average number of corners for a home team in the last five matches
-95. **total_avg_corners_last_5_a** - Average number of corners for an away team in the last five matches
-96. **total_avg_tackles_last_3_h** - Average number of tackles for a home team in the last three matches
-97. **total_avg_tackles_last_3_a** - Average number of tackles for an away team in the last three matches
-98. **total_avg_tackles_last_5_h** - Average number of tackles for a home team in the last five matches
-99. **total_avg_tackles_last_5_a** - Average number of tackles for an away team in the last five matches
-100. **total_avg_touches_last_3_h** - Average number of touches for a home team in the last three matches
-101. **total_avg_touches_last_3_a** - Average number of touches for an away team in the last three matches
-102. **total_avg_touches_last_5_h** - Average number of touches for a home team in the last five matches
-103. **total_avg_touches_last_5_a** - Average number of touches for an away team in the last five matches
-104. **avg_shots_last_3_h** - Average number of shots for a home team in the last three home matches
-105. **avg_shots_last_5_h** - Average number of shots for a home team in the last five home matches
-106. **avg_shots_last_3_a** - Average number of shots for an away team in the last three away matches
-107. **avg_shots_last_5_a** - Average number of shots for an away team in the last five away matches
-108. **avg_possession_h** - Average ball possession for a home team in home matches
-109. **avg_possession_a** - Average ball possession for an away team in away matches
-110. **avg_clearances_h** - Average number of clearances for a home team in home matches
-111. **avg_clearances_a** - Average number of clearances for an away team in away matches
-112. **total_avg_passes_last_3_h** - Average number of passes for a home team in the last three matches
-113. **total_avg_passes_last_3_a** - Average number of passes for an away team in the last three matches
-114. **total_avg_passes_last_5_h** - Average number of passes for a home team in the last five matches
-115. **total_avg_passes_last_5_a** - Average number of passes for an away team in the last five matches
-116. **total_n_matches_played_h** - Total number of matches played by a home team
-117. **total_n_matches_played_a** - Total number of matches played by an away team
-118. **avg_offsides_h** - Average number of offsides by a home team in home matches
-119. **avg_offsides_a** - Average number of offsides by an away team in away matches
-120. **avg_touches_h** - Average number of touches by a home team in home matches
-121. **avg_touches_a** - Average number of touches by an away team in away matches
-122. **avg_tackles_h** - Average number of tackles by a home team in home matches
-123. **avg_tackles_a** - Average number of tackles by an away team in away matches
-124. **avg_corners_h** - Average number of corners by a home team in home matches
-125. **avg_corners_a** - Average number of corners by an away team in away matches
-126. **avg_passes_h** - Average number of passes by a home team in home matches
-127. **avg_passes_a** - Average number of passes by an away team in away matches
-128. **points_h_cum** - Total number of points accumulated by a home team in home matches
-129. **points_a_cum** - Total number of points accumulated by an away team in away matches
-130. **avg_shots_h** - Average number of shots by a home team in home matches
-131. **avg_shots_a** - Average number of shots by an away team in away matches
-132. **total_avg_shots_last_3_h** - Average number of shots by a home team in the last three matches
-133. **total_avg_shots_last_3_a** - Average number of shots by an away team in the last three matches
-134. **total_avg_shots_last_5_h** - Average number of shots by a home team in the last five matches
-135. **total_avg_shots_last_5_a** - Average number of shots by an away team in the last five matches
-136. **n_matches_played_h** - Total number of home matches for a home team
-137. **n_matches_played_a** - Total number of away matches for an home team
-138. **max_points_h** - Maximum number of points a home team can get from home matches
-139. **max_points_a** - Maximum number of points an away team can get from away matches
-140. **points_dropped_h** - Total number of points dropped in home matches for a home team
-141. **points_dropped_a** - Total number of points dropped in away matches for an away team
-142. **total_goals_conceded_h** - Total number of goals conceded by a home team
-143. **total_goals_conceded_a** - Total number of goals conceded by an away team
-144. **total_avg_possession_last_3_h** - Average ball possession for a home team in the last three matches
-145. **total_avg_possession_last_3_a** - Average ball possession for an away team in the last three matches
-146. **total_avg_possession_last_5_h** - Average ball possession for a home team in the last five matches
-147. **total_avg_possession_last_5_a** - Average ball possession for an away team in the last five matches
-148. **total_avg_shots_on_target_h** - Average number of shots on target for a home team
-149. **total_avg_shots_on_target_a** - Average number of shots on target for an away team
-150. **total_avg_fouls_conceded_h** - Average number of fouls conceded by a home team
-151. **total_avg_fouls_conceded_a** - Average number of fouls conceded by an away team
-152. **total_avg_yellow_cards_h** - Average number of yellow cards received by a home team
-153. **total_avg_yellow_cards_a** - Average number of yellow cards received by an away team
-154. **total_avg_clearances_h** - Average number of clearances for a home team
-155. **total_avg_clearances_a** - Average number of clearances for an away team
-156. **total_avg_possession_h** - Average ball possession for a home team
-157. **total_avg_possession_a** - Average ball possession for an away team
-158. **total_avg_offsides_h** - Average number of offsides a home team
-159. **total_avg_offsides_a** - Average number of offsides an away team
-160. **total_goals_scored_h** - Total number of goals scored by a home team
-161. **total_goals_scored_a** - Total number of goals scored by an away team
-162. **total_avg_corners_h** - Average number of corners for a home team
-163. **total_avg_corners_a** - Average number of corners for an away team
-164. **total_avg_touches_h** - Average number of touches for a home team
-165. **total_avg_touches_a** - Average number of touches for an away team
-166. **total_avg_tackles_h** - Average number of tackles for a home team
-167. **total_avg_tackles_a** - Average number of tackles for an away team
-168. **total_avg_passes_h** - Average number of passes for a home team
-169. **total_avg_passes_a** - Average number of passes for an away team
-170. **total_points_h_cum** - Total number of points accumulated by a home team
-171. **total_points_a_cum** - Total number of points accumulated by an away team
-172. **total_max_points_h** - Maximum number of points a home team can get
-173. **total_max_points_a** - Maximum number of points an away team can get
-174. **total_points_dropped_h** - Total number of points dropped by a home team
-175. **total_points_dropped_a** - Total number of points dropped by an away team
-176. **positive_total_goal_difference_h** - Whether or not a home team has a positive goal difference
-177. **positive_total_goal_difference_a** - Whether or not an away team has a positive goal difference
-178. **positive_goal_difference_h** - Whether or not a home team has a positive goal difference in home matches
-179. **positive_goal_difference_a** - Whether or not an away team has a positive goal difference in away matches
-180. **total_goal_difference_h** - Total goal difference for a home team
-181. **total_goal_difference_a** - Total goal difference for an away team
-182. **goal_difference_h** - Total goal difference for a home team in home matches
-183. **goal_difference_a** - Total goal difference for an away team in away matches
-184. **total_avg_shots_h** - Average number of shots for a home team
-185. **total_avg_shots_a** - Average number of shots for an away team
-186. **is_derby** - Whether or not a match is a derby
-187. **derby_name** - A name of a derby in case a match is a derby
-188. **h_position** - A league position of a home team
-189. **a_position** - A league position of an away team
-
+22. **positive_total_goal_difference_h** - Whether or not a home team has a positive goal difference
+23. **positive_total_goal_difference_a** - Whether or not an away team has a positive goal difference
+24. **positive_goal_difference_h** - Whether or not a home team has a positive goal difference in home matches
+25. **positive_goal_difference_a** - Whether or not an away team has a positive goal difference in away matches
+26. **has_been_a_ucl_winner_h** - Whether or not a home team has won the Uefa Champions League at least once
+27. **has_been_a_ucl_winner_a** - Whether or not an away team has won the Uefa Champions League at least once
+28. **has_been_an_epl_winner_h** - Whether or not a home team has won the EPL at least once
+29. **has_been_an_epl_winner_a** - Whether or not an away team has won the EPL at least once
+30. **is_derby** - Whether or not a match is derby
+31. **club_tier_h** - A tier of a home team based on trophies
+32. **club_tier_a** - A tier of an away team based on trophies
+33. **h_position** - A league position of a home team
+34. **a_position** - A league position of an away team
+35. **streak_h** - Form of a home team based on the last five matches
+36. **streak_a** - Form of an away team based on the last five matches
+37. **derby_name** - A name of a derby in case a match is a derby
+38. **home_team** - A home team
+39. **away_team** - An away team
+40. **match_week** - A match week
+41. **month** - A month a match took place
+42. **day** - A day of a month a match took place
+43. **weekday** - A day of a week a match took place
+44. **total_n_matches_played_h** - The number of total matches played by a home team
+45. **total_n_matches_played_a** - The number of total matches played by an away team
+46. **total_max_points_h** - The maximum points a home team was supposed to get
+47. **total_max_points_a** - The maximum points an away team was supposed to get
+48. **total_points_h_cum** - The total number of points accumulated by a home team
+49. **total_points_a_cum** - The total number of points accumulated by an away team
+50. **total_avg_acc_points_h** - The average points accumulated by a home team
+51. **total_avg_acc_points_a** - The average points accumulated by an away team
+52. **total_avg_points_accumulated_last_3_h** - The average points accumulated by a home team in the last three matches
+53. **total_avg_points_accumulated_last_3_a** - The average points accumulated by an away team in the last three matches
+54. **total_avg_points_accumulated_last_5_h** - The average points accumulated by a home team in the last five matches
+55. **total_avg_points_accumulated_last_5_a** - The average points accumulated by an away team in the last five matches
+56. **total_points_dropped_h** - The total number of points dropped by a home team
+57. **total_points_dropped_a** - The total number of points dropped by an away team
+58. **total_avg_dropped_points_h** - The average number of points dropped by a home team
+59. **total_avg_dropped_points_a** - The average number of points dropped by an away team
+60. **total_avg_points_dropped_last_3_h** - The average number of points dropped by a home team in the last three matches
+61. **total_avg_points_dropped_last_3_a** - The average number of points dropped by an away team in the last three matches
+62. **total_avg_points_dropped_last_5_h** - The average number of points dropped by a home team in the last five matches
+63. **total_avg_points_dropped_last_5_a** - The average number of points dropped by an away team in the last five matches
+64. **total_goals_scored_h** - The total number of goals scored by a home team
+65. **total_goals_scored_a** - The total number of goals scored by an away team
+66. **total_avg_goals_scored_h** - The average number of goals scored by a home team
+67. **total_avg_goals_scored_a** - The average number of goals scored by an away team
+68. **total_avg_goals_scored_last_3_h** - The average number of goals scored by a home team in the last three matches
+69. **total_avg_goals_scored_last_3_a** - The average number of goals scored by an away team in the last three matches
+70. **total_avg_goals_scored_last_5_h** - The average number of goals scored by a home team in the last five matches
+71. **total_avg_goals_scored_last_5_a** - The average number of goals scored by an away team in the last five matches
+72. **total_goals_conceded_h** - The total number of goals conceded by a home team
+73. **total_goals_conceded_a** - The total number of goals conceded by an away team
+74. **total_avg_goals_conceded_h** - The average number of goals conceded by a home team
+75. **total_avg_goals_conceded_a** - The average number of goals conceded by an away team
+76. **total_avg_goals_conceded_last_3_h** - The average number of goals conceded by a home team in the last three matches
+77. **total_avg_goals_conceded_last_3_a** - The average number of goals conceded by an away team in the last three matches
+78. **total_avg_goals_conceded_last_5_h** - The average number of goals conceded by a home team in the last five matches
+79. **total_avg_goals_conceded_last_5_a** - The average number of goals conceded by an away team in the last five matches
+80. **total_avg_possession_h** - The average possession of a home team
+81. **total_avg_possession_a** - The average possession of an away team
+82. **total_avg_possession_last_3_h** - The average possession of a home team in the last three matches
+83. **total_avg_possession_last_3_a** - The average possession of an away team in the last three matches
+84. **total_avg_possession_last_5_h** - The average possession of a home team in the last five matches
+85. **total_avg_possession_last_5_a** - The average possession of an away team in the last five matches
+86. **total_shots_on_target_cum_h** - The total number of shots on target by a home team
+87. **total_shots_on_target_cum_a** - The total number of shots on target by an away team
+88. **total_avg_shots_on_target_h** - The average number of shots on target by a home team
+89. **total_avg_shots_on_target_a** - The average number of shots on target by an away team
+90. **total_avg_shots_on_target_last_3_h** - The average number of shots on target by a home team in the last three matches
+91. **total_avg_shots_on_target_last_3_a** - The average number of shots on target by an away team in the last three matches
+92. **total_avg_shots_on_target_last_5_h** - The average number of shots on target by a home team in the last five matches
+93. **total_avg_shots_on_target_last_5_a** - The average number of shots on target by an away team in the last five matches
+94. **total_shots_cum_h** - The total number of shots by a home team
+95. **total_shots_cum_a** - The total number of shots by an away team
+96. **total_avg_shots_h** - The average number of shots by a home team
+97. **total_avg_shots_a** - The average number of shots by a home team
+98. **total_avg_shots_last_3_h** - The average number of shots by a home team in the last three matches
+99. **total_avg_shots_last_3_a** - The average number of shots by an away team in the last three matches
+100. **total_avg_shots_last_5_h** - The average number of shots by a home team in the last five matches
+101. **total_avg_shots_last_5_a** - The average number of shots by an away team in the last five matches
+102. **total_avg_touches_h** - The average number of touches by a home team
+103. **total_avg_touches_a** - The average number of touches by an away team
+104. **total_avg_touches_last_3_h** - The average number of touches by a home team in the last three matches
+105. **total_avg_touches_last_3_a** - The average number of touches by an away team in the last three matches
+106. **total_avg_touches_last_5_h** - The average number of touches by a home team in the last five matches
+107. **total_avg_touches_last_5_a** - The average number of touches by an away team in the last five matches
+108. **total_avg_passes_h** - The average number of passes by a home team
+109. **total_avg_passes_a** - The average number of passes by a away team
+110. **total_avg_passes_last_3_h** - The average number of passes by a home team in the last three matches
+111. **total_avg_passes_last_3_a** - The average number of passes by an away team in the last three matches
+112. **total_avg_passes_last_5_h** - The average number of passes by a home team in the last five matches
+113. **total_avg_passes_last_5_a** - The average number of passes by an away team in the last five matches
+114. **total_avg_tackles_h** - The average number of tackles by a home team
+115. **total_avg_tackles_a** - The average number of tackles by an away team
+116. **total_avg_tackles_last_3_h** - The average number of tackles by a home team in the last three matches
+117. **total_avg_tackles_last_3_a** - The average number of tackles by an away team in the last three matches
+118. **total_avg_tackles_last_5_h** - The average number of tackles by a home team in the last five matches
+119. **total_avg_tackles_last_5_a** - The average number of tackles by an away team in the last five matches
+120. **total_avg_clearances_h** - The average number of clearances by a home team
+121. **total_avg_clearances_a** - The average number of clearances by an away team
+122. **total_avg_clearances_last_3_h** - The average number of clearances by a home team in the last three matches
+123. **total_avg_clearances_last_3_a** - The average number of clearances by an away team in the last three matches
+124. **total_avg_clearances_last_5_h** - The average number of clearances by a home team in the last five matches
+125. **total_avg_clearances_last_5_a** - The average number of clearances by an away team in the last five matches
+126. **total_avg_corners_h** - The average number of corners by a home team
+127. **total_avg_corners_a** - The average number of corners by an away team
+128. **total_avg_corners_last_3_h** - The average number of corners by a home team in the last three matches
+129. **total_avg_corners_last_3_a** - The average number of corners by an away team in the last three matches
+130. **total_avg_corners_last_5_h** - The average number of corners by a home team in the last five matches
+131. **total_avg_corners_last_5_a** - The average number of corners by an away team in the last five matches
+132. **total_avg_offsides_h** - The average number of offsides by a home team
+133. **total_avg_offsides_a** - The average number of offsides by an away team
+134. **total_avg_offsides_last_3_h** - The average number of offsides by a home team in the last three matches
+135. **total_avg_offsides_last_3_a** - The average number of offsides by an away team in the last three matches
+136. **total_avg_offsides_last_5_h** - The average number of offsides by a home team in the last five matches
+137. **total_avg_offsides_last_5_a** - The average number of offsides by an away team in the last five matches
+138. **total_avg_yellow_cards_h** - The average number of yellow cards by a home team
+139. **total_avg_yellow_cards_a** - The average number of yellow cards by an away team
+140. **total_avg_yellow_cards_last_3_h** - The average number of yellow cards by a home team in the last three matches
+141. **total_avg_yellow_cards_last_3_a** - The average number of yellow cards by an away team in the last three matches
+142. **total_avg_yellow_cards_last_5_h** - The average number of yellow cards by a home team in the last five matches
+143. **total_avg_yellow_cards_last_5_a** - The average number of yellow cards by an away team in the last five matches
+144. **total_avg_fouls_conceded_h** - The average number of fouls conceded by a home team
+145. **total_avg_fouls_conceded_a** - The average number of fouls conceded by an away team
+146. **total_avg_fouls_conceded_last_3_h** - The average number of fouls concededs by a home team in the last three matches
+147. **total_avg_fouls_conceded_last_3_a** - The average number of fouls concededs by an away team in the last three matches
+148. **total_avg_fouls_conceded_last_5_h** - The average number of fouls concededs by a home team in the last five matches
+149. **total_avg_fouls_conceded_last_5_a** - The average number of fouls concededs by an away team in the last five matches
+150. **total_s2g_cum_ratio_h** - The total goal to shots on target ratio for a home team
+151. **total_s2g_cum_ratio_a** - The total goal to shots on target ratio for an away team
+152. **total_s2g_ratio_last_3_h** - The goal to shots on target ratio for a home team in the last three matches
+153. **total_s2g_ratio_last_3_a** - The goal to shots on target ratio for an away team in the last three matches
+154. **total_s2g_ratio_last_5_h** - The goal to shots on target ratio for a home team in the last five matches
+155. **total_s2g_ratio_last_5_a** - The goal to shots on target ratio for an away team in the last five matches
+156. **total_s2s_cum_ratio_h** - The total shots on target to shots ratio for a home team
+157. **total_s2s_cum_ratio_a** - The total shots on target to shots ratio for an away team
+158. **total_s2s_ratio_last_3_h** - The shots on target to shots ratio for a home team in the last three matches
+159. **total_s2s_ratio_last_3_a** - The shots on target to shots ratio for an away team in the last three matches
+160. **total_s2s_ratio_last_5_h** - The shots on target to shots ratio for a home team in the last five matches
+161. **total_s2s_ratio_last_5_a** - The shots on target to shots ratio for an away team in the last five matches
+162. **n_matches_played_h** - Total number of home matches for a home team
+163. **n_matches_played_a** - Total number of away matches for an away team
+164. **max_points_h** - Maximum number of points a home could get in home fixtures
+165. **max_points_a** - Maximum number of points an away could get in away fixtures
+166. **points_h_cum** - The number of points accumulated in home fixtures for a home team
+167. **points_a_cum** - The number of points accumulated in away fixtures for an away team
+168. **avg_acc_points_h** - The average number of points accumulated by a home team in home fixtures
+169. **avg_acc_points_a** - The average number of points accumulated by an away team in away fixtures
+170. **avg_points_accumulated_last_3_h** - The average number of points accumulated by a home team in the last three home fixtures
+171. **avg_points_accumulated_last_3_a** - The average number of points accumulated by an away team in the last three away fixtures
+172. **avg_points_accumulated_last_5_h** - The average number of points accumulated by a home team in the last five home fixtures
+173. **avg_points_accumulated_last_5_a** - The average number of points accumulated by an away team in the last five away fixtures
+174. **points_dropped_h** - The number of points dropped in home fixtures for a home team
+175. **points_dropped_a** - The number of points dropped in away fixtures for an away team
+176. **avg_dropped_points_h** - The average number of points dropped by a home team in home fixtures
+177. **avg_dropped_points_a** - The average number of points dropped by an away team in away fixtures
+178. **avg_points_dropped_last_3_h** - The average number of points dropped by a home team in the last three home fixtures
+179. **avg_points_dropped_last_3_a** - The average number of points dropped by an away team in the last three away fixtures
+180. **avg_points_dropped_last_5_h** - The average number of points dropped by a home team in the last five home fixtures
+181. **avg_points_dropped_last_5_a** - The average number of points dropped by an away team in the last five away fixtures
+182. **goals_scored_h_cum** - The number of goals scored by a home team in home fixtures
+183. **goals_scored_a_cum** - The number of goals scored by a away team in away fixtures
+184. **avg_goals_scored_h** - The average number of goals scored by a home team in home fixtures
+185. **avg_goals_scored_a** - The average number of goals scored by an away team in away fixtures
+186. **avg_goals_scored_last_3_h** - The average number of goals scored by a home team in the last three home fixtures
+187. **avg_goals_scored_last_3_a** - The average number of goals scored by an away team in the last three away fixtures
+188. **avg_goals_scored_last_5_h** - The average number of goals scored by a home team in the last five home fixtures
+189. **avg_goals_scored_last_5_a** - The average number of goals scored by an away team in the last five away fixtures
+190. **goals_conceded_h_cum** - The number of goals conceded by a home team in home fixtures
+191. **goals_conceded_a_cum** - The number of goals conceded by an away team in away fixtures
+192. **avg_goals_conceded_h** - The average number of goals conceded by a home team in home fixtures
+193. **avg_goals_conceded_a** - The average number of goals conceded by an away team in away fixtures
+194. **avg_goals_conceded_last_3_h** - The average number of goals conceded by a home team in the last three home fixtures
+195. **avg_goals_conceded_last_3_a** - The average number of goals conceded by an away team in the last three away fixtures
+196. **avg_goals_conceded_last_5_h** - The average number of goals conceded by a home team in the last five home fixtures
+197. **avg_goals_conceded_last_5_a** - The average number of goals conceded by an away team in the last five away fixtures
+198. **avg_possession_h** - The average possession for a home team in home fixtures
+199. **avg_possession_a** - The average possession for an away team in away fixtures
+200. **avg_possession_last_3_h** - The average possession for a home team in the last three home fixtures
+201. **avg_possession_last_3_a** - The average possession for an away team in the last three away fixtures
+202. **avg_possession_last_5_h** - The average possession for a home team in the last five home fixtures
+203. **avg_possession_last_5_a** - The average possession for an away team in the last five away fixtures
+204. **shots_on_target_h_cum** - The total number of shots on target for a home team in home fixtures
+205. **shots_on_target_a_cum** - The total number of shots on target for an away team in away fixtures
+206. **avg_shots_on_target_h** - The average number of shots on target for a home team in home fixtures
+207. **avg_shots_on_target_a** - The average number of shots on target for an away team in away fixtures
+208. **avg_shots_on_target_last_3_h** - The average number of shots on target for a home team in the last three home fixtures
+209. **avg_shots_on_target_last_3_a** - The average number of shots on target for an away team in the last three away fixtures
+210. **avg_shots_on_target_last_5_h** - The average number of shots on target for a home team in the last five home fixtures
+211. **avg_shots_on_target_last_5_a** - The average number of shots on target for an away team in the last five away fixtures
+212. **shots_h_cum** - The total number of shots for a home team in home fixtures
+213. **shots_a_cum** - The total number of shots for an away team in away fixtures
+214. **avg_shots_h** - The average number of shots for a home team in home fixtures
+215. **avg_shots_a** - The average number of shots for an away team in away fixtures
+216. **avg_shots_last_3_h** - The average number of shots for a home team in the last three home fixtures
+217. **avg_shots_last_3_a** - The average number of shots for an away team in the last three away fixtures
+218. **avg_shots_last_5_h** - The average number of shots for a home team in the last five home fixtures
+219. **avg_shots_last_5_a** - The average number of shots for an away team in the last five away fixtures
+220. **avg_touches_h** - The average number of touches for a home team in home fixtures
+221. **avg_touches_a** - The average number of touches for an away team in away fixtures
+222. **avg_touches_last_3_h** - The average number of touches for a home team in the last three home fixtures
+223. **avg_touches_last_3_a** - The average number of touches for an away team in the last three away fixtures
+224. **avg_touches_last_5_h** - The average number of touches for a home team in the last five home fixtures
+225. **avg_touches_last_5_a** - The average number of touches for a away team in the last five away fixtures
+226. **avg_passes_h** - The average number of passes for a home team in home fixtures
+227. **avg_passes_a** - The average number of passes for an away team in away fixtures
+228. **avg_passes_last_3_h** - The average number of passes for a home team in the last three home fixtures
+229. **avg_passes_last_3_a** - The average number of passes for an away team in the last three away fixtures
+230. **avg_passes_last_5_h** - The average number of passes for a home team in the last five home fixtures
+231. **avg_passes_last_5_a** - The average number of passes for an away team in the last five away fixtures
+232. **avg_tackles_h** - The average number of tackles for a home team in home fixtures
+233. **avg_tackles_a** - The average number of tackles for an away team in away fixtures
+234. **avg_tackles_last_3_h** - The average number of tackles for a home team in the last three home fixtures
+235. **avg_tackles_last_3_a** - The average number of tackles for an away team in the last three away fixtures
+236. **avg_tackles_last_5_h** - The average number of tackles for a home team in the last five home fixtures
+237. **avg_tackles_last_5_a** - The average number of tackles for an away team in the last five away fixtures
+238. **avg_clearances_h** - The average number of clearances for a home team in home fixtures
+239. **avg_clearances_a** - The average number of clearances for an away team in home fixtures
+240. **avg_clearances_last_3_h** - The average number of clearances for a home team in the last three home fixtures
+241. **avg_clearances_last_3_a** - The average number of clearances for an away team in the last three away fixtures
+242. **avg_clearances_last_5_h** - The average number of clearances for a home team in the last five home fixtures
+243. **avg_clearances_last_5_a** - The average number of clearances for an away team in the last five away fixtures
+244. **avg_corners_h** - The average number of corners for a home team in home fixtures
+245. **avg_corners_a** - The average number of corners for an away team in away fixtures
+246. **avg_corners_last_3_h** - The average number of corners for a home team in the last three home fixtures
+247. **avg_corners_last_3_a** - The average number of corners for an away team in the last three away fixtures
+248. **avg_corners_last_5_h** - The average number of corners for a home team in the last five home fixtures
+249. **avg_corners_last_5_a** - The average number of corners for an away team in the last five away fixtures
+250. **avg_offsides_h** - The average number of offsides for a home team in home fixtures
+251. **avg_offsides_a** - The average number of offsides for an away team in away fixtures
+252. **avg_offsides_last_3_h** - The average number of offsides for a home team in the last three home fixtures
+253. **avg_offsides_last_3_a** - The average number of offsides for an away team in the last three away fixtures
+254. **avg_offsides_last_5_h** - The average number of offsides for a home team in the last five home fixtures
+255. **avg_offsides_last_5_a** - The average number of offsides for an away team in the last five away fixtures
+256. **avg_yellow_cards_h** - The average number of yellow cards for a home team in home fixtures
+257. **avg_yellow_cards_a** - The average number of yellow cards for an away team in away fixtures
+258. **avg_yellow_cards_last_3_h** - The average number of yellow cards for a home team in the last three home fixtures
+259. **avg_yellow_cards_last_3_a** - The average number of yellow cards for an away team in the last three away fixtures
+260. **avg_yellow_cards_last_5_h** - The average number of yellow cards for a home team in the last five home fixtures
+261. **avg_yellow_cards_last_5_a** - The average number of yellow cards for an away team in the last five away fixtures
+262. **avg_fouls_conceded_h** - The average number of fouls conceded for a home team in home fixtures
+263. **avg_fouls_conceded_a** - The average number of fouls conceded for an away team in away fixtures
+264. **avg_fouls_conceded_last_3_h** - The average number of fouls conceded for a home team in the last three home fixtures
+265. **avg_fouls_conceded_last_3_a** - The average number of fouls conceded for an away team in the last three away fixtures
+266. **avg_fouls_conceded_last_5_h** - The average number of fouls conceded for a home team in the last five home fixtures
+267. **avg_fouls_conceded_last_5_a** - The average number of fouls conceded for an away team in the last five away fixtures
+268. **s2g_cum_ratio_h** - The goal to shots on target ratio for a home team in home fixtures
+269. **s2g_cum_ratio_a** - The goal to shots on target ratio for an away team in away fixtures
+270. **s2g_ratio_last_3_h** - The goal to shots on target ratio for a home team in the last three home fixtures
+271. **s2g_ratio_last_3_a** - The goal to shots on target ratio for an away team in the last three away fixtures
+272. **s2g_ratio_last_5_h** - The goal to shots on target ratio for a home team in the last five home fixtures
+273. **s2g_ratio_last_5_a** - The goal to shots on target ratio for an away team in the last five away fixtures
+274. **s2s_cum_ratio_h** - The shots on target to shots ratio for a home team in home fixtures
+275. **s2s_cum_ratio_a** - The shots on target to shots ratio for an away team in away fixtures
+276. **s2s_ratio_last_3_h** - The shots on target to shots ratio for a home team in the last three home fixtures
+277. **s2s_ratio_last_3_a** - The shots on target to shots ratio for an away team in the last three away fixtures
+278. **s2s_ratio_last_5_h** - The shots on target to shots ratio for a home team in the last five home fixtures
+279. **s2s_ratio_last_5_a** - The shots on target to shots ratio for an away team in the last five away fixtures
+280. **n_epls_h** - The number of EPL titles won by a home team
+281. **n_epls_a** - The number of EPL titles won by an away team
+282. **n_ucls_h** - The number of UCL titles won by a home team
+283. **n_ucls_a** - The number of UCL titles won by an away team
 ---
 
 These features indicate the behavior of teams based on which a batch model will learn the previous behavior to predict the future behavior of a team. After running the feature_engineering.py script, the data for each season with batch features created is stored as a separate csv file. The feature engineered data for each season is then converted into a parquet file. Moreover, I am also planning to add some other features which are realted to clubs' off field activities when retraining the model. The initial list of those features are following.
@@ -300,78 +395,70 @@ These features indicate the behavior of teams based on which a batch model will 
 3. **Sacking a manager** - Clubs usually decide to sack managers when a team fails to deliver on the pitch consequently. Football is a results' business and any manager is in danger of being sacked after poor run of form and results. When a new manager is appointed there is a period in football which is called **honeymoon** period that lasts three or five matches maximum in which team overperforms and actually gets results before going back to default settings. The model would learn the current state of a club in case its manager has been sacked in the summer or during a season while predicting increase in performance with a new manager in post.
 
 ## Modeling
-Considering the fact that it is time based binary classification problem, I did not shuffle the training data since it was more important for the model to learn the behavior in previous seasons to predict into the upcoming season. The training data covers five years of data starting from **2016/17** season up until the end of **2020/21** season while **2021/22** season was used as the test which can also be referred as **out of time (OOT)** samples. There are 20 teams in the division, while a single season lasts 38 weeks and in each week on average there are 10 matches. In a single season there are **380** matches and the training data contains **1900** matches from previous seasons whereas the test set only contains **380** matches as it is a single season. 
+Considering the fact that it is time based binary classification problem, I did not shuffle the training data since it was more important for the model to learn the behavior in previous seasons to predict into the upcoming season. The initial training data covers **12** years of data starting from **2006/07** season up until the end of **2017/18** season while **2018/19 - 2021/22** seasons were used as the test which can also be referred as **out of time (OOT)** samples. There are 20 teams in the division, while a single season lasts 38 weeks on average and in each week on average there are 10 matches. In a single season there are **380** matches and the training data contains **4560** matches from previous seasons whereas the test set contains **1520** matches. The features used in modeling have been categorized into **five** different groups which are following.
 
-Before building a classifier pipeline I created a custom transformer called **FeatureReallocator** which reallocates input features in a certain order and this is the first transformer of the entire pipeline. Then I categorized features into **four** different groups so that I could apply various preprocessing steps to each category separately.
+1. **Nominal features**
+2. **Ordinal features**
+3. **Binary features**
+4. **Numeric features**
+5. **Datetime features** 
 
-1. Binary features
-2. Ordinal features
-3. Numeric features
-4. Datetime features 
-
-Apart from the datetime features, I created a separate pipeline for each category and the first transformer in each pipeline is **missing value imputation**. Even though there is no missing value present either in the train or the test data, it is always important to include the missing value imputation as the initial layer of the pipeline to handle potential problems in production environment. Since I want the model to understand the importance of league positions before a match took place, I used **ordinal encoder** to give more weights to the teams with higher league positions. 
-
-All the algorithms were used while for the **Win & Loss** model **Support Vector Machine** prevailed as there was neither overfitting nor underfitting problem. Modeling involved following algorithms.
+All the algorithms were tested and in the end for the **Win** model the **Stacked** pipeline containing **Logistic Regression**, **Multi Layer Perceptron**, and **Light Gradient Boosted Machine (LightGBM)** algorithms prevailed with the highest **Area Under the Curve (AUC)** score on the test set. On the hand hand for the **Loss** model the **Voting** pipeline got the best **AUC** score on the test set using the previously mentioned algorithms while **Multi Layer Perceptron** was chosen for the **Draw** model. Modeling involved following algorithms.
 
 | Algorithms|Win Model|Loss Model|Draw Model|
 | -------- | -------- | -------- | -------- |
 |Gaussian Naïve Bayes|False|False|False
-|Logistic Regression|False|False|False
-|Support Vector Machine|True|True|False
+|Logistic Regression|True|True|False
+|Support Vector Machine|False|False|False
 |K Nearest Neighbors|False|False|False
-|Multi Layer Perceptron|False|False|True
+|Multi Layer Perceptron|True|True|True
 |Decision Tree|False|False|False
 |Random Forest|False|False|False
 |Adaptive Boosting (AdaBoost)|False|False|False
-|Light Gradient Boosted Machine (LightGBM)|False|False|False
+|Light Gradient Boosted Machine (LightGBM)|True|True|False
 |Gradient Boosting (GBM)|False|False|False
 |Extreme Gradient Boosting (XGBoost)|False|False|False
 |Category Boosting (CatBoost)|False|False|False
+|Stacked|True|False|False
+|Voting|False|True|False
 
-The main evaluation metric for the project is **Balanced Accuracy** score which is calculated by this formula.
+The main evaluation metric for the project is **AUC** score since all outcomes of a football match are equally important to predict and the probability threshold has been applied based on **Balanced Accuracy** score which is calculated by this formula.
 
-- **Balanced Accuracy Score** = (Sensitivity + Specificity) / 2
+- **Balanced Accuracy Score = (Sensitivity + Specificity) / 2**
 
-This is the initial architecture of the classifier pipeline for the **Win & Loss** models.
+This is the architecture of the classifier pipeline with **Logistic Regression** as the estimator.
 
-![](https://i.imgur.com/edUlCLv.png)
+![](https://i.imgur.com/ymr2iPb.png)
 
-This is the initial architecture of the classifier pipeline for the **Draw** model.
+This is the architecture of the classifier pipeline with **Multi Layer Perceptron** as the estimator.
 
-![](https://i.imgur.com/EpZUs1m.png)
+![](https://i.imgur.com/MuyWFK0.png)
+
+This is the architecture of the classifier pipeline with **Light Gradient Boosted Machine** as the estimator.
+
+![](https://i.imgur.com/XupOTIL.png)
 
 In order to maximize the evaluation metric both on train and test sets I applied probability thresholding between 10% and 90% probabilities. This is an example from the probability thresholding for the **Win** model.
 
-![](https://i.imgur.com/VEqs9oA.jpg)
+![](https://i.imgur.com/wfH50rO.png)
 
 This is the **confusion matrix**, **Recall & Precision Ratio** for train and test sets based on **Support Vector Machine** algorithm for the **Win** model.
 
-![](https://i.imgur.com/2gsVc5v.png)
-
-![](https://i.imgur.com/t2Xtqnl.png)
+![](https://i.imgur.com/WgG7YP6.png)
 
 This is the **Receiver Operating Characteristics Curve (ROC)** curve for the train and test sets of the **Win** model.
 
-![](https://i.imgur.com/DA2dOqY.jpg)
+![](https://i.imgur.com/b2iCq7y.png)
 
-It would not be the best approach to use this model to predict the outcome of the matches of the current season since the training data should also include the most recent data. Therefore, I retrained the model by including the **2021/22** season to the training set in which case **2022/23** *(current season)* would be the test set. I used **Bayesian Optimization** to find the best hyperparameters for each of the model. In order to create an engine, I combined the models and a prediction with the maximum probability is the outcome of the engine. I have created **five** confidence interval boundaries for the engine predictions which are following.
+It would not be the best approach to use this model to predict the outcome of the matches of the current season since the training data should also include the most recent data. Therefore, I retrained the model by including the from **2018/19 -- 2021/22** seasons to the training set in which case **2022/23** *(current season)* would be the test set. In order to create an engine, I combined the models and a prediction with the maximum probability is the outcome of the engine. I have created **three** confidence interval boundaries for the engine predictions which are following.
 
-1. **Very Low** - The outcome of a match with probability lower than **35%**
-2. **Low** - The outcome of a match with probability between **35%** (inclusive) and **55%** (exclusive)
-3. **Medium** - The outcome of a match with probability between than **55%** (inclusive) and **65%** (exclusive)
-4. **High** - The outcome of a match with probability between than **65%** (inclusive) and **85%** (exclusive)
-5. **Very High** - The outcome of a match with probability greater equal than **85%**
+1. **Low** - The outcome of a match with probability less than **50%** (exclusive)
+2. **Medium** - The outcome of a match with probability between than **50%** (inclusive) and **65%** (exclusive)
+3. **High** - The outcome of a match with probability greater equal than **65%** (inclusive)
 
-Even though the engine makes predictions for any match, its performance is evaluted for matches in which the probability is greater equal than **65%**. Current accuracy of the engine on the train set is **79%** and **70%** on the test set.
+Engine's performance is evaluated based on the predictions made with high confidence. Current accuracy of the engine on the train set is **77%** and **70%** on the test set.
 
-![](https://i.imgur.com/bmfQHqr.jpg)
-
-Apart from the primary engine, there is also a **shadow engine** which contains the exact same models built using **Logistic Regression** algorithm. The main reason why there is also the second engine was due to the fact that I wanted to compare the performance of those engines in production while only providing the output of the primary engine to the end users as the predictions of the shadow engine are saved for further analysis. The performance of the both engines will be monitored till the **World Cup** starts. Right now the accuracy of the shadow engine on the test set is **79%**. 
-
-![](https://i.imgur.com/0nPlNBY.jpg)
-
-## Deployment
-Furthermore, I have also created a streamlit [application](https://epl-engine.herokuapp.com) which has been deployed and currently running on **Heroku** server, however, primary engine is the one that makes predictions in the application.
+![](https://i.imgur.com/iPY2Bvf.jpg)
 
 ## Additional Information
 I will maintain this project for the years to come and add other functionalities to the engine such as **online prediction** using in game statistics. In addition, I will also include new variables for the current engine and retrain it. Since the size of the training set is subject to increase each year, the change for the main algorithms used in modeling is expected.
