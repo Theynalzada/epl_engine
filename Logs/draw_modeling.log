@@ -1,14 +1,17 @@
-2022-09-23 12:44:44,336 - INFO - Data has been loaded
-2022-09-23 12:44:44,440 - INFO - Train and test set has been created
-2022-09-23 12:44:47,013 - INFO - Gaussian Naïve Bayes model has been built
-2022-09-23 12:49:47,143 - INFO - Logistic Regression model has been built
-2022-09-23 12:52:10,765 - INFO - Support Vector Machine model has been built
-2022-09-23 12:52:33,345 - INFO - K Nearest Neighbors model has been built
-2022-09-23 13:10:27,671 - INFO - Multi Layer Perceptron model has been built
-2022-09-23 13:11:18,053 - INFO - Decision Tree model has been built
-2022-09-23 13:15:34,362 - INFO - Random Forest model has been built
-2022-09-23 13:15:57,056 - INFO - Light Gradient Boosted Machine model has been built
-2022-09-23 13:16:12,924 - INFO - Adaptive Boosting model has been built
-2022-09-23 13:16:36,609 - INFO - Gradient Boosted Machine model has been built
-2022-09-23 13:16:55,644 - INFO - Extreme Gradient Boosted Machine model has been built
-2022-09-23 13:17:16,703 - INFO - Category Boosting model has been built
+2022-11-09 15:51:16,292 - INFO - Data has been loaded
+2022-11-09 15:51:16,422 - INFO - Train and test sets have been created
+2022-11-09 15:51:18,993 - INFO - Baseline model has been built
+2022-11-09 15:54:51,880 - INFO - Gaussian Naïve Bayes model has been built
+2022-11-09 16:01:12,125 - INFO - Logistic Regression model has been built
+2022-11-09 16:02:06,507 - INFO - Support Vector Machine model has been built
+2022-11-09 16:08:46,595 - INFO - K Nearest Neighbors model has been built
+2022-11-09 16:15:16,719 - INFO - Multi Layer Perceptron model has been built
+2022-11-09 16:20:10,441 - INFO - Decision Tree model has been built
+2022-11-09 16:29:45,516 - INFO - Random Forest model has been built
+2022-11-09 16:35:48,416 - INFO - Light Gradient Boosted Machine model has been built
+2022-11-09 16:46:36,979 - INFO - Adaptive Boosting model has been built
+2022-11-09 16:52:38,517 - INFO - Gradient Boosted Machine model has been built
+2022-11-09 17:42:58,525 - INFO - Extreme Gradient Boosted Machine model has been built
+2022-11-09 17:43:42,976 - INFO - Category Boosting model has been built
+2022-11-09 21:37:25,099 - INFO - Stacked model has been built
+2022-11-09 21:39:29,865 - INFO - Voting model has been built
