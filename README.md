@@ -456,9 +456,9 @@ It would not be the best approach to use this model to predict the outcome of th
 2. **Medium** - The outcome of a match with probability between than **50%** (inclusive) and **65%** (exclusive)
 3. **High** - The outcome of a match with probability greater equal than **65%** (inclusive)
 
-Engine's performance is evaluated based on the predictions made with high confidence. Current accuracy of the engine on the train set is **77%** and **70%** on the test set.
+Engine's performance is evaluated based on the predictions made with high confidence. Current accuracy of the engine on the train set is **77%** and **74%** on the test set.
 
-![](https://i.imgur.com/iPY2Bvf.jpg)
+![](https://i.imgur.com/VwUDOJR.png)
 
 ## Additional Information
 I will maintain this project for the years to come and add other functionalities to the engine such as **online prediction** using in game statistics. In addition, I will also include new variables for the current engine and retrain it. Since the size of the training set is subject to increase each year, the change for the main algorithms used in modeling is expected.
