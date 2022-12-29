@@ -13,13 +13,13 @@ current_season_df = pd.read_csv(filepath_or_buffer = "/Users/kzeynalzade/Documen
 current_season_df.match_date = pd.to_datetime(arg = current_season_df.match_date, yearfirst = True)
 
 # Creating a list of match dates
-dates = pd.to_datetime(arg = ("2022-12-26 " * 6).strip().split() + ("2022-12-27 " * 2).strip().split() + ["2022-12-27", "2022-12-28"], yearfirst = True)
+dates = pd.to_datetime(arg = ["2022-12-30"] + ("2022-12-31 " * 7).strip().split() + ("2023-01-01 " * 2).strip().split(), yearfirst = True)
 
 # Creating a list of home teams
-home_teams = ["Brentford", "Crystal Palace", "Everton", "Leicester", "Southampton", "Aston Villa", "Arsenal", "Chelsea", "Man Utd", "Leeds"]
+home_teams = ["West Ham", "Liverpool", "Wolves", "Bournemouth", "Fulham", "Man City", "Newcastle", "Brighton", "Spurs", "Nott'm Forest"]
 
 # Creating a list of away teams
-away_teams = ["Spurs", "Fulham", "Wolves", "Newcastle", "Brighton", "Liverpool", "West Ham", "Bournemouth", "Nott'm Forest", "Man City"]
+away_teams = ["Brentford", "Leicester", "Man Utd", "Crystal Palace", "Southampton", "Everton", "Leeds", "Arsenal", "Aston Villa", "Chelsea"]
 
 # Running the script
 if __name__ == "__main__":
