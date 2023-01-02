@@ -676,11 +676,11 @@ def evaluate_engine_performance(input_df = None,
     # Defining the name for the previous match week predictions
     filename = f"match_week_{data_frame.match_week.unique()[0] - 1}_predictions.csv"
     
+    # Creating a filepath
+    filepath = os.path.join(target_path, filename)
+    
     # Creating a condition in case the previous match week predictions exists in the specified folder
-    if filename in os.listdir(path = target_path):
-        # Creating the filepath
-        filepath = os.path.join(target_path, filename)
-        
+    if os.path.exists(path = filepath):
         # Removing the file
         os.remove(path = filepath)
         
@@ -712,7 +712,6 @@ def evaluate_engine_performance(input_df = None,
         # Writing the weekly engine predictions to a separate csv
         data_frame[output_columns].to_csv(path_or_buf = predictions_filepath, index = False)
         
-    
     # Selecting only output columns
     data_frame = data_frame[output_columns]
     
